@@ -506,7 +506,7 @@ body.lb-open{overflow:hidden}
       <div class="sum"><div class="big">7</div><div class="ro">På holdet</div><div class="ln">Tre generationer, tre store dobbeltværelser, seks voksne og én på et år. Han har ikke pakket selv.</div></div>
     </div>
 
-    <div class="rooms-h rv"><h3>Værelserne</h3><span class="label">Tre store dobbeltværelser</span></div>
+    <div class="rooms-h rv"><h3>Værelserne</h3><span class="label">Kohlmais eller Reiterkogel · 30 m² hver</span></div>
     <div class="rooms rv" id="rooms"></div>
   </div>
 </section>
@@ -594,9 +594,9 @@ body.lb-open{overflow:hidden}
 
     <div class="skistrip rv">
       <div><b>Egne ski</b><p>Jeanet, Victor, Alexander og Thomas har egne ski med. Støvlerne bliver delt ud inden turen, så hver pakker sine egne.</p></div>
-      <div><b>Leje</b><p>Freja og Amalie lejer ski og støvler. Hotellet har partnerne Snow &amp; Fun og Sport Bründl, hjælper med at vælge efter niveau, og udstyret kan bookes direkte på hotellet.</p></div>
+      <div><b>Leje</b><p>Freja og Amalie får ski og støvler via hotellet. Hotellets partnere er Snow &amp; Fun og Sport Bründl, og de hjælper med at vælge efter niveau.</p></div>
       <div><b>Skiservice</b><p>Snow &amp; Fun sliber og vokser natten over og stiller skiene tilbage i hotellets skikælder.</p></div>
-      <div><b>Liftkort og skiskole</b><p>Liftkort købes i receptionen og lægges på regningen. Skiskolen tager børn fra 4 år, så Carl må vente et par sæsoner.</p></div>
+      <div><b>Liftkort og skiskole</b><p>Liftkortene får vi i receptionen. Skiskolen tager børn fra 4 år, så Carl må vente et par sæsoner.</p></div>
     </div>
   </div>
 </section>
@@ -653,9 +653,9 @@ body.lb-open{overflow:hidden}
     </div>
 
     <div class="windows">
-      <div class="rv"><span class="label">Ankomstdagen</span><div class="w">10.30<i>→</i>15.00</div><p>Vi er fremme omkring halv elleve, hvis alt går efter bogen. All inclusive og après ski-buffeten starter kl. 13. Værelserne er klar ca. kl. 15, og bagagen kan stå i bagagerummet. Pak skitøjet øverst.</p></div>
+      <div class="rv"><span class="label">Ankomstdagen</span><div class="w">10.30<i>→</i>15.00</div><p>Vi er fremme omkring halv elleve, hvis alt går efter bogen. All inclusive og après ski-buffeten starter kl. 13, og værelserne er klar ca. kl. 15. Ingen ski i dag. Vi pakker ud, henter liftkort i receptionen og får ski og støvler til Freja og Amalie.</p></div>
       <div class="rv"><span class="label">Hjemrejsedagen</span><div class="w">10.00<i>/</i>13.05</div><p>Check-ud og sidste drink senest kl. 11, hvor all inclusive slutter. Flyet går 13.05 og turen tager halvanden time. Vi kører fra hotellet omkring kl. 10. Sidste skidag er fredag.</p></div>
-      <div class="rv"><span class="label">Skidagene</span><div class="w">6<i>+</i>½</div><p>Søndag til fredag er hele dage. Lørdag eftermiddag er bonus for den, der har benene til det efter en morgen, der startede kl. 4-noget.</p></div>
+      <div class="rv"><span class="label">Skidagene</span><div class="w">6</div><p>Søndag til fredag. Lørdag står ingen på ski. Vi pakker ud, får udstyr og liftkort på plads og hygger på hotellet. Det er besluttet.</p></div>
     </div>
   </div>
 </section>
@@ -738,7 +738,7 @@ body.lb-open{overflow:hidden}
         <h4>Turen</h4>
         <ul>
           <li><b>6.–13. marts 2027</b>, lørdag til lørdag</li>
-          <li>7 nætter · 6 voksne og Carl · 3 værelser</li>
+          <li>7 nætter · 6 voksne og Carl · 3 værelser à 30 m²</li>
           <li>All inclusive</li>
           <li>Skicircus Saalbach Hinterglemm Leogang Fieberbrunn</li>
         </ul>
@@ -750,7 +750,7 @@ body.lb-open{overflow:hidden}
           <li><b>SK2620</b> · lør. 13. marts<br>SZG 13.05 → CPH 14.45</li>
           <li>Privat shuttle, ca. 90 minutter hver vej</li>
           <li>All inclusive fra kl. 13 på ankomstdagen til kl. 11 på hjemrejsedagen</li>
-          <li>Egne ski til fire, leje til Freja og Amalie</li>
+          <li>Egne ski til fire. Freja og Amalie får ski og støvler via hotellet</li>
         </ul>
       </div>
       <div>
@@ -820,9 +820,9 @@ const CONFIG = {
 
   // Værelsesfordeling. size = antal personer; mangler der navne, vises roomsPending.
   rooms: [
-    { name: "Værelse 1", size: 2, note: "To voksne", who: ["Thomas", "Jeanet"] },
-    { name: "Værelse 2", size: 3, note: "To voksne og Carl · tremmeseng", who: ["Carl"] },
-    { name: "Værelse 3", size: 2, note: "To voksne", who: [] }
+    { name: "Værelse 1", size: 2, note: "30 m²", who: ["Jeanet", "Thomas"] },
+    { name: "Værelse 2", size: 3, note: "30 m² · tremmeseng", who: ["Carl", "Amalie", "Victor"] },
+    { name: "Værelse 3", size: 2, note: "30 m²", who: ["Freja", "Alexander"] }
   ],
   roomsPending: "Resten fordeles af farfar. Meldes ud i god tid.",
 
