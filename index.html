@@ -199,25 +199,14 @@ section.s.alt{background:var(--night)}
 .sh h2{margin:0;padding-top:.12em;font-size:clamp(56px,12.5vw,196px)}
 .sh p{max-width:46ch;color:var(--mute);font-size:clamp(19px,1.6vw,23px);line-height:1.5;margin:6px 0 0}
 .sh p strong{color:var(--snow);font-weight:500}
-h3{font-family:var(--f-display);font-weight:400;text-transform:uppercase;line-height:1;letter-spacing:.01em;margin:0 0 14px;font-size:clamp(30px,3.2vw,44px)}
+h3{font-family:var(--f-display);font-weight:400;text-transform:uppercase;line-height:1;letter-spacing:.01em;margin:0 0 14px;overflow-wrap:break-word;font-size:clamp(30px,3.2vw,44px)}
 .label{font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
 .small{font-size:var(--fs-small);color:var(--mute)}
 
 html.js .rv{opacity:0;transform:translate3d(0,26px,0);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
 html.js .rv.in{opacity:1;transform:none}
 
-/* ── 01 Holdet */
-.team{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
-@media (min-width:480px){.team{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:1000px){.team{grid-template-columns:repeat(4,1fr)}}
-.team>div{background:var(--void);padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;gap:14px;min-width:0;min-height:260px;transition:background .3s}
-.team>div:hover{background:var(--slate)}
-.mono-g{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:34px;letter-spacing:.02em;color:var(--void);flex:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
-.team .nm{font-family:var(--f-display);text-transform:uppercase;font-size:clamp(32px,2.8vw,40px);line-height:1;margin-top:auto}
-.team .ro{font-family:var(--f-mono);font-size:var(--fs-mono-sm);letter-spacing:.1em;text-transform:uppercase;color:var(--ice)}
-.team .ln{font-size:var(--fs-small);color:var(--mute);line-height:1.45}
-.team .sum{background:linear-gradient(160deg,var(--slate),var(--void))}
-.team .sum .big{font-family:var(--f-display);font-size:clamp(88px,9vw,132px);line-height:.85;color:var(--brass)}
+/* ── Værelser */
 .rooms{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
 @media (min-width:860px){.rooms{grid-template-columns:repeat(3,1fr)}}
 .rooms>div{background:var(--night);padding:24px 26px;min-width:0}
@@ -369,6 +358,29 @@ img.dead{visibility:hidden}
 .live a span{min-width:0;overflow-wrap:anywhere}
 .live a i{font-style:normal;color:var(--brass);flex:none}
 
+/* ── 04 Formen */
+.ex-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px;margin:clamp(48px,6vw,80px) 0 18px}
+.ex-h h3{margin:0;font-size:clamp(34px,4vw,56px)}
+.ex{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (min-width:640px){.ex{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1100px){.ex{grid-template-columns:repeat(4,1fr)}}
+.ex>article{background:var(--void);padding:clamp(22px,2.4vw,30px);min-width:0;display:flex;flex-direction:column;gap:10px;min-height:250px;transition:background .3s}
+.ex>article:hover{background:var(--slate)}
+.ex .xn{font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.14em;color:var(--brass);text-transform:uppercase}
+.ex h3{margin:0;font-size:clamp(28px,2.4vw,36px)}
+.ex .rp{display:flex;flex-wrap:wrap;gap:6px}
+.ex .rp span{font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line-2);border-radius:999px;padding:4px 10px;color:var(--snow);white-space:nowrap}
+.ex .rp span+span{color:var(--ice);border-color:rgba(143,199,232,.35)}
+.ex p{margin:0;font-size:var(--fs-small);color:#c5cfda;line-height:1.5}
+.plan{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (min-width:640px){.plan{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1100px){.plan{grid-template-columns:repeat(4,1fr)}}
+.plan>div{background:var(--night);padding:22px 22px 24px;min-width:0}
+.plan b{display:block;font-family:var(--f-display);font-weight:400;font-size:clamp(34px,3.4vw,48px);line-height:1;margin:8px 0 8px}
+.plan p{margin:0;font-size:var(--fs-small);color:#c5cfda;line-height:1.5}
+.safety{margin-top:18px;border:1px solid rgba(208,171,99,.45);background:linear-gradient(160deg,rgba(208,171,99,.10),rgba(208,171,99,0) 60%),var(--night);border-radius:var(--r);padding:18px 22px;font-size:var(--fs-small);color:#d9e1ea;line-height:1.5}
+.safety b{font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-right:10px;font-weight:500}
+
 /* ── 05 Events */
 .events{display:grid;grid-template-columns:1fr;gap:clamp(14px,1.6vw,20px)}
 @media (min-width:640px){.events{grid-template-columns:repeat(2,1fr)}}
@@ -421,7 +433,7 @@ body.lb-open{overflow:hidden}
 </style>
 </head>
 <body>
-<a class="skip" href="#holdet">Spring til indhold</a>
+<a class="skip" href="#hotellet">Spring til indhold</a>
 <canvas id="snow" aria-hidden="true"></canvas>
 <div class="grain" aria-hidden="true"></div>
 
@@ -429,10 +441,10 @@ body.lb-open{overflow:hidden}
   <div class="wrap">
     <a class="brand" href="#hero" aria-label="Til toppen"><b>Saalbach&nbsp;’27</b><span>6.–13. marts</span></a>
     <nav class="main" aria-label="Sektioner">
-      <a href="#holdet"><i>01</i>Holdet</a>
-      <a href="#hotellet"><i>02</i>Hotellet</a>
-      <a href="#rejsen"><i>03</i>Rejsen</a>
-      <a href="#omraadet"><i>04</i>Området</a>
+      <a href="#hotellet"><i>01</i>Hotellet</a>
+      <a href="#rejsen"><i>02</i>Rejsen</a>
+      <a href="#omraadet"><i>03</i>Området</a>
+      <a href="#formen"><i>04</i>Formen</a>
       <a href="#events"><i>05</i>Måske</a>
     </nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav"><span class="bars" aria-hidden="true"></span><span class="mt">Menu</span></button>
@@ -440,10 +452,10 @@ body.lb-open{overflow:hidden}
 </header>
 
 <nav class="mnav" id="mnav" aria-label="Mobilmenu" aria-hidden="true">
-  <a href="#holdet"><i>01</i><b>Holdet</b></a>
-  <a href="#hotellet"><i>02</i><b>Hotellet</b></a>
-  <a href="#rejsen"><i>03</i><b>Rejsen</b></a>
-  <a href="#omraadet"><i>04</i><b>Området</b></a>
+  <a href="#hotellet"><i>01</i><b>Hotellet</b></a>
+  <a href="#rejsen"><i>02</i><b>Rejsen</b></a>
+  <a href="#omraadet"><i>03</i><b>Området</b></a>
+  <a href="#formen"><i>04</i><b>Formen</b></a>
   <a href="#events"><i>05</i><b>Måske</b></a>
 </nav>
 
@@ -487,30 +499,6 @@ body.lb-open{overflow:hidden}
   </div>
 </div>
 
-<!-- ═══════════ 01 HOLDET ═══════════ -->
-<section class="s" id="holdet">
-  <div class="wrap">
-    <div class="sh rv">
-      <span class="num mono">01 — Holdet</span>
-      <h2 class="display"><span class="fit" data-fit>Holdet</span></h2>
-      <p>Tre generationer. Den ældste har bestilt turen. <strong>Den yngste er ikke blevet spurgt.</strong></p>
-    </div>
-    <div class="team rv" id="team">
-      <div><div class="mono-g" style="background:linear-gradient(135deg,#D0AB63,#8a6a2e)">TH</div><div class="nm fit" data-fit>Thomas</div><div class="ro">Farfar</div><div class="ln">Har bestilt turen. Har også nedtællingen.</div></div>
-      <div><div class="mono-g" style="background:linear-gradient(135deg,#EEF3F8,#93A1B1)">JE</div><div class="nm fit" data-fit>Jeanet</div><div class="ro">Holdets kaptajn</div><div class="ln">Har det sidste ord. Også om afterski.</div></div>
-      <div><div class="mono-g" style="background:linear-gradient(135deg,#8FC7E8,#2E6B91)">AL</div><div class="nm fit" data-fit>Alexander</div><div class="ro">Søn</div><div class="ln">Gik Kungsleden i 2021. Her er der lift.</div></div>
-      <div><div class="mono-g" style="background:linear-gradient(135deg,#bfe0f2,#4b88ad)">VI</div><div class="nm fit" data-fit>Victor</div><div class="ro">Søn</div><div class="ln">Besteg Kilimanjaro i 2019. Det her går nedad.</div></div>
-      <div><div class="mono-g" style="background:linear-gradient(135deg,#e9d3a4,#a88443)">FR</div><div class="nm fit" data-fit>Freja</div><div class="ro">På holdet</div><div class="ln">Holdets fornuft. Nogen skal jo være det.</div></div>
-      <div><div class="mono-g" style="background:linear-gradient(135deg,#f3f6f9,#8FC7E8)">AM</div><div class="nm fit" data-fit>Amalie</div><div class="ro">På holdet</div><div class="ln">Med for sneen, saunaen og selskabet.</div></div>
-      <div><div class="mono-g" style="background:linear-gradient(135deg,#9fb6c9,#3a5568)">CA</div><div class="nm fit" data-fit>Carl</div><div class="ro">1 år · holdets yngste</div><div class="ln">Har sin egen tremmeseng. Skiskolen tager børn fra 4 år, så han venter.</div></div>
-      <div class="sum"><div class="big">7</div><div class="ro">På holdet</div><div class="ln">Tre generationer, tre store dobbeltværelser, seks voksne og én på et år. Han har ikke pakket selv.</div></div>
-    </div>
-
-    <div class="rooms-h rv"><h3>Værelserne</h3><span class="label">Kohlmais eller Reiterkogel · 30 m² hver</span></div>
-    <div class="rooms rv" id="rooms"></div>
-  </div>
-</section>
-
 <!-- ═══════════ PARALLAX ═══════════ -->
 <div class="band" aria-hidden="true">
   <div class="ph"><img data-px src="https://www.hotel-sonne.at/fileadmin/_processed_/7/5/csm_SNO_0226_c113012117.jpg" alt="" loading="lazy" onerror="this.classList.add('dead')"></div>
@@ -521,7 +509,7 @@ body.lb-open{overflow:hidden}
 <section class="s alt" id="hotellet">
   <div class="wrap">
     <div class="sh rv">
-      <span class="num mono">02 — Hotellet</span>
+      <span class="num mono">01 — Hotellet</span>
       <h2 class="display"><span class="fit" data-fit>Die Sonne</span></h2>
       <p>Fire stjerner superior, mellem Saalbach og Hinterglemm. <strong>All inclusive fra morgen til midnat.</strong></p>
     </div>
@@ -540,6 +528,9 @@ body.lb-open{overflow:hidden}
         <div><b>Hele dagen</b><span>Inklusiv-taxi til liftene</span></div>
       </div>
     </div>
+
+    <div class="rooms-h rv"><h3>Værelserne</h3><span class="label">Kohlmais eller Reiterkogel · 30 m² hver</span></div>
+    <div class="rooms rv" id="rooms"></div>
 
     <div class="gal rv" id="gal">
       <button type="button" data-i="0"><div class="fr ph"><img loading="lazy" src="https://www.hotel-sonne.at/fileadmin/_processed_/0/3/csm_HotelDieSONNE-Dez23-0116_Steffi.O_Print_1f173b67e8.jpg" alt="Hotel Die Sonne i december" onerror="this.classList.add('dead')"></div><span class="cap"><i>01</i>Die Sonne, december</span></button>
@@ -605,7 +596,7 @@ body.lb-open{overflow:hidden}
 <section class="s" id="rejsen">
   <div class="wrap">
     <div class="sh rv">
-      <span class="num mono">03 — Rejsen</span>
+      <span class="num mono">02 — Rejsen</span>
       <h2 class="display"><span class="fit" data-fit>Rejsen</span></h2>
       <p>Tidligt ud, tidligt fremme. <strong>Det er hele planen.</strong></p>
     </div>
@@ -669,7 +660,7 @@ body.lb-open{overflow:hidden}
 <section class="s alt" id="omraadet">
   <div class="wrap">
     <div class="sh rv">
-      <span class="num mono">04 — Området</span>
+      <span class="num mono">03 — Området</span>
       <h2 class="display"><span class="fit" data-fit>Skicircus</span></h2>
       <p>Saalbach Hinterglemm Leogang Fieberbrunn. <strong>Et af Østrigs største skiområder</strong>, og ikke et af de højeste. Det skal man vide i marts.</p>
     </div>
@@ -707,6 +698,49 @@ body.lb-open{overflow:hidden}
         <a href="https://www.feratel.com/en/webcams/austria/salzburg/saalbach-zwoelferkogel" target="_blank" rel="noopener"><span>Zwölferkogel · feratel</span><i>↗</i></a>
         <a href="https://www.feratel.com/en/webcams/austria/salzburg/saalbach-kohlmaiskopf" target="_blank" rel="noopener"><span>Kohlmaiskopf · feratel</span><i>↗</i></a></div>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════ 04 FORMEN ═══════════ -->
+<section class="s alt" id="formen">
+  <div class="wrap">
+    <div class="sh rv">
+      <span class="num mono">04 — Formen</span>
+      <h2 class="display"><span class="fit" data-fit>Formen</span></h2>
+      <p>Seks skidage kræver lår, baller, læg og en mave, der holder det hele samlet. <strong>Carl hjælper gerne. Han vejer ca. 10 kilo.</strong></p>
+    </div>
+    <div class="plan rv">
+      <div><span class="label">Start</span><b id="tstart">11. januar</b><p>Mandag 11. januar 2027. Otte uger før afgang.</p></div>
+      <div><span class="label">Hvor tit</span><b>2–3 gange</b><p>Om ugen. Ikke to dage i træk.</p></div>
+      <div><span class="label">Hvor længe</span><b>20 min</b><p>Fire øvelser med Carl og fire uden. Skift fra gang til gang.</p></div>
+      <div><span class="label">Progression</span><b>2 → 3 sæt</b><p>Uge 1–4: to sæt og ingen hop. Uge 5–8: tre sæt, og hoppene kommer med.</p></div>
+    </div>
+
+    <div class="ex-h rv"><h3>Med Carl</h3><span class="label">8 øvelser · ca. 10 kg levende vægt</span></div>
+    <div class="ex">
+      <article class="rv"><span class="xn">01 · Med Carl</span><h3>Carl-squat</h3><div class="rp"><span>3 × 10</span><span>Lår og baller</span></div><p>Bær ham foran brystet og gå ned, til lårene er vandrette. Skistillingen med vægt på.</p></article>
+      <article class="rv"><span class="xn">02 · Med Carl</span><h3>Vægsiddet med passager</h3><div class="rp"><span>30–60 sek</span><span>Forside lår</span></div><p>Ryggen mod væggen, Carl på skødet. Det minder mest om en lang rød pist.</p></article>
+      <article class="rv"><span class="xn">03 · Med Carl</span><h3>Hoftehævet</h3><div class="rp"><span>3 × 12</span><span>Baller og baglår</span></div><p>Lig på ryggen med Carl siddende på hofterne, og hold ham med begge hænder. Han tror, det er en karrusel.</p></article>
+      <article class="rv"><span class="xn">04 · Med Carl</span><h3>Flyveren</h3><div class="rp"><span>3 × 10</span><span>Mave og hoftebøjere</span></div><p>Carl på skinnebenene og hænderne i hans. Bøj og stræk benene langsomt. Meget fnis, også fra Carl.</p></article>
+      <article class="rv"><span class="xn">05 · Med Carl</span><h3>Udfald med bæresele</h3><div class="rp"><span>2 × 10 frem og tilbage</span><span>Lår og balance</span></div><p>Gennem stuen og tilbage igen. Bæreselen kan lånes på hotellet, men den her øvelse foregår derhjemme.</p></article>
+      <article class="rv"><span class="xn">06 · Med Carl</span><h3>Fang Carl</h3><div class="rp"><span>3 × 30 sek</span><span>Inder- og yderside lår</span></div><p>Lave sidetrin i halv squat, mens han går efter dig. Det er kanterne, der trænes.</p></article>
+      <article class="rv"><span class="xn">07 · Med Carl</span><h3>Tunnelen</h3><div class="rp"><span>3 × 30 sek</span><span>Mave og skuldre</span></div><p>Planke, mens han kravler under dig. Sideplanke, når han kommer ud på den anden side.</p></article>
+      <article class="rv"><span class="xn">08 · Med Carl</span><h3>Tåhævet</h3><div class="rp"><span>3 × 15</span><span>Læg og ankler</span></div><p>Stå med Carl på armen og løft hælene langsomt. Det er det, skistøvlerne kræver hele dagen.</p></article>
+    </div>
+    <div class="safety rv"><b>Regler</b>Hold ham tæt ind til kroppen. Ingen hop og ingen hurtige retningsskift med ham på armen. Stop, når han ikke synes, det er sjovt længere.</div>
+
+    <div class="ex-h rv"><h3>Uden Carl</h3><span class="label">8 øvelser · hoppene kommer fra uge 5</span></div>
+    <div class="ex">
+      <article class="rv"><span class="xn">01 · Uden Carl</span><h3>Skøjtehop</h3><div class="rp"><span>3 × 10 pr. side</span><span>Svingene</span></div><p>Hop sidelæns fra ét ben til det andet, og stå landingen stille. Den vigtigste af dem alle.</p></article>
+      <article class="rv"><span class="xn">02 · Uden Carl</span><h3>Bulgarsk split squat</h3><div class="rp"><span>3 × 8 pr. ben</span><span>Lår og baller</span></div><p>Bagerste fod op på en stol. Ét ben ad gangen, som på ski.</p></article>
+      <article class="rv"><span class="xn">03 · Uden Carl</span><h3>Etbens-dødløft</h3><div class="rp"><span>3 × 8 pr. ben</span><span>Baglår og balance</span></div><p>Langsomt ned med flad ryg. Passer på knæene, når pisten bliver lang.</p></article>
+      <article class="rv"><span class="xn">04 · Uden Carl</span><h3>Copenhagen-planke</h3><div class="rp"><span>3 × 20 sek pr. side</span><span>Inderside lår</span></div><p>Sideplanke med øverste ben på en bænk. Navnet forpligter.</p></article>
+      <article class="rv"><span class="xn">05 · Uden Carl</span><h3>Kassehop</h3><div class="rp"><span>3 × 8</span><span>Eksplosiv kraft</span></div><p>Op på et lavt trin eller en kasse, blødt ned. Til pukler og ujævn sne.</p></article>
+      <article class="rv"><span class="xn">06 · Uden Carl</span><h3>Balance på pude</h3><div class="rp"><span>3 × 30 sek pr. ben</span><span>Fødder og ankler</span></div><p>På ét ben, på en sofapude, med lukkede øjne. Sværere end det lyder.</p></article>
+      <article class="rv"><span class="xn">07 · Uden Carl</span><h3>Sideplanke med benløft</h3><div class="rp"><span>3 × 10 pr. side</span><span>Yderside hofte</span></div><p>Løft det øverste ben langsomt og kontrolleret. Holder knæet på plads i svinget.</p></article>
+      <article class="rv"><span class="xn">08 · Uden Carl</span><h3>Vægsiddet, sidste udgave</h3><div class="rp"><span>Så længe du kan</span><span>Forside lår</span></div><p>Én gang i hver træning. Skriv tiden ned. Den skal op inden marts.</p></article>
+    </div>
+    <div class="safety rv"><b>I øvrigt</b>Gør det ondt i knæ eller ryg, så stop. Det er ikke en konkurrence. Endnu.</div>
   </div>
 </section>
 
@@ -826,6 +860,9 @@ const CONFIG = {
   ],
   roomsPending: "Resten fordeles af farfar. Meldes ud i god tid.",
 
+  // Træningsplanen starter her (8 uger før afgang)
+  trainingStart: "2027-01-11T00:00:00+01:00",
+
   // Sne: 0 = slukket, 1 = normal, 2 = snestorm
   snowDensity: 1
 };
@@ -907,6 +944,14 @@ const CONFIG = {
     cd.querySelector('[data-u="h"]').textContent = pad(h);
     cd.querySelector('[data-u="m"]').textContent = pad(m);
     cd.querySelector('[data-u="s"]').textContent = pad(s);
+  }
+  const ts = $("#tstart");
+  if (ts) {
+    const t0 = new Date(CONFIG.trainingStart).getTime(), now = Date.now();
+    const days = Math.ceil((t0 - now) / 86400000);
+    if (now < t0) ts.textContent = days === 1 ? "I morgen" : "Om " + days + " dage";
+    else if (now < dep) ts.textContent = "Uge " + Math.min(8, Math.floor((now - t0) / 604800000) + 1) + " af 8";
+    else ts.textContent = "Overstået";
   }
   if (!tick()) { const iv = setInterval(() => { if (tick()) clearInterval(iv); }, 1000); }
 
