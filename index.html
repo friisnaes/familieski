@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Saalbach Hinterglemm 2027 · Familien på ski · 6.–13. marts</title>
-<meta name="description" content="Familiens skiuge i Saalbach Hinterglemm, 6.–13. marts 2027. Hotel Die Sonne, all inclusive, 270 km piste i Skicircus. Fly, transfer, værelser og det vi håber på.">
+<title>Saalbach Hinterglemm 2027 · Familieguide · 6.–13. marts</title>
+<meta name="description" content="Familieguide til Saalbach Hinterglemm, 6.–13. marts 2027. Turen lige nu, fly, transfer, Hotel Die Sonne, oversigtskort over Skicircus, plan A og B og pakkeliste.">
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
 <link rel="canonical" href="https://friisnaes.github.io/familieski/">
@@ -30,42 +30,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://www.hotel-sonne.at" crossorigin>
+<link rel="preload" as="image" href="https://www.hotel-sonne.at/fileadmin/_processed_/1/d/csm_skiurlaub-saalbach-hinterglemm-sh_w_1949_63d570daee.jpg" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Familieski i Saalbach Hinterglemm 2027",
-  "description": "Familiens skiuge i Skicircus Saalbach Hinterglemm Leogang Fieberbrunn med ophold på Hotel Die Sonne, all inclusive.",
-  "startDate": "2027-03-06T06:35:00+01:00",
-  "endDate": "2027-03-13T14:45:00+01:00",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "inLanguage": "da",
-  "image": [
-    "https://www.hotel-sonne.at/fileadmin/_processed_/1/d/csm_skiurlaub-saalbach-hinterglemm-sh_w_1949_63d570daee.jpg",
-    "https://www.hotel-sonne.at/fileadmin/user_upload/WEB-Sonne-Hallenbad-Dez22-1_01.jpg"
-  ],
-  "organizer": { "@type": "Person", "name": "Thomas Friisnæs", "url": "https://friisnaes.com" },
-  "location": {
-    "@type": "Hotel",
-    "name": "Hotel DIE SONNE",
-    "url": "https://www.hotel-sonne.at/en/",
-    "telephone": "+43 6541 7202",
-    "email": "saalbach@hotel-sonne.at",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Altachweg 334",
-      "postalCode": "5753",
-      "addressLocality": "Saalbach",
-      "addressRegion": "Salzburg",
-      "addressCountry": "AT"
-    },
-    "geo": { "@type": "GeoCoordinates", "latitude": 47.389452, "longitude": 12.621843 }
-  }
-}
-</script>
 
 <style>
 :root{
@@ -132,7 +99,7 @@ nav.main a:hover,nav.main a.on{color:var(--snow)}
 .menu-btn .bars::before{top:0}.menu-btn .bars::after{top:8px}
 body.menu-open .menu-btn .bars::before{top:4px;transform:rotate(45deg)}
 body.menu-open .menu-btn .bars::after{top:4px;transform:rotate(-45deg)}
-@media (min-width:960px){nav.main{display:flex}.menu-btn{display:none}}
+
 @media (max-width:420px){.brand span{display:none}.brand b{font-size:21px}.menu-btn{padding:8px 14px}}
 .brand{overflow:hidden}.brand b{white-space:nowrap}
 
@@ -141,7 +108,7 @@ body.menu-open .mnav{opacity:1;visibility:visible}
 body.menu-open{overflow:hidden}
 .mnav a{display:flex;align-items:baseline;gap:16px;text-decoration:none;padding:10px 0;border-bottom:1px solid var(--line)}
 .mnav a i{font-family:var(--f-mono);font-style:normal;font-size:var(--fs-mono-md);color:var(--brass)}
-.mnav a b{font-family:var(--f-display);font-weight:400;text-transform:uppercase;font-size:clamp(40px,11vw,76px);line-height:1}
+.mnav a b{font-family:var(--f-display);font-weight:400;text-transform:uppercase;font-size:clamp(32px,9vw,64px);line-height:1}
 
 /* ── Hero */
 #hero{position:relative;z-index:4;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:calc(var(--header-h) + 40px);padding-bottom:clamp(28px,5vh,56px);overflow:hidden;isolation:isolate}
@@ -430,10 +397,177 @@ body.lb-open{overflow:hidden}
   html.js .rv{opacity:1;transform:none}
   .slide img{transform:none}
 }
+
+/* ════════ v2 ════════ */
+.grain{opacity:.045}
+#snow{transition:opacity .8s ease}
+#snow.dim{opacity:.15}
+.ticker{opacity:.55;padding:10px 0}
+.track{animation-duration:110s}
+.track span{font-size:clamp(20px,2.4vw,30px)}
+.ticker:hover .track{animation-play-state:paused}
+@media (min-width:1240px){nav.main{display:flex}.menu-btn{display:none}}
+@media (max-width:1239px){nav.main{display:none}}
+nav.main a{padding:10px 10px}
+
+/* Knapper til tommelfingre */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 22px;border-radius:999px;border:1px solid var(--line-2);background:rgba(17,25,34,.72);color:var(--snow);font-family:var(--f-mono);font-size:var(--fs-mono-md);font-weight:500;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s,border-color .2s,color .2s;text-align:center;line-height:1.25}
+.btn:hover{border-color:var(--ice);background:rgba(143,199,232,.1)}
+.btn.pri{background:var(--snow);color:var(--void);border-color:var(--snow)}
+.btn.pri:hover{background:var(--ice);border-color:var(--ice)}
+.hero-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+@media (max-width:520px){.hero-acts .btn{flex:1 1 100%}}
+
+/* Status */
+.st{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;white-space:nowrap;line-height:1.3;border:1px solid}
+.st::before{content:"";width:7px;height:7px;border-radius:50%;flex:none}
+.st-b{color:var(--ice);border-color:rgba(143,199,232,.5);background:rgba(143,199,232,.1)}
+.st-b::before{background:var(--ice)}
+.st-f{color:var(--brass);border-color:rgba(208,171,99,.55)}
+.st-f::before{border:1.5px solid var(--brass);box-sizing:border-box}
+.st-a{color:var(--mute);border-color:var(--mute-2);border-style:dashed}
+.st-a::before{border:1.5px dashed var(--mute);box-sizing:border-box}
+.legend{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:0 0 clamp(22px,3vw,34px)}
+.legend span.lx{font-size:var(--fs-small);color:var(--mute)}
+
+/* Turen lige nu */
+#nu{position:relative;z-index:4;background:var(--void);padding:clamp(18px,3vw,36px) 0 clamp(36px,5vw,64px)}
+.now-card{position:relative;border:1px solid var(--line-2);border-radius:18px;background:linear-gradient(160deg,#111c28 0%,#0a0f15 70%);padding:clamp(20px,3.2vw,40px);display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(18px,2.4vw,28px);overflow:hidden}
+.now-card::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 70% at 100% 0%,rgba(143,199,232,.12),transparent 60%);pointer-events:none}
+.now-card>*{position:relative;min-width:0}
+@media (min-width:1000px){.now-card{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)}.now-top{grid-column:1/-1}}
+.now-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px}
+.now-top .label{color:var(--brass)}
+.now-net{font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.now-net.off{color:var(--brass)}
+.now-h{margin:0;font-family:var(--f-display);font-weight:400;text-transform:uppercase;line-height:.95;font-size:clamp(40px,7vw,84px);overflow-wrap:break-word}
+.now-sub{margin:10px 0 0;font-size:clamp(19px,1.7vw,22px);color:#cfd8e2}
+.now-facts{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--line)}
+.now-facts li,.agl li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center}
+.now-facts .k,.agl .k{font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.now-facts .v,.agl .v{grid-column:1/-1;font-size:var(--fs-body);line-height:1.45;color:var(--snow)}
+.agl .v em{font-style:normal;color:var(--mute)}
+.now-acts{display:grid;gap:10px;align-content:start}
+.now-sim{margin:0;font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.08em;color:var(--brass);grid-column:1/-1}
+
+/* Rejsen: tidslinjer */
+.tls{margin-top:clamp(28px,4vw,48px);display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(16px,2vw,24px)}
+@media (min-width:1000px){.tls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tl{border:1px solid var(--line-2);border-radius:var(--r);background:var(--night);padding:clamp(20px,2.6vw,32px)}
+.tl h3{font-size:clamp(28px,2.8vw,40px);margin-bottom:8px}
+.tl ol{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:4px 14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:start}
+.tl li:last-child{border-bottom:0}
+.tl time{font-family:var(--f-display);font-size:26px;line-height:1.05;color:var(--snow);grid-row:span 2}
+.tl li b{font-weight:500;font-size:var(--fs-body);line-height:1.35;display:block}
+.tl .tl-n{display:block;font-size:var(--fs-small);color:var(--mute);line-height:1.45;margin-top:3px}
+.tl li .st{grid-column:2;justify-self:start;margin-top:4px}
+.tl-note{margin-top:16px;font-size:var(--fs-small);color:#c5cfda;border-left:2px solid var(--brass);padding-left:14px}
+
+/* I lommen */
+.pocket{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(16px,2vw,24px)}
+@media (min-width:960px){.pocket{grid-template-columns:repeat(2,minmax(0,1fr))}.pk-pack{grid-column:2;grid-row:1/span 2}}
+.pk-card{border:1px solid var(--line-2);border-radius:var(--r);background:var(--night);padding:clamp(20px,2.6vw,32px);min-width:0;display:flex;flex-direction:column;gap:12px}
+.pk-card .label{color:var(--ice)}
+.pk-card h3{margin:0}
+.addr{font-size:clamp(22px,2.2vw,28px);line-height:1.3;margin:0}
+.pk-acts{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+@media (min-width:560px){.pk-acts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:960px){.pk-acts{grid-template-columns:minmax(0,1fr)}}
+@media (min-width:1240px){.pk-acts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.pk-acts .btn{padding:12px 14px}
+#ics-list{list-style:none;margin:0;padding:0}
+#ics-list li{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:var(--fs-small);color:#c5cfda}
+.pk-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.pk-count{font-family:var(--f-display);font-size:32px;line-height:1;color:var(--brass)}
+.pack{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.pack label{display:flex;gap:14px;align-items:flex-start;min-height:52px;padding:12px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.pack input{width:24px;height:24px;margin:2px 0 0;flex:none;accent-color:var(--ice);cursor:pointer}
+.pack b{font-weight:500;display:block;line-height:1.35}
+.pack i{font-style:normal;display:block;font-size:var(--fs-small);color:var(--mute);line-height:1.4}
+.pack input:checked+span b{color:var(--mute);text-decoration:line-through;text-decoration-color:var(--mute-2)}
+.pk-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.pk-foot .small{margin:0}
+.offline-note{margin-top:clamp(20px,2.4vw,28px);font-size:var(--fs-small);color:var(--mute);max-width:70ch}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);z-index:90;background:var(--snow);color:var(--void);font-family:var(--f-mono);font-size:var(--fs-mono-sm);letter-spacing:.06em;padding:14px 20px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-width:calc(100vw - 32px);text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* Saalbach fra oven */
+.map-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(16px,2vw,28px);margin-bottom:clamp(40px,5vw,72px)}
+@media (min-width:1000px){.map-wrap{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:start}}
+.map{margin:0;position:relative;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;background:radial-gradient(70% 60% at 45% 65%,rgba(46,107,145,.28),transparent 70%),linear-gradient(180deg,#0d1822,#070a0e)}
+.map svg{display:block;width:100%;height:auto}
+.map figcaption{position:absolute;left:14px;top:12px;font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);background:rgba(6,8,11,.7);padding:6px 10px;border-radius:999px;max-width:calc(100% - 28px)}
+#map-spot{transform-box:view-box;transform-origin:0 0;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+#map-lnk{stroke:var(--brass);stroke-width:2;stroke-linecap:round;transition:stroke-dashoffset 1s cubic-bezier(.2,.7,.2,1) .15s}
+#map-dist{fill:var(--brass);font-family:var(--f-mono);font-size:13px;letter-spacing:.14em}
+#map-g .gr{stroke:rgba(255,255,255,.06);stroke-width:1}
+#map-g .gt{fill:rgba(147,161,177,.5);font-family:var(--f-mono);font-size:11px;letter-spacing:.06em}
+#map-g .ct{fill:none;stroke:var(--ice);stroke-width:1;stroke-dasharray:2 5}
+#map-g .vl{fill:none;stroke:rgba(143,199,232,.45);stroke-width:2;stroke-dasharray:6 6;stroke-linecap:round}
+#map-g .vt{fill:rgba(143,199,232,.7);font-family:var(--f-mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+#map-g .mk{cursor:pointer}
+#map-g .mk-hit{fill:transparent}
+#map-g .mk-dot{fill:var(--mute);transition:fill .4s}
+#map-g .mk-ring{fill:none;stroke:var(--mute-2);stroke-width:1.5;transition:stroke .4s}
+#map-g .mk-l{fill:var(--mute);font-family:var(--f-display);font-size:30px;letter-spacing:.02em;transition:fill .4s}
+#map-g .mk.on .mk-dot{fill:var(--snow)}
+#map-g .mk.on .mk-ring{stroke:var(--ice);animation:ping 2.4s ease-out infinite;transform-box:fill-box;transform-origin:center}
+#map-g .mk.on .mk-l{fill:var(--snow)}
+#map-g .ht rect{fill:var(--brass)}
+#map-g .ht text{fill:var(--brass);font-family:var(--f-mono);font-size:13px;letter-spacing:.14em}
+#map-g .sc line{stroke:var(--mute);stroke-width:1.5}
+#map-g .sc text{fill:var(--mute);font-family:var(--f-mono);font-size:12px;letter-spacing:.14em}
+@keyframes ping{0%{transform:scale(1);opacity:1}100%{transform:scale(2.4);opacity:0}}
+.map-btns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.map-btns button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:76px;padding:12px 16px;border:1px solid var(--line-2);border-radius:var(--r);background:var(--void);cursor:pointer;text-align:left;transition:background .25s,border-color .25s,color .25s;min-width:0}
+.map-btns button i{font-style:normal;font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.14em;color:var(--brass)}
+.map-btns button b{font-family:var(--f-display);font-weight:400;font-size:clamp(22px,2vw,28px);text-transform:uppercase;line-height:1.05;overflow-wrap:anywhere}
+.map-btns button span{font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.map-btns button:hover{border-color:var(--ice)}
+.map-btns button[aria-pressed="true"]{background:var(--snow);color:var(--void);border-color:var(--snow)}
+.map-btns button[aria-pressed="true"] span,.map-btns button[aria-pressed="true"] i{color:var(--ice-deep)}
+.map-panel{margin-top:12px;border:1px solid var(--line-2);border-radius:var(--r);background:var(--slate);padding:clamp(20px,2.4vw,30px);min-height:300px;display:flex;flex-direction:column;gap:6px}
+.map-panel.in{animation:pin .6s ease both}
+@keyframes pin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.map-panel .ix{font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.14em;color:var(--brass);text-transform:uppercase}
+.map-panel h3{margin:6px 0 0;font-size:clamp(40px,4vw,58px)}
+.map-panel .alt{font-family:var(--f-display);font-size:clamp(48px,4.6vw,66px);line-height:1;color:var(--ice);font-variant-numeric:tabular-nums}
+.map-panel .alt small{font-size:.4em;color:var(--mute);margin-left:4px}
+.map-panel .an{font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.map-panel p{margin:10px 0 14px;font-size:var(--fs-small);color:#c5cfda;line-height:1.55}
+.map-panel .btn{align-self:flex-start;margin-top:auto}
+
+/* Plan A og B */
+.aftalt{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(16px,2vw,24px);margin-bottom:clamp(28px,3vw,40px)}
+@media (min-width:960px){.aftalt{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.aftalt>div{border:1px solid rgba(143,199,232,.35);border-radius:var(--r);background:var(--night);padding:clamp(20px,2.6vw,30px);min-width:0}
+.aftalt h3{font-size:clamp(26px,2.6vw,36px);margin-bottom:6px}
+.agl{list-style:none;margin:0;padding:0}
+.agl li.none .v{color:var(--mute);font-size:var(--fs-small)}
+.days{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(14px,1.6vw,20px);margin-top:clamp(28px,3vw,40px)}
+@media (min-width:700px){.days{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1100px){.days{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.days>article{border:1px solid var(--line-2);border-radius:var(--r);background:linear-gradient(170deg,var(--slate),var(--night));padding:clamp(20px,2.4vw,30px);min-width:0;display:flex;flex-direction:column;gap:10px}
+.days .idea{align-self:flex-start;font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);border:1px dashed var(--mute-2);padding:4px 10px;border-radius:999px}
+.days h3{margin:4px 0 0}
+.days .ab{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 14px;margin:6px 0 0;align-items:baseline}
+.days .ab dt{font-family:var(--f-display);font-size:22px;line-height:1;color:var(--brass);min-width:28px}
+.days .ab dd{margin:0;font-size:var(--fs-small);color:#c5cfda;line-height:1.5}
+.cond-h{margin:clamp(28px,3vw,40px) 0 14px}
+
+@media (max-width:640px){
+  .map figcaption{position:static;display:block;border-radius:0;max-width:none;background:var(--night);border-top:1px solid var(--line);padding:10px 14px}
+  #map-g .mk-l{font-size:46px}
+  #map-g .ht text,#map-dist{font-size:22px}
+  #map-g .vt{font-size:20px}
+  #map-g .gt{display:none}
+  #map-g .sc text{font-size:20px}
+}
 </style>
 </head>
 <body>
-<a class="skip" href="#hotellet">Spring til indhold</a>
+<a class="skip" href="#nu">Spring til turen lige nu</a>
 <canvas id="snow" aria-hidden="true"></canvas>
 <div class="grain" aria-hidden="true"></div>
 
@@ -441,22 +575,26 @@ body.lb-open{overflow:hidden}
   <div class="wrap">
     <a class="brand" href="#hero" aria-label="Til toppen"><b>Saalbach&nbsp;’27</b><span>6.–13. marts</span></a>
     <nav class="main" aria-label="Sektioner">
+      <a href="#nu"><i>00</i>Nu</a>
       <a href="#hotellet"><i>01</i>Hotellet</a>
       <a href="#rejsen"><i>02</i>Rejsen</a>
-      <a href="#omraadet"><i>03</i>Området</a>
-      <a href="#formen"><i>04</i>Formen</a>
-      <a href="#events"><i>05</i>Måske</a>
+      <a href="#lommen"><i>03</i>Lommen</a>
+      <a href="#kort"><i>04</i>Kortet</a>
+      <a href="#plan"><i>05</i>Plan</a>
+      <a href="#formen"><i>06</i>Formen</a>
     </nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav"><span class="bars" aria-hidden="true"></span><span class="mt">Menu</span></button>
   </div>
 </header>
 
 <nav class="mnav" id="mnav" aria-label="Mobilmenu" aria-hidden="true">
+  <a href="#nu"><i>00</i><b>Turen lige nu</b></a>
   <a href="#hotellet"><i>01</i><b>Hotellet</b></a>
   <a href="#rejsen"><i>02</i><b>Rejsen</b></a>
-  <a href="#omraadet"><i>03</i><b>Området</b></a>
-  <a href="#formen"><i>04</i><b>Formen</b></a>
-  <a href="#events"><i>05</i><b>Måske</b></a>
+  <a href="#lommen"><i>03</i><b>I lommen</b></a>
+  <a href="#kort"><i>04</i><b>Fra oven</b></a>
+  <a href="#plan"><i>05</i><b>Plan A og B</b></a>
+  <a href="#formen"><i>06</i><b>Formen</b></a>
 </nav>
 
 <main>
@@ -474,13 +612,17 @@ body.lb-open{overflow:hidden}
     <h1 class="display"><span class="fit l1" data-fit>Saalbach</span><span class="fit l2" data-fit>Hinterglemm</span></h1>
     <p class="lead">Syv personer, tre værelser, én uge. Den yngste kan endnu ikke stå på ski. Resten har ingen undskyldning.</p>
     <div class="count" aria-live="off">
-      <span class="cl mono">Afgang fra Kastrup · lørdag 6. marts kl. 06.35</span>
+      <span class="cl mono" data-dep-label>Afgang fra København · lørdag 6. marts kl. 06.35</span>
       <div class="cd" id="cd">
         <div><b data-u="d">––</b><span>Dage</span></div>
         <div><b data-u="h">––</b><span>Timer</span></div>
         <div><b data-u="m">––</b><span>Min</span></div>
         <div><b data-u="s">––</b><span>Sek</span></div>
       </div>
+    </div>
+    <div class="hero-acts">
+      <a class="btn pri" href="#nu">Turen lige nu ↓</a>
+      <a class="btn" href="#lommen">Adresse, kalender, pakkeliste</a>
     </div>
     <div class="stats">
       <div><b>7</b><span>Nætter</span></div>
@@ -490,6 +632,22 @@ body.lb-open{overflow:hidden}
     </div>
   </div>
   <div class="scroll-cue" aria-hidden="true">Rul ned</div>
+</section>
+
+<section id="nu" aria-labelledby="nu-h">
+  <div class="wrap">
+    <div class="now-card" id="nu-card">
+      <div class="now-top"><span class="label">Turen lige nu</span><span class="now-net" data-net>Plan 22.11.2026</span></div>
+      <div>
+        <h2 class="now-h" id="nu-h">Næste afgang</h2>
+        <p class="now-sub" id="nu-sub">Lørdag 6. marts kl. 06.35 fra København.</p>
+        <ul class="now-facts" id="nu-facts"></ul>
+      </div>
+      <div class="now-acts" id="nu-acts"></div>
+      <p class="now-sim" id="nu-sim" hidden></p>
+    </div>
+    <noscript><p class="small">Slå JavaScript til for at se turen lige nu. Rejseplanen står længere nede.</p></noscript>
+  </div>
 </section>
 
 <div class="ticker" aria-hidden="true">
@@ -592,7 +750,7 @@ body.lb-open{overflow:hidden}
   </div>
 </section>
 
-<!-- ═══════════ 03 REJSEN ═══════════ -->
+<!-- ═══════════ 02 REJSEN ═══════════ -->
 <section class="s" id="rejsen">
   <div class="wrap">
     <div class="sh rv">
@@ -600,54 +758,52 @@ body.lb-open{overflow:hidden}
       <h2 class="display"><span class="fit" data-fit>Rejsen</span></h2>
       <p>Tidligt ud, tidligt fremme. <strong>Det er hele planen.</strong></p>
     </div>
+    <div class="legend rv"><span class="st st-b">Bekræftet</span><span class="lx">står i en booking eller hos hotellet</span><span class="st st-f">Foreløbig</span><span class="lx">vores eget skøn</span><span class="st st-a">Afventer</span><span class="lx">ikke oplyst endnu</span></div>
+    <div class="passes" id="passes"></div>
+    <div class="tls">
+      <article class="tl rv"><h3 id="tl-ud-h">Udrejsedag</h3><ol id="tl-ud"></ol></article>
+      <article class="tl rv"><h3 id="tl-hjem-h">Hjemrejsedag</h3><ol id="tl-hjem"></ol>
+        <p class="tl-note">Check-ud kl. 11 er hotellets frist. Afhentningen er en anden tid, og den er ikke aftalt endnu.</p></article>
+    </div>
+  </div>
+</section>
 
-    <div class="passes">
-      <article class="pass rv" aria-label="Udrejse SK2609 København til Salzburg">
-        <div class="pm">
-          <div class="ph-top"><span class="label">Udrejse · <b>Lørdag 6. marts 2027</b></span><span class="tag">SAS</span></div>
-          <div class="route">
-            <div class="ap"><b>CPH</b><span class="t">06.35</span><span class="c">København</span></div>
-            <div class="arr" aria-hidden="true"><span>1 t 35 m</span><div class="ln2"></div></div>
-            <div class="ap"><b>SZG</b><span class="t">08.10</span><span class="c">Salzburg</span></div>
-          </div>
+<!-- ═══════════ 03 I LOMMEN ═══════════ -->
+<section class="s alt" id="lommen">
+  <div class="wrap">
+    <div class="sh rv">
+      <span class="num mono">03 — I lommen</span>
+      <h2 class="display"><span class="fit" data-fit>I lommen</span></h2>
+      <p>Det, man skal bruge med en skitaske i den anden hånd. <strong>Virker også uden net, når siden har været åbnet én gang.</strong></p>
+    </div>
+    <div class="pocket">
+      <article class="pk-card rv">
+        <span class="label">Hotellet</span>
+        <h3>Hotel Die Sonne</h3>
+        <p class="addr" data-hotel-addr>Altachweg 334<br>5753 Saalbach, Østrig</p>
+        <div class="pk-acts">
+          <button type="button" class="btn pri" data-act="copy">Kopiér adresse</button>
+          <a class="btn" data-hotel-dir href="https://www.google.com/maps/dir/?api=1&amp;destination=Hotel%20Die%20Sonne%2C%20Altachweg%20334%2C%205753%20Saalbach%2C%20Austria" target="_blank" rel="noopener">Vejvisning ↗</a>
+          <a class="btn" data-hotel-tel href="tel:+4365417202">Ring til hotellet</a>
         </div>
-        <div class="ps">
-          <div><span class="label">Fly</span><b>SK2609</b></div>
-          <div><span class="label">Dato</span><b>06.03.27</b></div>
-          <div><span class="label">Afgang</span><b>06.35</b></div>
-          <div><span class="label">Ankomst</span><b>08.10</b></div>
-        </div>
+        <p class="small">Telefon <span data-hotel-phone>+43 6541 7202</span> · <a href="mailto:saalbach@hotel-sonne.at">saalbach@hotel-sonne.at</a></p>
       </article>
-      <article class="pass rv" aria-label="Hjemrejse SK2620 Salzburg til København">
-        <div class="pm">
-          <div class="ph-top"><span class="label">Hjemrejse · <b>Lørdag 13. marts 2027</b></span><span class="tag">SAS</span></div>
-          <div class="route">
-            <div class="ap"><b>SZG</b><span class="t">13.05</span><span class="c">Salzburg</span></div>
-            <div class="arr" aria-hidden="true"><span>1 t 40 m</span><div class="ln2"></div></div>
-            <div class="ap"><b>CPH</b><span class="t">14.45</span><span class="c">København</span></div>
-          </div>
-        </div>
-        <div class="ps">
-          <div><span class="label">Fly</span><b>SK2620</b></div>
-          <div><span class="label">Dato</span><b>13.03.27</b></div>
-          <div><span class="label">Afgang</span><b>13.05</b></div>
-          <div><span class="label">Ankomst</span><b>14.45</b></div>
-        </div>
+      <article class="pk-card rv">
+        <span class="label">Kalender</span>
+        <h3>Flyene i kalenderen</h3>
+        <ul id="ics-list"></ul>
+        <button type="button" class="btn pri" data-act="ics">Hent kalenderfil (.ics)</button>
+        <p class="small">Én fil med begge fly og en påmindelse tre timer før. Transfer kommer med, når tidspunktet er bekræftet.</p>
+      </article>
+      <article class="pk-card pk-pack rv" id="pakkeliste">
+        <div class="pk-h"><span class="label">Pakkeliste</span><span class="pk-count" id="pk-count">0 af 14</span></div>
+        <h3>Pakket?</h3>
+        <ul class="pack" id="pack"></ul>
+        <div class="pk-foot"><p class="small">Afkrydsninger gemmes kun på denne enhed.</p><button type="button" class="btn" data-act="pack-reset">Nulstil</button></div>
+        <p class="small">Barnevogn, bæresele og babyalarm kan lånes på hotellet, hvis man beder om det.</p>
       </article>
     </div>
-
-    <div class="steps rv">
-      <div><span class="sn">Trin 1 · Kastrup</span><div class="tm">06.35</div><h4>Afgang</h4><p>Det er tidligt. Det er det. Barnevognen kan blive hjemme, for hotellet låner en ud.</p></div>
-      <div><span class="sn">Trin 2 · Salzburg</span><div class="tm">08.10</div><h4>Landing</h4><p>Bagage, skitasker og én lille mand, der har haft en lang morgen.</p></div>
-      <div><span class="sn">Trin 3 · Transfer</span><div class="tm">90<small>min</small></div><h4>Privat shuttle</h4><p>Ca. 100 km fra lufthavnen til Saalbach. Ingen skal køre selv.</p></div>
-      <div><span class="sn">Trin 4 · Die Sonne</span><div class="tm">ca. 15</div><h4>Værelserne</h4><p>Check-in fra ca. kl. 15. Indtil da står bagagen i hotellets bagagerum.</p></div>
-    </div>
-
-    <div class="windows">
-      <div class="rv"><span class="label">Ankomstdagen</span><div class="w">10.30<i>→</i>15.00</div><p>Vi er fremme omkring halv elleve, hvis alt går efter bogen. All inclusive og après ski-buffeten starter kl. 13, og værelserne er klar ca. kl. 15. Ingen ski i dag. Vi pakker ud, henter liftkort i receptionen og får ski og støvler til Freja og Amalie.</p></div>
-      <div class="rv"><span class="label">Hjemrejsedagen</span><div class="w">10.00<i>/</i>13.05</div><p>Check-ud og sidste drink senest kl. 11, hvor all inclusive slutter. Flyet går 13.05 og turen tager halvanden time. Vi kører fra hotellet omkring kl. 10. Sidste skidag er fredag.</p></div>
-      <div class="rv"><span class="label">Skidagene</span><div class="w">6</div><p>Søndag til fredag. Lørdag står ingen på ski. Vi pakker ud, får udstyr og liftkort på plads og hygger på hotellet. Det er besluttet.</p></div>
-    </div>
+    <p class="offline-note"><span data-plan-ver>Rejseplan opdateret 22.11.2026</span>. Når planen ændres her, henter siden den nye version næste gang, der er net.</p>
   </div>
 </section>
 
@@ -656,15 +812,28 @@ body.lb-open{overflow:hidden}
   <div class="bt"><div class="wrap"><blockquote>Fire byer. To delstater. Ét liftkort.</blockquote><cite>Salzburger Land og Tyrol</cite></div></div>
 </div>
 
-<!-- ═══════════ 04 OMRÅDET ═══════════ -->
-<section class="s alt" id="omraadet">
+<!-- ═══════════ 04 SAALBACH FRA OVEN ═══════════ -->
+<section class="s" id="kort">
   <div class="wrap">
     <div class="sh rv">
-      <span class="num mono">03 — Området</span>
-      <h2 class="display"><span class="fit" data-fit>Skicircus</span></h2>
-      <p>Saalbach Hinterglemm Leogang Fieberbrunn. <strong>Et af Østrigs største skiområder</strong>, og ikke et af de højeste. Det skal man vide i marts.</p>
+      <span class="num mono">04 — Saalbach fra oven</span>
+      <h2 class="display"><span class="fit" data-fit>Fra oven</span></h2>
+      <p>Saalbach Hinterglemm Leogang Fieberbrunn. Fire byer, to delstater, ét liftkort. <strong>Vælg et område.</strong></p>
     </div>
-
+    <div class="map-wrap">
+      <figure class="map rv">
+        <svg id="map-svg" viewBox="0 0 920 700" role="img" aria-labelledby="map-title map-cap" preserveAspectRatio="xMidYMid meet">
+          <title id="map-title">Oversigtskort over Skicircus med Saalbach, Hinterglemm, Leogang, Fieberbrunn og Hotel Die Sonne</title>
+          <g id="map-g"></g>
+          <g aria-hidden="true"><text x="880" y="56" text-anchor="middle" fill="#93A1B1" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="2">N</text><path d="M880 64 L888 92 L880 86 L872 92 Z" fill="#EEF3F8"/></g>
+        </svg>
+        <figcaption id="map-cap">Oversigtskort · ikke et pistekort · byer og hotel efter koordinater</figcaption>
+      </figure>
+      <div class="map-side rv">
+        <div class="map-btns" id="map-btns" role="group" aria-label="Vælg område"></div>
+        <article class="map-panel" id="map-panel" aria-live="polite"></article>
+      </div>
+    </div>
     <div class="nums rv">
       <div><b class="fit" data-fit><span data-count="270">270</span><small>km</small></b><span>Piste i alt</span></div>
       <div><b class="fit" data-fit><span data-count="70">70</span></b><span>Lifte</span></div>
@@ -674,19 +843,26 @@ body.lb-open{overflow:hidden}
       <div><b class="fit" data-fit><span data-count="65">65</span><small>km</small></b><span>Skicircus-runden, hele vejen rundt</span></div>
     </div>
 
-    <div class="towns">
-      <article class="rv"><span class="ix">By 01 · Salzburger Land</span><h3 class="fit" data-fit>Saalbach</h3><div class="alt fit" data-fit><span data-count="1003">1.003</span><small>m</small></div><span class="an">Byen</span><p>Kohlmaisbahn og Schattberg X-press ligger her. Begge er på hotellets shuttlerute.</p></article>
-      <article class="rv"><span class="ix">By 02 · Salzburger Land</span><h3 class="fit" data-fit>Hinterglemm</h3><div class="alt fit" data-fit><span data-count="1984">1.984</span><small>m</small></div><span class="an">Zwölferkogel</span><p>Den anden ende af dalen. Zwölferkogel er områdets sværeste del, med VM-ruten og en world cup-piste.</p></article>
-      <article class="rv"><span class="ix">By 03 · Salzburger Land</span><h3 class="fit" data-fit>Leogang</h3><div class="alt fit" data-fit><span data-count="1914">1.914</span><small>m</small></div><span class="an">Asitz · byen ligger lige under 800 m</span><p>Forbundet over Asitz. Flere lette og mellemsvære nedfarter. Godt for benene på dag fire.</p></article>
-      <article class="rv"><span class="ix">By 04 · Tyrol</span><h3 class="fit" data-fit>Fieberbrunn</h3><div class="alt fit" data-fit><span data-count="800">800</span><small>m</small></div><span class="an">Byen</span><p>Tyrol-enden af cirkusset. Når vi derover og hjem igen, har vi fortjent middagen.</p></article>
-    </div>
-
     <div class="extra">
       <div class="rv"><span class="label">Vejret i marts · gennemsnit i dalen</span><div class="w"><span>+5°<i>Dag</i></span><span>−5°<i>Nat</i></span></div><p>Koldere på toppen. Omkring 20 cm nysne om ugen i gennemsnit i marts, målt i mellemhøjde. Et gennemsnit er ikke et løfte.</p></div>
       <div class="rv"><span class="label">Liftkortet</span><div class="w"><span>270<i>Skicircus</i></span><span>408<i>Alpin Card</i></span></div><p>Skicircus dækker de fire byer. Ski ALPIN CARD lægger Schmittenhöhe i Zell am See og Kitzsteinhorn i Kaprun oveni, i alt 408 km.</p></div>
     </div>
 
-    <div class="live">
+  </div>
+</section>
+
+<!-- ═══════════ 05 PLAN A OG B ═══════════ -->
+<section class="s alt" id="plan">
+  <div class="wrap">
+    <div class="sh rv">
+      <span class="num mono">05 — Plan A og B</span>
+      <h2 class="display"><span class="fit" data-fit>Plan A og B</span></h2>
+      <p>Der er ikke planlagt meget. Det er sådan set planen. <strong>Her er det aftalte, og her er idéerne.</strong></p>
+    </div>
+    <div class="aftalt rv" id="aftalt"></div>
+
+    <h3 class="cond-h rv">Tjek forholdene først</h3>
+    <div class="live" style="margin-top:0">
       <div class="rv"><span class="label">Live · vejret</span><h3>Udsigten</h3><p>Seks dage frem, i dalen og på toppen.</p>
         <a href="https://www.feratel.com/en/weather/austria/salzburg/saalbach-hinterglemm.html" target="_blank" rel="noopener"><span>Vejret i Saalbach · feratel</span><i>↗</i></a>
         <a href="https://www.snow-forecast.com/resorts/Saalbach/6day/top" target="_blank" rel="noopener"><span>6 dage på toppen · snow-forecast</span><i>↗</i></a></div>
@@ -698,14 +874,23 @@ body.lb-open{overflow:hidden}
         <a href="https://www.feratel.com/en/webcams/austria/salzburg/saalbach-zwoelferkogel" target="_blank" rel="noopener"><span>Zwölferkogel · feratel</span><i>↗</i></a>
         <a href="https://www.feratel.com/en/webcams/austria/salzburg/saalbach-kohlmaiskopf" target="_blank" rel="noopener"><span>Kohlmaiskopf · feratel</span><i>↗</i></a></div>
     </div>
+
+    <div class="days">
+      <article class="rv"><span class="idea">Idé · ikke aftalt</span><h3>Blå dag</h3><dl class="ab"><dt>A</dt><dd>Tidligt op. Zwölferkogel og Schattberg West, mens pisterne er nyprepareret.</dd><dt>B</dt><dd>Hele Skicircus-runden, 65 km og 12.400 højdemeter. Hvis benene vil.</dd></dl></article>
+      <article class="rv"><span class="idea">Idé · ikke aftalt</span><h3>Grå dag</h3><dl class="ab"><dt>A</dt><dd>Kortere ture og de lette og mellemsvære nedfarter på Leogang-siden over Asitz.</dd><dt>B</dt><dd>Sonnenoase: pool, udendørs whirlpool og børnebiograf. Carl kan være med.</dd></dl></article>
+      <article class="rv"><span class="idea">Idé · ikke aftalt</span><h3>Trætte ben</h3><dl class="ab"><dt>A</dt><dd>Formiddag på ski og ned til après ski-buffeten, når den åbner kl. 13.</dd><dt>B</dt><dd>Thaimassage hos Nithi i Zirben-spaet. Det er ikke svaghed, det er vedligeholdelse.</dd></dl></article>
+      <article class="rv"><span class="idea">Idé · ikke aftalt</span><h3>Dag med Carl</h3><dl class="ab"><dt>A</dt><dd>Kælk. Carl skal ikke på ski, men han kan godt sidde i en kælk. Det er en start.</dd><dt>B</dt><dd>Poolen i Sonnenoase og børnebiografen. Ingen kø.</dd></dl></article>
+      <article class="rv"><span class="idea">Idé · ikke aftalt</span><h3>Dårlig sne</h3><dl class="ab"><dt>A</dt><dd>Gletsjerdag på Kitzsteinhorn i Kaprun. Kræver Alpin Card, så det skal besluttes inden liftkortene købes.</dd><dt>B</dt><dd>Formiddag højt oppe, eftermiddag i Sonnenhaus, fra 15 år.</dd></dl></article>
+      <article class="rv"><span class="idea">Idé · ikke aftalt</span><h3>Om aftenen</h3><dl class="ab"><dt>A</dt><dd>Aftenski: oplyst pist mandag, onsdag og fredag til kl. 21.30, ifølge hotellet. Efter en femretters middag er det en ambitiøs plan.</dd><dt>B</dt><dd>Baren. Drikkevarer er med til midnat.</dd></dl></article>
+    </div>
   </div>
 </section>
 
-<!-- ═══════════ 04 FORMEN ═══════════ -->
-<section class="s alt" id="formen">
+<!-- ═══════════ 06 FORMEN ═══════════ -->
+<section class="s" id="formen">
   <div class="wrap">
     <div class="sh rv">
-      <span class="num mono">04 — Formen</span>
+      <span class="num mono">06 — Formen</span>
       <h2 class="display"><span class="fit" data-fit>Formen</span></h2>
       <p>Seks skidage kræver lår, baller, læg og en mave, der holder det hele samlet. <strong>Carl hjælper gerne. Han vejer ca. 10 kilo.</strong></p>
     </div>
@@ -744,24 +929,6 @@ body.lb-open{overflow:hidden}
   </div>
 </section>
 
-<!-- ═══════════ 05 EVENTS ═══════════ -->
-<section class="s" id="events">
-  <div class="wrap">
-    <div class="sh rv">
-      <span class="num mono">05 — Det vi håber på</span>
-      <h2 class="display"><span class="fit" data-fit>Måske</span></h2>
-      <p>Der er ikke planlagt noget. Det er sådan set planen. <strong>Men hvis vi alligevel skal have noget at håbe på.</strong></p>
-    </div>
-    <div class="events">
-      <article class="rv"><span class="ev-n" aria-hidden="true">01</span><span class="mb">Måske</span><h3>En blå dag</h3><span class="wh">Hvilken som helst</span><p>Ingen skyer, ingen vind, nysne natten før. Vi beder ikke om mere end én.</p></article>
-      <article class="rv"><span class="ev-n" aria-hidden="true">02</span><span class="mb">Måske</span><h3>Aftenski</h3><span class="wh">Man 8. · ons 10. · fre 12. marts · til 21.30</span><p>Den oplyste piste kører mandag, onsdag og fredag til halv ti. Efter en femretters middag er det en ambitiøs plan.</p></article>
-      <article class="rv"><span class="ev-n" aria-hidden="true">03</span><span class="mb">Måske</span><h3>Hele runden</h3><span class="wh">65 km · 12.400 højdemeter</span><p>Skicircus-runden i ét stræk. Hvis benene vil. Hvis ikke, er der eftermiddagsjause.</p></article>
-      <article class="rv"><span class="ev-n" aria-hidden="true">04</span><span class="mb">Måske</span><h3>Kælk med Carl</h3><span class="wh">En eftermiddag</span><p>Carl skal ikke på ski. Han kan godt sidde i en kælk. Det er en start.</p></article>
-      <article class="rv"><span class="ev-n" aria-hidden="true">05</span><span class="mb">Måske</span><h3 class="fit" data-fit>Gletsjerdag</h3><span class="wh">Kitzsteinhorn · kræver Alpin Card</span><p>En dag ude af dalen, på gletsjeren i Kaprun. Kun hvis vejret siger ja, og nogen gider stå tidligt op igen.</p></article>
-      <article class="rv"><span class="ev-n" aria-hidden="true">06</span><span class="mb">Måske</span><h3 class="fit" data-fit>Thaimassage</h3><span class="wh">Hos Nithi · Sonnenhaus</span><p>Efter dag tre. Bookes i spaet. Det er ikke svaghed, det er vedligeholdelse.</p></article>
-    </div>
-  </div>
-</section>
 </main>
 
 <!-- ═══════════ FOOTER ═══════════ -->
@@ -779,12 +946,7 @@ body.lb-open{overflow:hidden}
       </div>
       <div>
         <h4>Flyene</h4>
-        <ul>
-          <li><b>SK2609</b> · lør. 6. marts<br>CPH 06.35 → SZG 08.10</li>
-          <li><b>SK2620</b> · lør. 13. marts<br>SZG 13.05 → CPH 14.45</li>
-          <li>Privat shuttle, ca. 90 minutter hver vej</li>
-          <li>All inclusive fra kl. 13 på ankomstdagen til kl. 11 på hjemrejsedagen</li>
-          <li>Egne ski til fire. Freja og Amalie får ski og støvler via hotellet</li>
+        <ul id="f-fly">
         </ul>
       </div>
       <div>
@@ -817,7 +979,7 @@ body.lb-open{overflow:hidden}
       <a href="https://www.flysas.com/dk-da/" target="_blank" rel="noopener">SAS ↗</a>
     </div>
     <div class="outline" aria-hidden="true"><span class="fit" data-fit>Saalbach</span></div>
-    <div class="fbot"><span>Familieski 2027 · Lavet til familien</span><span>Ingen bookingnumre på denne side. Med vilje.</span></div>
+    <div class="fbot"><span>Familieski 2027 · <span data-plan-ver>Rejseplan opdateret 22.11.2026</span></span><span>Ingen bookingnumre på denne side. Med vilje.</span></div>
   </div>
 </footer>
 
@@ -834,15 +996,133 @@ body.lb-open{overflow:hidden}
 
 <script>
 /* ════════════════════════════════════════════════════════════
-   CONFIG — ret her, ikke nede i koden
+   TRIP — den fælles rejseplan. Nedtælling, boardingkort, tidslinje,
+   "Turen lige nu", kalenderfil og footer læser alle herfra.
+   status: "bekraeftet" | "forelobig" | "afventer"
+   Tider er lokale tider på stedet (tz pr. lufthavn / hotel).
+   Når noget bliver bekræftet: ret status og tid her, og hæv version.
    ════════════════════════════════════════════════════════════ */
-const CONFIG = {
-  // Afgang fra Kastrup. Marts 2027 er vintertid i Danmark (+01:00).
-  departure: "2027-03-06T06:35:00+01:00",
-  // Hjemkomst — efter dette tidspunkt skifter nedtællingen til "Turen er slut".
-  returnHome: "2027-03-13T14:45:00+01:00",
+const TRIP = {
+  version: "2026-11-22-v2",
+  updated: "22.11.2026",
+  tz: "Europe/Vienna",
+  start: "2027-03-06",
+  end: "2027-03-13",
 
-  // Hero-billeder: stien efter /fileadmin/_processed_/ på hotel-sonne.at
+  hotel: {
+    name: "Hotel Die Sonne",
+    street: "Altachweg 334",
+    zip: "5753",
+    city: "Saalbach",
+    country: "Østrig",
+    countryEn: "Austria",
+    phone: "+4365417202",
+    phoneDisplay: "+43 6541 7202",
+    email: "saalbach@hotel-sonne.at",
+    url: "https://www.hotel-sonne.at/en/",
+    lat: 47.389452,
+    lng: 12.621843
+  },
+
+  flights: [
+    { id: "ud", no: "SK2609", airline: "SAS", label: "Udrejse",
+      from: { iata: "CPH", city: "København", name: "Københavns Lufthavn", tz: "Europe/Copenhagen" },
+      to:   { iata: "SZG", city: "Salzburg",  name: "Salzburg Airport",    tz: "Europe/Vienna" },
+      dep: "2027-03-06T06:35", arr: "2027-03-06T08:10",
+      status: "bekraeftet", src: "Oplyst af familien fra flybookingen" },
+    { id: "hjem", no: "SK2620", airline: "SAS", label: "Hjemrejse",
+      from: { iata: "SZG", city: "Salzburg",  name: "Salzburg Airport",    tz: "Europe/Vienna" },
+      to:   { iata: "CPH", city: "København", name: "Københavns Lufthavn", tz: "Europe/Copenhagen" },
+      dep: "2027-03-13T13:05", arr: "2027-03-13T14:45",
+      status: "bekraeftet", src: "Oplyst af familien fra flybookingen" }
+  ],
+
+  // pickup = afhentningstid "HH:MM" når den er aftalt. null = ikke oplyst.
+  transfers: [
+    { id: "ind", date: "2027-03-06", pickup: null, durationMin: 90, sortAt: "08:40",
+      label: "Privat shuttle Salzburg → hotellet",
+      note: "Ca. 90 min, ca. 100 km. Afhentningstid er ikke oplyst.",
+      status: "afventer" },
+    { id: "hjem", date: "2027-03-13", pickup: null, durationMin: 90, sortAt: "10:00",
+      label: "Afhentning hotellet → Salzburg",
+      note: "Ikke aftalt. Skal passe med flyet kl. 13.05 og ca. 90 min kørsel.",
+      status: "afventer" }
+  ],
+
+  // Hotellets egne tider og vores egne skøn — holdt adskilt via status og kilde
+  times: [
+    { id: "ankomst", date: "2027-03-06", time: "10:30", approx: true, label: "Fremme på hotellet",
+      note: "Beregnet: landing 08.10, bagage og ca. 90 min kørsel.", status: "forelobig" },
+    { id: "ai-start", date: "2027-03-06", time: "13:00", label: "All inclusive og après ski-buffet starter",
+      note: "Hotellets tilbud.", status: "bekraeftet" },
+    { id: "checkin", date: "2027-03-06", time: "15:00", approx: true, label: "Værelserne klar",
+      note: "Check-in fra ca. kl. 15 ifølge hotellet. Bagagerum i mellemtiden.", status: "bekraeftet" },
+    { id: "checkout", date: "2027-03-13", time: "11:00", label: "Check-ud, hotellets frist",
+      note: "Senest kl. 11. All inclusive slutter samtidig.", status: "bekraeftet" }
+  ],
+
+  // Gælder hver dag under opholdet — fra hotellets tilbud
+  daily: [
+    { time: "13:00–16:30", label: "Après ski-buffet på hotellet", status: "bekraeftet" }
+  ],
+
+  // Faktisk aftalt i familien. Ingen opdigtede aftaler.
+  agreements: [
+    { date: "2027-03-06", time: null, place: "Hotel Die Sonne",
+      text: "Ingen ski i dag. Vi pakker ud, henter liftkort i receptionen og får ski og støvler til Freja og Amalie.",
+      status: "bekraeftet" }
+  ],
+  meetingPoints: [],
+
+  rooms: [
+    { name: "Værelse 1", note: "30 m²", who: ["Jeanet", "Thomas"] },
+    { name: "Værelse 2", note: "30 m² · tremmeseng", who: ["Carl", "Amalie", "Victor"] },
+    { name: "Værelse 3", note: "30 m²", who: ["Freja", "Alexander"] }
+  ],
+
+  links: {
+    pistekort: "https://www.saalbach.com/en/winter/ski-resort/piste-map",
+    snerapport: "https://www.saalbach.com/en/live-info/snow-report",
+    vejr: "https://www.feratel.com/en/weather/austria/salzburg/saalbach-hinterglemm.html",
+    webcams: "https://www.skiresort.info/ski-resort/saalbach-hinterglemm-leogang-fieberbrunn-skicircus/webcams/"
+  },
+
+  // Koordinater: Wikipedia / GeoNames / Statistik Austria-ortsdata. Hotellet: hotellets egne metadata.
+  areas: [
+    { id: "saalbach", name: "Saalbach", region: "Salzburger Land", lat: 47.3904, lng: 12.6370,
+      alt: 1003, altLabel: "Byen",
+      text: "Byen. Kohlmaisbahn og Schattberg X-press ligger her. Begge er på hotellets taxarute." },
+    { id: "hinterglemm", name: "Hinterglemm", region: "Salzburger Land", lat: 47.37685, lng: 12.59583,
+      alt: 1984, altLabel: "Zwölferkogel",
+      text: "Den anden ende af dalen. Zwölferkogel er områdets sværeste del, med VM-ruten og en world cup-piste. 12er Kogel og Reiterkogel er på taxaruten." },
+    { id: "leogang", name: "Leogang", region: "Salzburger Land", lat: 47.43886, lng: 12.76014,
+      alt: 1914, altLabel: "Asitz · byen ligger lige under 800 m",
+      text: "Forbundet over Asitz. Flere lette og mellemsvære nedfarter. Godt for benene på dag fire." },
+    { id: "fieberbrunn", name: "Fieberbrunn", region: "Tyrol", lat: 47.46639, lng: 12.55,
+      alt: 790, altLabel: "Byen",
+      text: "Tyrol-enden af cirkusset. Når vi derover og hjem igen, har vi fortjent middagen." }
+  ],
+
+  pack: [
+    { id: "pas", t: "Pas eller ID-kort til alle syv" },
+    { id: "sygesikring", t: "Det blå EU-sygesikringskort" },
+    { id: "telefon", t: "Telefon, oplader og stik" },
+    { id: "stovler", t: "Skistøvler", n: "Udleveres inden turen. Hver pakker sine egne." },
+    { id: "ski", t: "Ski i skitaske", n: "Jeanet, Victor, Alexander og Thomas" },
+    { id: "hjelm", t: "Hjelm og skibriller" },
+    { id: "handsker", t: "Skihandsker og halsedisse" },
+    { id: "undertoj", t: "Skiundertøj og skisokker" },
+    { id: "jakke", t: "Skijakke og skibukser" },
+    { id: "sol", t: "Solcreme og læbepomade" },
+    { id: "bad", t: "Badetøj", n: "Pool og udendørs whirlpool" },
+    { id: "afterski", t: "Tøj til afterski og middag" },
+    { id: "carl", t: "Carls taske til flyet" },
+    { id: "kontanter", t: "Lidt euro i kontanter" }
+  ]
+};
+
+/* ════ CONFIG — udseende. Ret her, ikke nede i koden. ════ */
+const CONFIG = {
   imageBase: "https://www.hotel-sonne.at/fileadmin/_processed_/",
   heroImages: [
     "1/d/csm_skiurlaub-saalbach-hinterglemm-sh_w_1949_63d570daee.jpg",
@@ -850,24 +1130,11 @@ const CONFIG = {
     "b/f/csm_Skicircus_Saalbach_Hinterglemm_Leogang_Fieberbrunn__56__272a7d5492.jpg",
     "9/3/csm_Skicircus_Saalbach_Hinterglemm_Leogang_Fieberbrunn__57__07f5922dde.jpg"
   ],
-  heroInterval: 7000,   // ms mellem krydsfade
-
-  // Værelsesfordeling. size = antal personer; mangler der navne, vises roomsPending.
-  rooms: [
-    { name: "Værelse 1", size: 2, note: "30 m²", who: ["Jeanet", "Thomas"] },
-    { name: "Værelse 2", size: 3, note: "30 m² · tremmeseng", who: ["Carl", "Amalie", "Victor"] },
-    { name: "Værelse 3", size: 2, note: "30 m²", who: ["Freja", "Alexander"] }
-  ],
-  roomsPending: "Resten fordeles af farfar. Meldes ud i god tid.",
-
-  // Træningsplanen starter her (8 uger før afgang)
-  trainingStart: "2027-01-11T00:00:00+01:00",
-
-  // Sne: 0 = slukket, 1 = normal, 2 = snestorm
-  snowDensity: 1
+  heroInterval: 7000,
+  snowDensity: 0.7,             // 0 = slukket, 1 = normal
+  trainingStart: "2027-01-11"   // Formen: start 8 uger før afgang
 };
 
-/* ════════════════════════════════════════════════════════════ */
 (function(){
   "use strict";
   const doc = document.documentElement;
@@ -875,133 +1142,517 @@ const CONFIG = {
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const $ = (s, r) => (r || document).querySelector(s);
   const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const pad2 = n => String(n).padStart(2, "0");
 
-  // Døde billeder → skjul, bjergsilhuetten nedenunder tager over
-  window.addEventListener("error", e => {
-    const t = e.target;
-    if (t && t.tagName === "IMG") t.classList.add("dead");
-  }, true);
+  window.addEventListener("error", e => { const t = e.target; if (t && t.tagName === "IMG") t.classList.add("dead"); }, true);
 
-  /* ── Værelser */
-  const roomsEl = $("#rooms");
-  if (roomsEl) {
-    roomsEl.innerHTML = CONFIG.rooms.map((r, i) => {
-      const n = (r.who || []).length;
-      const who = n ? '<div class="who">' + r.who.map(esc).join(" · ") + "</div>" : "";
-      const full = n >= (r.size || 2);
-      const tbd = full ? "" : '<div class="tbd">' + esc(CONFIG.roomsPending) + "</div>";
-      return '<div><div class="rn"><span class="label">' + esc(r.name) + (r.note ? " · " + esc(r.note) : "") + '</span><b>0' + (i + 1) + "</b></div>" + who + tbd + "</div>";
+  /* ── Tid og tidszoner ─────────────────────────────── */
+  const fmtCache = {};
+  function partsIn(ts, tz){
+    const f = fmtCache[tz] || (fmtCache[tz] = new Intl.DateTimeFormat("en-GB", { timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23" }));
+    const o = {};
+    f.formatToParts(new Date(ts)).forEach(p => { o[p.type] = p.value; });
+    return { y: +o.year, mo: +o.month, d: +o.day, h: (+o.hour) % 24, mi: +o.minute, s: +o.second };
+  }
+  function offsetMs(ts, tz){
+    const p = partsIn(ts, tz);
+    return Date.UTC(p.y, p.mo - 1, p.d, p.h, p.mi, p.s) - Math.floor(ts / 1000) * 1000;
+  }
+  // "2027-03-06T06:35" i tidszone tz → epoch ms
+  function zoned(local, tz){
+    const [d, t = "00:00"] = local.split("T");
+    const [Y, M, D] = d.split("-").map(Number);
+    const [h, mi] = t.split(":").map(Number);
+    const guess = Date.UTC(Y, M - 1, D, h, mi);
+    let ts = guess - offsetMs(guess, tz);
+    const o2 = offsetMs(ts, tz);
+    if (guess - o2 !== ts) ts = guess - o2;
+    return ts;
+  }
+  function dayKey(ts, tz){ const p = partsIn(ts, tz || TRIP.tz); return p.y + "-" + pad2(p.mo) + "-" + pad2(p.d); }
+  const WD = ["søndag","mandag","tirsdag","onsdag","torsdag","fredag","lørdag"];
+  const MO = ["januar","februar","marts","april","maj","juni","juli","august","september","oktober","november","december"];
+  function dateLabel(key, cap){
+    const [y, m, d] = key.split("-").map(Number);
+    const wd = WD[new Date(Date.UTC(y, m - 1, d)).getUTCDay()];
+    return (cap ? wd[0].toUpperCase() + wd.slice(1) : wd) + " " + d + ". " + MO[m - 1];
+  }
+  const hm = s => s ? s.replace(":", ".") : "";
+  const addDays = (key, n) => { const [y, m, d] = key.split("-").map(Number); const t = new Date(Date.UTC(y, m - 1, d + n)); return t.getUTCFullYear() + "-" + pad2(t.getUTCMonth() + 1) + "-" + pad2(t.getUTCDate()); };
+
+  // Simuleret tid: ?nu=2027-03-07T09:00 (tolkes i turens tidszone)
+  const simParam = new URLSearchParams(location.search).get("nu");
+  const SIM = simParam && /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2})?$/.test(simParam) ? zoned(simParam, TRIP.tz) : null;
+  const LOADED = Date.now();
+  const now = () => SIM !== null ? SIM + (Date.now() - LOADED) : Date.now();
+
+  const flightTs = f => ({ dep: zoned(f.dep, f.from.tz), arr: zoned(f.arr, f.to.tz) });
+  const OUT = TRIP.flights[0], HOME = TRIP.flights[TRIP.flights.length - 1];
+  const DEP_TS = flightTs(OUT).dep;
+  const HOME_TS = flightTs(HOME).arr;
+
+  function stateAt(ts){
+    const key = dayKey(ts, TRIP.tz);
+    if (key < TRIP.start) return { kind: "for", key };
+    if (key === TRIP.start) return { kind: "udrejse", key };
+    if (key < TRIP.end) {
+      const n = Math.round((Date.UTC(...key.split("-").map((v, i) => i === 1 ? v - 1 : +v)) - Date.UTC(...TRIP.start.split("-").map((v, i) => i === 1 ? v - 1 : +v))) / 864e5);
+      return { kind: "dag", key, n };
+    }
+    if (key === TRIP.end) return { kind: "hjemrejse", key };
+    return { kind: "efter", key };
+  }
+
+  const ST = { bekraeftet: ["Bekræftet", "st-b"], forelobig: ["Foreløbig", "st-f"], afventer: ["Afventer", "st-a"] };
+  const chip = s => s && ST[s] ? '<span class="st ' + ST[s][1] + '">' + ST[s][0] + "</span>" : "";
+  const flightLine = f => f.no + " · " + f.from.iata + " " + hm(f.dep.split("T")[1]) + " → " + f.to.iata + " " + hm(f.arr.split("T")[1]);
+  const durTxt = f => { const t = flightTs(f); const m = Math.round((t.arr - t.dep) / 6e4); return Math.floor(m / 60) + " t " + (m % 60) + " m"; };
+  const hotelAddr = () => TRIP.hotel.street + ", " + TRIP.hotel.zip + " " + TRIP.hotel.city + ", " + TRIP.hotel.country;
+  const dirUrl = () => "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(TRIP.hotel.name + ", " + TRIP.hotel.street + ", " + TRIP.hotel.zip + " " + TRIP.hotel.city + ", " + TRIP.hotel.countryEn);
+
+  /* ── Render: boardingkort ─────────────────────────── */
+  function renderPasses(){
+    const el = $("#passes"); if (!el) return;
+    el.innerHTML = TRIP.flights.map(f => {
+      const [d] = f.dep.split("T"); const [y, m, dd] = d.split("-");
+      return '<article class="pass rv" aria-label="' + esc(f.label + " " + f.no + " " + f.from.city + " til " + f.to.city) + '">' +
+        '<div class="pm"><div class="ph-top"><span class="label">' + esc(f.label) + " · <b>" + esc(dateLabel(d, true)) + " " + y + "</b></span>" + chip(f.status) + "</div>" +
+        '<div class="route"><div class="ap"><b>' + f.from.iata + '</b><span class="t">' + hm(f.dep.split("T")[1]) + '</span><span class="c">' + esc(f.from.city) + "</span></div>" +
+        '<div class="arr" aria-hidden="true"><span>' + durTxt(f) + '</span><div class="ln2"></div></div>' +
+        '<div class="ap"><b>' + f.to.iata + '</b><span class="t">' + hm(f.arr.split("T")[1]) + '</span><span class="c">' + esc(f.to.city) + "</span></div></div></div>" +
+        '<div class="ps"><div><span class="label">Fly</span><b>' + f.no + '</b></div><div><span class="label">Dato</span><b>' + dd + "." + m + "." + y.slice(2) + "</b></div>" +
+        '<div><span class="label">Afgang</span><b>' + hm(f.dep.split("T")[1]) + '</b></div><div><span class="label">Ankomst</span><b>' + hm(f.arr.split("T")[1]) + "</b></div></div></article>";
     }).join("");
   }
-  function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
 
-  /* ── Hero-slides */
+  /* ── Render: tidslinjer for rejsedagene ───────────── */
+  function dayItems(key){
+    const items = [];
+    TRIP.flights.forEach(f => {
+      if (f.dep.startsWith(key)) items.push({ at: f.dep.split("T")[1], time: hm(f.dep.split("T")[1]), label: "Afgang " + f.no + " fra " + f.from.city, note: f.from.name, status: f.status });
+      if (f.arr.startsWith(key)) items.push({ at: f.arr.split("T")[1], time: hm(f.arr.split("T")[1]), label: "Landing i " + f.to.city, note: f.no + " · flyvetid " + durTxt(f), status: f.status });
+    });
+    TRIP.transfers.filter(t => t.date === key).forEach(t => items.push({ at: t.pickup || t.sortAt, time: t.pickup ? hm(t.pickup) : "—", label: t.label, note: t.note, status: t.status }));
+    TRIP.times.filter(t => t.date === key).forEach(t => items.push({ at: t.time, time: (t.approx ? "ca. " : "") + hm(t.time), label: t.label, note: t.note, status: t.status }));
+    TRIP.agreements.filter(a => a.date === key).forEach(a => items.push({ at: a.time || "23:59", time: a.time ? hm(a.time) : "Aftalt", label: a.text, note: a.place ? "Sted: " + a.place : "", status: a.status }));
+    return items.sort((a, b) => a.at < b.at ? -1 : a.at > b.at ? 1 : 0);
+  }
+  function renderTimelines(){
+    [["#tl-ud", TRIP.start, "#tl-ud-h", "Udrejsedag"], ["#tl-hjem", TRIP.end, "#tl-hjem-h", "Hjemrejsedag"]].forEach(([sel, key, hsel, word]) => {
+      const el = $(sel); if (!el) return;
+      const h = $(hsel); if (h) h.textContent = word + " · " + dateLabel(key);
+      el.innerHTML = dayItems(key).map(i => '<li><time>' + esc(i.time) + '</time><div><b>' + esc(i.label) + "</b>" + (i.note ? '<span class="tl-n">' + esc(i.note) + "</span>" : "") + "</div>" + chip(i.status) + "</li>").join("");
+    });
+  }
+
+  /* ── Render: værelser, footer, aftaler ────────────── */
+  function renderRooms(){
+    const el = $("#rooms"); if (!el) return;
+    el.innerHTML = TRIP.rooms.map((r, i) => '<div><div class="rn"><span class="label">' + esc(r.name) + (r.note ? " · " + esc(r.note) : "") + "</span><b>0" + (i + 1) + '</b></div><div class="who">' + r.who.map(esc).join(" · ") + "</div></div>").join("");
+  }
+  function renderFooter(){
+    const el = $("#f-fly");
+    if (el) el.innerHTML = TRIP.flights.map(f => "<li><b>" + f.no + "</b> · " + esc(dateLabel(f.dep.split("T")[0]).replace(/^(\w+)/, s => s.slice(0, 3) + ".")) + "<br>" + f.from.iata + " " + hm(f.dep.split("T")[1]) + " → " + f.to.iata + " " + hm(f.arr.split("T")[1]) + "</li>").join("") +
+      TRIP.transfers.map(t => "<li>" + esc(t.label) + ": " + (t.pickup ? hm(t.pickup) : "afventer") + "</li>").join("");
+    $$("[data-plan-ver]").forEach(e => { e.textContent = "Rejseplan opdateret " + TRIP.updated; });
+  }
+  function renderAgreements(){
+    const el = $("#aftalt"); if (!el) return;
+    const ag = TRIP.agreements.map(a => "<li><span class=\"k\">" + esc(dateLabel(a.date, true)) + (a.time ? " · " + hm(a.time) : "") + "</span>" + chip(a.status) + '<span class="v">' + esc(a.text) + (a.place ? " <em>" + esc(a.place) + "</em>" : "") + "</span></li>").join("");
+    const mp = TRIP.meetingPoints.length
+      ? TRIP.meetingPoints.map(m => "<li><span class=\"k\">" + esc(dateLabel(m.date, true)) + (m.time ? " · " + hm(m.time) : "") + "</span>" + chip(m.status) + '<span class="v">' + esc(m.place) + (m.text ? " · " + esc(m.text) : "") + "</span></li>").join("")
+      : '<li class="none"><span class="v">Ingen mødesteder eller mødetider er aftalt endnu. De kommer her, når de er.</span></li>';
+    const dl = TRIP.daily.map(d => "<li><span class=\"k\">Hver dag · " + esc(d.time.replace(/:/g, ".")) + "</span>" + chip(d.status) + '<span class="v">' + esc(d.label) + "</span></li>").join("");
+    el.innerHTML = '<div><h3>Aftalt i familien</h3><ul class="agl">' + ag + mp + '</ul></div><div><h3>Fast på hotellet</h3><ul class="agl">' + dl + '<li><span class="k">Hver dag · 08.00–24.00</span>' + chip("bekraeftet") + '<span class="v">Drikkevarer er med i all inclusive, også i baren.</span></li></ul></div>';
+  }
+
+  /* ── Kalenderfil (.ics) ────────────────────────────── */
+  const icsDate = ts => new Date(ts).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+  const icsEsc = s => String(s).replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
+  function fold(line){
+    const enc = new TextEncoder(); let out = "", cur = "", bytes = 0, first = true;
+    for (const ch of line) {
+      const b = enc.encode(ch).length;
+      if (bytes + b > (first ? 75 : 74)) { out += cur + "\r\n "; cur = ""; bytes = 0; first = false; }
+      cur += ch; bytes += b;
+    }
+    return out + cur;
+  }
+  function icsEvents(trip){
+    const ev = [];
+    trip.flights.forEach(f => {
+      const t = { dep: zoned(f.dep, f.from.tz), arr: zoned(f.arr, f.to.tz) };
+      ev.push({ uid: "familieski-2027-fly-" + f.id, start: t.dep, end: t.arr,
+        summary: "Fly " + f.no + " " + f.from.city + " → " + f.to.city,
+        location: f.from.name + " (" + f.from.iata + ")",
+        desc: f.label + ". " + f.no + " " + f.from.iata + " " + hm(f.dep.split("T")[1]) + " → " + f.to.iata + " " + hm(f.arr.split("T")[1]) + " lokal tid. Status: " + ST[f.status][0] + ".",
+        confirmed: f.status === "bekraeftet", alarm: 180 });
+    });
+    trip.transfers.forEach(tr => {
+      if (tr.status !== "bekraeftet" || !tr.pickup) return;
+      const s = zoned(tr.date + "T" + tr.pickup, trip.tz);
+      ev.push({ uid: "familieski-2027-transfer-" + tr.id, start: s, end: s + tr.durationMin * 6e4,
+        summary: tr.label, location: tr.id === "ind" ? "Salzburg Airport (SZG)" : trip.hotel.name + ", " + trip.hotel.street + ", " + trip.hotel.zip + " " + trip.hotel.city,
+        desc: tr.note + " Status: Bekræftet.", confirmed: true, alarm: 60 });
+    });
+    return ev;
+  }
+  function buildICS(trip){
+    trip = trip || TRIP;
+    const stamp = icsDate(Date.now());
+    const L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//friisnaes//familieski 2027//DA", "CALSCALE:GREGORIAN", "METHOD:PUBLISH", "X-WR-CALNAME:Familieski Saalbach 2027"];
+    icsEvents(trip).forEach(e => {
+      L.push("BEGIN:VEVENT", "UID:" + e.uid + "@friisnaes.github.io", "DTSTAMP:" + stamp, "DTSTART:" + icsDate(e.start), "DTEND:" + icsDate(e.end),
+        "SUMMARY:" + icsEsc(e.summary), "LOCATION:" + icsEsc(e.location), "DESCRIPTION:" + icsEsc(e.desc), "STATUS:" + (e.confirmed ? "CONFIRMED" : "TENTATIVE"),
+        "BEGIN:VALARM", "ACTION:DISPLAY", "TRIGGER:-PT" + e.alarm + "M", "DESCRIPTION:" + icsEsc(e.summary), "END:VALARM", "END:VEVENT");
+    });
+    L.push("END:VCALENDAR");
+    return L.map(fold).join("\r\n") + "\r\n";
+  }
+  function downloadICS(){
+    const blob = new Blob([buildICS(TRIP)], { type: "text/calendar;charset=utf-8" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "familieski-2027-fly.ics";
+    document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+    toast("Kalenderfilen er hentet");
+  }
+  function renderIcsList(){
+    const el = $("#ics-list"); if (!el) return;
+    const ev = icsEvents(TRIP);
+    const pend = TRIP.transfers.filter(t => !(t.status === "bekraeftet" && t.pickup));
+    el.innerHTML = ev.map(e => "<li>" + chip("bekraeftet") + "<span>" + esc(e.summary) + "</span></li>").join("") +
+      pend.map(t => "<li>" + chip(t.status) + "<span>" + esc(t.label) + " · kommer med, når tidspunktet er bekræftet</span></li>").join("");
+  }
+
+  /* ── Kopiér, toast ─────────────────────────────────── */
+  let toastT;
+  function toast(msg){
+    let t = $("#toast");
+    if (!t) { t = document.createElement("div"); t.id = "toast"; t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
+    t.textContent = msg; t.classList.add("on");
+    clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("on"), 2400);
+  }
+  function copyAddr(){
+    const txt = TRIP.hotel.name + "\n" + TRIP.hotel.street + "\n" + TRIP.hotel.zip + " " + TRIP.hotel.city + "\n" + TRIP.hotel.countryEn;
+    const done = () => toast("Adressen er kopieret");
+    const fallback = () => {
+      const ta = document.createElement("textarea"); ta.value = txt; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) { toast(hotelAddr()); }
+      ta.remove();
+    };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(done, fallback); else fallback();
+  }
+
+  /* ── Pakkeliste (kun lokal lagring) ────────────────── */
+  const PK = "familieski-pak-v1";
+  function loadPack(){ try { return new Set(JSON.parse(localStorage.getItem(PK) || "[]")); } catch (e) { return new Set(); } }
+  function savePack(s){ try { localStorage.setItem(PK, JSON.stringify(Array.from(s))); } catch (e) {} }
+  function renderPack(){
+    const el = $("#pack"); if (!el) return;
+    const got = loadPack();
+    el.innerHTML = TRIP.pack.map(p => '<li><label><input type="checkbox" data-pk="' + p.id + '"' + (got.has(p.id) ? " checked" : "") + '><span><b>' + esc(p.t) + "</b>" + (p.n ? "<i>" + esc(p.n) + "</i>" : "") + "</span></label></li>").join("");
+    countPack();
+  }
+  function countPack(){
+    const all = $$("#pack input"), c = all.filter(i => i.checked).length;
+    const el = $("#pk-count"); if (el) el.textContent = c + " af " + all.length;
+  }
+  document.addEventListener("change", e => {
+    const i = e.target.closest && e.target.closest("[data-pk]"); if (!i) return;
+    const s = loadPack(); if (i.checked) s.add(i.dataset.pk); else s.delete(i.dataset.pk);
+    savePack(s); countPack();
+  });
+
+  /* ── Handlinger (delegeret) ────────────────────────── */
+  document.addEventListener("click", e => {
+    const b = e.target.closest && e.target.closest("[data-act]"); if (!b) return;
+    const a = b.dataset.act;
+    if (a === "copy") { e.preventDefault(); copyAddr(); }
+    else if (a === "ics") { e.preventDefault(); downloadICS(); }
+    else if (a === "pack-reset") { e.preventDefault(); savePack(new Set()); renderPack(); toast("Pakkelisten er nulstillet"); }
+  });
+
+  /* ── Turen lige nu ─────────────────────────────────── */
+  const ACT = {
+    pak: { label: "Pakkeliste", href: "#pakkeliste" },
+    ics: { label: "Tilføj fly til kalender", act: "ics" },
+    rejse: { label: "Rejseplanen", href: "#rejsen" },
+    copy: { label: "Kopiér hoteladresse", act: "copy" },
+    dir: { label: "Vejvisning", href: dirUrl(), ext: true },
+    ring: { label: "Ring til hotellet", href: "tel:" + TRIP.hotel.phone },
+    piste: { label: "Pistekort", href: TRIP.links.pistekort, ext: true },
+    forhold: { label: "Sne og vejr", href: TRIP.links.snerapport, ext: true },
+    plan: { label: "Plan A og B", href: "#plan" }
+  };
+  function btnHtml(k, primary){
+    const a = ACT[k];
+    const cls = "btn" + (primary ? " pri" : "");
+    if (a.act) return '<button type="button" class="' + cls + '" data-act="' + a.act + '">' + esc(a.label) + "</button>";
+    return '<a class="' + cls + '" href="' + esc(a.href) + '"' + (a.ext ? ' target="_blank" rel="noopener"' : "") + ">" + esc(a.label) + (a.ext ? " ↗" : "") + "</a>";
+  }
+  function fact(k, v, s){ return '<li><span class="k">' + esc(k) + "</span>" + chip(s) + '<span class="v">' + esc(v) + "</span></li>"; }
+  function renderNow(){
+    const el = $("#nu-card"); if (!el) return;
+    const st = stateAt(now());
+    let h = "", sub = "", facts = [], acts = [];
+    const tIn = TRIP.transfers.find(t => t.date === TRIP.start), tOut = TRIP.transfers.find(t => t.date === TRIP.end);
+    const co = TRIP.times.find(t => t.id === "checkout"), ci = TRIP.times.find(t => t.id === "checkin");
+    if (st.kind === "for") {
+      const days = Math.max(0, Math.floor((DEP_TS - now()) / 864e5));   // samme regning som nedtællingen
+      h = "Næste afgang";
+      sub = dateLabel(TRIP.start, true) + " kl. " + hm(OUT.dep.split("T")[1]) + " fra " + OUT.from.city + ". " + (days === 0 ? "Om under et døgn." : days === 1 ? "Om et døgn og lidt." : "Om " + days + " dage.");
+      facts = [fact("Udrejse", flightLine(OUT), OUT.status), fact("Hotel", TRIP.hotel.name + " · " + TRIP.hotel.city, "bekraeftet"), fact("Transfer", "Privat shuttle · tidspunkt ikke oplyst", tIn.status)];
+      acts = ["pak", "ics", "rejse"];
+    } else if (st.kind === "udrejse") {
+      h = "Udrejse i dag";
+      sub = dateLabel(st.key, true) + ". Kastrup, Salzburg, Saalbach. Ingen ski i dag.";
+      facts = [fact("Fly", flightLine(OUT), OUT.status), fact("Transfer", tIn.pickup ? "Afhentning " + hm(tIn.pickup) + " · ca. " + tIn.durationMin + " min" : "Privat shuttle · afhentningstid ikke oplyst", tIn.status), fact("Hotel", hotelAddr() + " · værelser fra ca. " + hm(ci.time), "bekraeftet")];
+      acts = ["copy", "dir", "ring"];
+    } else if (st.kind === "dag") {
+      h = "Skidag " + st.n + " af 6";
+      sub = dateLabel(st.key, true) + ".";
+      const ag = TRIP.agreements.filter(a => a.date === st.key).concat(TRIP.meetingPoints.filter(m => m.date === st.key).map(m => ({ text: m.place + (m.time ? " kl. " + hm(m.time) : ""), status: m.status })));
+      facts = ag.length ? ag.map(a => fact("Aftalt i dag", a.text, a.status)) : [fact("Aftalt i dag", "Intet aftalt. Se Plan A og B.", "afventer")];
+      TRIP.daily.forEach(d => facts.push(fact("Fast på hotellet", d.label + " " + d.time.replace(/:/g, "."), d.status)));
+      acts = ["piste", "forhold", "plan"];
+    } else if (st.kind === "hjemrejse") {
+      h = "Hjemrejse i dag";
+      sub = dateLabel(st.key, true) + ". Check-ud og afhentning er to forskellige tider.";
+      facts = [fact("Check-ud", "Senest " + hm(co.time) + " · hotellets frist", co.status),
+               fact("Afhentning", tOut.pickup ? hm(tOut.pickup) + " fra hotellet" : "Ikke aftalt endnu. Skal passe med flyet " + hm(HOME.dep.split("T")[1]) + ".", tOut.status),
+               fact("Fly hjem", flightLine(HOME), HOME.status)];
+      acts = ["ring", "rejse"];
+    } else {
+      h = "Turen er slut";
+      sub = "Velkommen hjem. Siden bliver her.";
+      facts = [];
+      acts = [];
+    }
+    el.dataset.state = st.kind;
+    $("#nu-h").textContent = h;
+    $("#nu-sub").textContent = sub;
+    $("#nu-facts").innerHTML = facts.join("");
+    $("#nu-facts").hidden = !facts.length;
+    $("#nu-acts").innerHTML = acts.map((k, i) => btnHtml(k, i === 0)).join("");
+    $("#nu-acts").hidden = !acts.length;
+    const sim = $("#nu-sim");
+    if (sim) { sim.hidden = SIM === null; if (SIM !== null) sim.textContent = "Simuleret tidspunkt: " + simParam.replace("T", " kl. ") + " (" + TRIP.tz + ")"; }
+  }
+  function renderNet(){
+    const on = navigator.onLine !== false;
+    $$("[data-net]").forEach(e => {
+      e.textContent = on ? "Online · plan " + TRIP.updated : "Offline · viser gemt rejseplan fra " + TRIP.updated;
+      e.classList.toggle("off", !on);
+    });
+  }
+  window.addEventListener("online", renderNet);
+  window.addEventListener("offline", renderNet);
+
+  /* ── Oversigtskort ─────────────────────────────────── */
+  const MAP = { W: 920, H: 700, lonMin: 12.515, latMax: 47.495, pad: 40, pxKm: 39.4, kmLon: 111.32 * Math.cos(47.42 * Math.PI / 180), kmLat: 110.57 };
+  const proj = (lat, lng) => [MAP.pad + (lng - MAP.lonMin) * MAP.kmLon * MAP.pxKm, MAP.pad + (MAP.latMax - lat) * MAP.kmLat * MAP.pxKm];
+  let selArea = null;
+  function distKm(la1, lo1, la2, lo2){
+    const r = Math.PI / 180, dla = (la2 - la1) * r, dlo = (lo2 - lo1) * r;
+    const h = Math.sin(dla / 2) ** 2 + Math.cos(la1 * r) * Math.cos(la2 * r) * Math.sin(dlo / 2) ** 2;
+    return 6371 * 2 * Math.asin(Math.sqrt(h));
+  }
+  function renderMap(){
+    const svg = $("#map-svg"), btns = $("#map-btns"); if (!svg || !btns) return;
+    const P = {}; TRIP.areas.forEach(a => { P[a.id] = proj(a.lat, a.lng); });
+    const hP = proj(TRIP.hotel.lat, TRIP.hotel.lng);
+    let g = "";
+    // gitter
+    for (let lo = 12.55; lo <= 12.80; lo += 0.05) { const x = proj(47.4, lo)[0]; g += '<line class="gr" x1="' + x.toFixed(1) + '" y1="0" x2="' + x.toFixed(1) + '" y2="' + MAP.H + '"/><text class="gt" x="' + (x + 4).toFixed(1) + '" y="' + (MAP.H - 10) + '">' + lo.toFixed(2) + "° Ø</text>"; }
+    for (let la = 47.35; la <= 47.49; la += 0.05) { const y = proj(la, 12.6)[1]; g += '<line class="gr" x1="0" y1="' + y.toFixed(1) + '" x2="' + MAP.W + '" y2="' + y.toFixed(1) + '"/><text class="gt" x="8" y="' + (y - 6).toFixed(1) + '">' + la.toFixed(2) + "° N</text>"; }
+    // "højdekurver" som dekoration om byerne
+    TRIP.areas.forEach(a => { const [x, y] = P[a.id]; [34, 62, 92, 126].forEach((r, i) => { g += '<circle class="ct" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + r + '" style="opacity:' + (0.5 - i * 0.1).toFixed(2) + '"/>'; }); });
+    // Glemmtal: skematisk linje gennem Hinterglemm, hotellet og Saalbach
+    const hg = P.hinterglemm, sb = P.saalbach;
+    g += '<path class="vl" d="M' + (hg[0] - 70).toFixed(1) + " " + (hg[1] + 22).toFixed(1) + " L" + hg[0].toFixed(1) + " " + hg[1].toFixed(1) + " L" + hP[0].toFixed(1) + " " + hP[1].toFixed(1) + " L" + sb[0].toFixed(1) + " " + sb[1].toFixed(1) + " L" + (sb[0] + 80).toFixed(1) + " " + (sb[1] + 6).toFixed(1) + '"/>';
+    g += '<text class="vt" x="' + ((hg[0] + hP[0]) / 2 - 20).toFixed(1) + '" y="' + ((hg[1] + hP[1]) / 2 + 34).toFixed(1) + '">Glemmtal</text>';
+    // spotlys og forbindelseslinje fra hotellet (bevæger sig ved områdeskift)
+    g += '<defs><radialGradient id="spotg"><stop offset="0" stop-color="#8FC7E8" stop-opacity=".32"/><stop offset="1" stop-color="#8FC7E8" stop-opacity="0"/></radialGradient></defs>';
+    g += '<circle id="map-spot" cx="0" cy="0" r="150" fill="url(#spotg)"/>';
+    g += '<line id="map-lnk" x1="' + hP[0].toFixed(1) + '" y1="' + hP[1].toFixed(1) + '" x2="' + hP[0].toFixed(1) + '" y2="' + hP[1].toFixed(1) + '"/>';
+    g += '<text id="map-dist" x="0" y="0"></text>';
+    // områder
+    TRIP.areas.forEach(a => {
+      const [x, y] = P[a.id];
+      const LB = { saalbach: [16, -22, "start"], hinterglemm: [0, 60, "middle"], leogang: [-22, -22, "end"], fieberbrunn: [22, -18, "start"] }[a.id] || [18, -16, "start"];
+      const lx = x + LB[0], ly = y + LB[1], anchor = LB[2];
+      g += '<g class="mk" data-area="' + a.id + '"><circle class="mk-hit" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="34"/><circle class="mk-ring" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="16"/><circle class="mk-dot" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="7"/>' +
+        '<text class="mk-l" x="' + lx.toFixed(1) + '" y="' + ly.toFixed(1) + '" text-anchor="' + anchor + '">' + esc(a.name.toUpperCase()) + "</text></g>";
+    });
+    // hotellet
+    g += '<g class="ht"><rect x="' + (hP[0] - 6).toFixed(1) + '" y="' + (hP[1] - 6).toFixed(1) + '" width="12" height="12" transform="rotate(45 ' + hP[0].toFixed(1) + " " + hP[1].toFixed(1) + ')"/><text x="' + (hP[0] - 12).toFixed(1) + '" y="' + (hP[1] + 28).toFixed(1) + '" text-anchor="end">DIE SONNE</text></g>';
+    // målestok 5 km
+    const sx = MAP.W - 60 - 5 * MAP.pxKm, sy = MAP.H - 44;
+    g += '<g class="sc"><line x1="' + sx.toFixed(1) + '" y1="' + sy + '" x2="' + (sx + 5 * MAP.pxKm).toFixed(1) + '" y2="' + sy + '"/><line x1="' + sx.toFixed(1) + '" y1="' + (sy - 6) + '" x2="' + sx.toFixed(1) + '" y2="' + (sy + 6) + '"/><line x1="' + (sx + 5 * MAP.pxKm).toFixed(1) + '" y1="' + (sy - 6) + '" x2="' + (sx + 5 * MAP.pxKm).toFixed(1) + '" y2="' + (sy + 6) + '"/><text x="' + (sx + 2.5 * MAP.pxKm).toFixed(1) + '" y="' + (sy - 12) + '" text-anchor="middle">5 KM</text></g>';
+    $("#map-g").innerHTML = g;
+    btns.innerHTML = TRIP.areas.map((a, i) => '<button type="button" data-area="' + a.id + '" aria-pressed="false" aria-controls="map-panel"><i>0' + (i + 1) + "</i><b>" + esc(a.name) + "</b><span>" + esc(a.region) + "</span></button>").join("");
+    btns.addEventListener("click", e => { const b = e.target.closest("button[data-area]"); if (b) selectArea(b.dataset.area, true); });
+    btns.addEventListener("keydown", e => {
+      if (!/^Arrow(Left|Right|Up|Down)$/.test(e.key)) return;
+      const bs = $$("button", btns), i = bs.indexOf(document.activeElement); if (i < 0) return;
+      e.preventDefault();
+      const n = bs[(i + (/Right|Down/.test(e.key) ? 1 : -1) + bs.length) % bs.length]; n.focus();
+    });
+    $("#map-g").addEventListener("click", e => { const m = e.target.closest(".mk"); if (m) selectArea(m.dataset.area, true); });
+    selectArea("saalbach", false);
+  }
+  function selectArea(id, animate){
+    const a = TRIP.areas.find(x => x.id === id); if (!a) return;
+    selArea = id;
+    $$("#map-btns button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.area === id)));
+    $$("#map-g .mk").forEach(m => m.classList.toggle("on", m.dataset.area === id));
+    const [x, y] = proj(a.lat, a.lng), hP = proj(TRIP.hotel.lat, TRIP.hotel.lng);
+    const spot = $("#map-spot"); if (spot) spot.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px)";
+    const ln = $("#map-lnk"), km = distKm(TRIP.hotel.lat, TRIP.hotel.lng, a.lat, a.lng);
+    if (ln) {
+      ln.setAttribute("x2", x.toFixed(1)); ln.setAttribute("y2", y.toFixed(1));
+      const L = Math.hypot(x - hP[0], y - hP[1]);
+      ln.style.strokeDasharray = L.toFixed(1); ln.style.strokeDashoffset = (animate && !reduce) ? L.toFixed(1) : "0";
+      if (animate && !reduce) { void ln.getBoundingClientRect(); ln.style.strokeDashoffset = "0"; }
+    }
+    const dt = $("#map-dist");
+    if (dt) {
+      const mx = (x + hP[0]) / 2, my = (y + hP[1]) / 2;
+      dt.setAttribute("x", (mx + 14).toFixed(1)); dt.setAttribute("y", (my - 10).toFixed(1));
+      dt.textContent = km < 1.5 ? "" : km.toLocaleString("da-DK", { maximumFractionDigits: 1 }) + " KM I LUFTLINJE";
+    }
+    const i = TRIP.areas.indexOf(a), p = $("#map-panel");
+    p.classList.remove("in"); void p.offsetWidth;
+    p.innerHTML = '<span class="ix">Område 0' + (i + 1) + " · " + esc(a.region) + '</span><h3 class="fit" data-fit>' + esc(a.name) + '</h3><div class="alt">' + a.alt.toLocaleString("da-DK") + '<small>m</small></div><span class="an">' + esc(a.altLabel) + " · " + (km < 1.5 ? "hotellet ligger her i nærheden" : "ca. " + km.toLocaleString("da-DK", { maximumFractionDigits: 1 }) + " km i luftlinje fra hotellet") + "</span><p>" + esc(a.text) + '</p><a class="btn" href="' + esc(TRIP.links.pistekort) + '" target="_blank" rel="noopener">Officielt pistekort ↗</a>';
+    p.classList.add("in");
+    if (animate && window.__fitAll) window.__fitAll();
+  }
+
+  /* ── JSON-LD fra TRIP ──────────────────────────────── */
+  function injectLd(){
+    const ld = { "@context": "https://schema.org", "@type": "Event", name: "Familieski i Saalbach Hinterglemm 2027",
+      description: "Familiens skiuge i Skicircus Saalbach Hinterglemm Leogang Fieberbrunn med ophold på Hotel Die Sonne, all inclusive.",
+      startDate: new Date(DEP_TS).toISOString(), endDate: new Date(HOME_TS).toISOString(),
+      eventStatus: "https://schema.org/EventScheduled", eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode", inLanguage: "da",
+      image: [CONFIG.imageBase + CONFIG.heroImages[0]],
+      organizer: { "@type": "Person", name: "Thomas Friisnæs", url: "https://friisnaes.com" },
+      location: { "@type": "Hotel", name: TRIP.hotel.name, url: TRIP.hotel.url, telephone: TRIP.hotel.phoneDisplay, email: TRIP.hotel.email,
+        address: { "@type": "PostalAddress", streetAddress: TRIP.hotel.street, postalCode: TRIP.hotel.zip, addressLocality: TRIP.hotel.city, addressRegion: "Salzburg", addressCountry: "AT" },
+        geo: { "@type": "GeoCoordinates", latitude: TRIP.hotel.lat, longitude: TRIP.hotel.lng } } };
+    const s = document.createElement("script"); s.type = "application/ld+json"; s.textContent = JSON.stringify(ld); document.head.appendChild(s);
+  }
+
+  // Render alt der kommer fra TRIP
+  renderPasses(); renderTimelines(); renderRooms(); renderFooter(); renderAgreements(); renderIcsList(); renderPack(); renderMap(); renderNow(); renderNet(); injectLd();
+  $$("[data-hotel-addr]").forEach(e => { e.innerHTML = esc(TRIP.hotel.street) + "<br>" + esc(TRIP.hotel.zip + " " + TRIP.hotel.city + ", " + TRIP.hotel.country); });
+  $$("[data-hotel-tel]").forEach(e => { e.href = "tel:" + TRIP.hotel.phone; });
+  $$("[data-hotel-dir]").forEach(e => { e.href = dirUrl(); });
+  $$("[data-hotel-phone]").forEach(e => { e.textContent = TRIP.hotel.phoneDisplay; });
+
+  /* ── Hero-slides: første billede prioriteres, resten efter load */
   const slidesEl = $("#hero .slides");
   if (slidesEl && CONFIG.heroImages.length) {
     const first = slidesEl.querySelector(".slide img");
     if (first) first.src = CONFIG.imageBase + CONFIG.heroImages[0];
-    CONFIG.heroImages.slice(1).forEach(id => {
-      const d = document.createElement("div");
-      d.className = "slide";
-      const im = new Image();
-      im.alt = ""; im.decoding = "async"; im.loading = "lazy";
-      im.addEventListener("error", () => im.classList.add("dead"));
-      im.src = CONFIG.imageBase + id;
-      d.appendChild(im);
-      slidesEl.appendChild(d);
-    });
-    const slides = $$(".slide", slidesEl);
-    if (!reduce && slides.length > 1) {
-      let cur = 0;
-      setInterval(() => {
-        if (document.hidden) return;
-        slides[cur].classList.remove("on");
-        cur = (cur + 1) % slides.length;
-        slides[cur].classList.add("on");
-      }, CONFIG.heroInterval);
-    }
+    const addRest = () => {
+      CONFIG.heroImages.slice(1).forEach(id => {
+        const d = document.createElement("div"); d.className = "slide";
+        const im = new Image(); im.alt = ""; im.decoding = "async";
+        im.addEventListener("error", () => im.classList.add("dead"));
+        im.src = CONFIG.imageBase + id; d.appendChild(im); slidesEl.appendChild(d);
+      });
+      const slides = $$(".slide", slidesEl);
+      if (!reduce && slides.length > 1) {
+        let cur = 0;
+        setInterval(() => {
+          if (document.hidden) return;
+          slides[cur].classList.remove("on"); cur = (cur + 1) % slides.length; slides[cur].classList.add("on");
+        }, CONFIG.heroInterval);
+      }
+    };
+    if (!reduce) { if (document.readyState === "complete") setTimeout(addRest, 1500); else window.addEventListener("load", () => setTimeout(addRest, 1500)); }
   }
 
-  /* ── Nedtælling */
+  /* ── Nedtælling (samme afgang som TRIP) ───────────── */
   const cd = $("#cd");
-  const dep = new Date(CONFIG.departure).getTime();
-  const ret = new Date(CONFIG.returnHome).getTime();
-  const pad = n => String(n).padStart(2, "0");
   function tick(){
-    if (!cd) return;
-    const now = Date.now();
-    let diff = dep - now;
+    if (!cd) return true;
+    const n = now(); let diff = DEP_TS - n;
     if (diff <= 0) {
-      cd.innerHTML = '<div class="cd-done">' + (now < ret ? "Vi er afsted" : "Turen er slut") + "</div>";
-      cd.style.display = "block";
-      return true;
+      cd.innerHTML = '<div class="cd-done">' + (n < HOME_TS ? "Vi er afsted" : "Turen er slut") + "</div>";
+      cd.style.display = "block"; return true;
     }
-    const d = Math.floor(diff / 86400000); diff -= d * 86400000;
-    const h = Math.floor(diff / 3600000);  diff -= h * 3600000;
-    const m = Math.floor(diff / 60000);    diff -= m * 60000;
-    const s = Math.floor(diff / 1000);
+    const d = Math.floor(diff / 864e5); diff -= d * 864e5;
+    const h = Math.floor(diff / 36e5); diff -= h * 36e5;
+    const m = Math.floor(diff / 6e4); diff -= m * 6e4;
+    const s = Math.floor(diff / 1e3);
     cd.querySelector('[data-u="d"]').textContent = d;
-    cd.querySelector('[data-u="h"]').textContent = pad(h);
-    cd.querySelector('[data-u="m"]').textContent = pad(m);
-    cd.querySelector('[data-u="s"]').textContent = pad(s);
+    cd.querySelector('[data-u="h"]').textContent = pad2(h);
+    cd.querySelector('[data-u="m"]').textContent = pad2(m);
+    cd.querySelector('[data-u="s"]').textContent = pad2(s);
   }
+  $$("[data-dep-label]").forEach(e => { e.textContent = "Afgang fra " + OUT.from.city + " · " + dateLabel(TRIP.start) + " kl. " + hm(OUT.dep.split("T")[1]); });
+  if (!tick()) { const iv = setInterval(() => { if (tick()) clearInterval(iv); }, 1000); }
+  let lastKind = stateAt(now()).kind;
+  setInterval(() => { const k = stateAt(now()).kind; if (k !== lastKind) { lastKind = k; renderNow(); } }, 30000);
+
+  /* ── Træningsstart ─────────────────────────────────── */
   const ts = $("#tstart");
   if (ts) {
-    const t0 = new Date(CONFIG.trainingStart).getTime(), now = Date.now();
-    const days = Math.ceil((t0 - now) / 86400000);
-    if (now < t0) ts.textContent = days === 1 ? "I morgen" : "Om " + days + " dage";
-    else if (now < dep) ts.textContent = "Uge " + Math.min(8, Math.floor((now - t0) / 604800000) + 1) + " af 8";
+    const t0 = zoned(CONFIG.trainingStart, TRIP.tz), n = now();
+    const days = Math.ceil((t0 - n) / 864e5);
+    if (n < t0) ts.textContent = days === 1 ? "I morgen" : "Om " + days + " dage";
+    else if (n < DEP_TS) ts.textContent = "Uge " + Math.min(8, Math.floor((n - t0) / 6048e5) + 1) + " af 8";
     else ts.textContent = "Overstået";
   }
-  if (!tick()) { const iv = setInterval(() => { if (tick()) clearInterval(iv); }, 1000); }
 
-  /* ── Header + aktiv sektion */
+  /* ── Header + aktiv sektion ────────────────────────── */
   const header = $("header.top");
   const navLinks = $$("nav.main a");
   const secs = navLinks.map(a => $(a.getAttribute("href"))).filter(Boolean);
   function onScrollUI(){
     header.classList.toggle("solid", window.scrollY > 40);
-    let act = -1;
-    const y = window.innerHeight * 0.35;
+    let act = -1; const y = window.innerHeight * 0.35;
     secs.forEach((s, i) => { if (s.getBoundingClientRect().top < y) act = i; });
     navLinks.forEach((a, i) => a.classList.toggle("on", i === act));
   }
 
-  /* ── Mobilmenu */
+  /* ── Mobilmenu ─────────────────────────────────────── */
   const btn = $(".menu-btn"), mnav = $("#mnav"), mt = $(".menu-btn .mt");
   function setMenu(open){
     document.body.classList.toggle("menu-open", open);
     btn.setAttribute("aria-expanded", String(open));
     mnav.setAttribute("aria-hidden", String(!open));
+    if ("inert" in mnav) mnav.inert = !open;
     mt.textContent = open ? "Luk" : "Menu";
+    if (open) { const f = mnav.querySelector("a"); if (f) setTimeout(() => f.focus(), 50); }
   }
+  if ("inert" in mnav) mnav.inert = true;
   btn.addEventListener("click", () => setMenu(!document.body.classList.contains("menu-open")));
   $$("a", mnav).forEach(a => a.addEventListener("click", () => setMenu(false)));
-  window.addEventListener("resize", () => { if (window.innerWidth >= 960) setMenu(false); });
+  window.addEventListener("resize", () => { if (window.innerWidth >= 1240) setMenu(false); });
 
-  /* ── Udtoning + taloptælling, med sikkerhedsnet */
+  /* ── Udtoning + taloptælling, med sikkerhedsnet ──── */
   const rvs = $$(".rv");
   const counters = $$("[data-count]");
   const fmt = n => Math.round(n).toLocaleString("da-DK");
   function finish(el){ el.textContent = fmt(+el.dataset.count); el.dataset.done = "1"; }
   function runCount(el){
-    if (el.dataset.run) return;
-    el.dataset.run = "1";
+    if (el.dataset.run) return; el.dataset.run = "1";
     const to = +el.dataset.count;
     if (reduce) return finish(el);
-    const t0 = performance.now(), dur = 1700;
-    el.textContent = "0";
+    const t0 = performance.now(), dur = 1700; el.textContent = "0";
     (function step(t){
       const p = Math.min(1, (t - t0) / dur);
       el.textContent = fmt(to * (1 - Math.pow(1 - p, 3)));
       if (p < 1 && !el.dataset.done) requestAnimationFrame(step); else finish(el);
     })(t0);
   }
-  function show(el){
-    if (el.classList.contains("in")) return;
-    el.classList.add("in");
-    $$("[data-count]", el).forEach(runCount);
-  }
+  function show(el){ if (el.classList.contains("in")) return; el.classList.add("in"); $$("[data-count]", el).forEach(runCount); }
   function sweep(){
     const lim = window.innerHeight * 0.95;
     for (const el of rvs) if (!el.classList.contains("in") && el.getBoundingClientRect().top < lim) show(el);
@@ -1011,10 +1662,10 @@ const CONFIG = {
   else if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } }), { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
     rvs.forEach(el => io.observe(el));
-  } else { rvs.forEach(show); }
+  } else rvs.forEach(show);
   setTimeout(() => { rvs.forEach(el => el.classList.add("in")); counters.forEach(c => { if (!c.dataset.done) { c.dataset.run = "1"; finish(c); } }); }, 4000);
 
-  /* ── Parallax */
+  /* ── Parallax ──────────────────────────────────────── */
   const pxs = $$("[data-px]");
   function parallax(){
     if (reduce) return;
@@ -1026,72 +1677,53 @@ const CONFIG = {
       im.style.transform = "translate3d(0," + (p * -18).toFixed(2) + "%,0)";
     }
   }
-
   let ticking = false;
-  function onScroll(){
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => { onScrollUI(); sweep(); parallax(); ticking = false; });
-  }
+  function onScroll(){ if (ticking) return; ticking = true; requestAnimationFrame(() => { onScrollUI(); sweep(); parallax(); ticking = false; }); }
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll);
   onScrollUI(); sweep(); parallax();
 
-  /* ── Tekst der skal passe: krymp til den ikke klippes (også med reserveskrift) */
-  const fits = $$("[data-fit]");
-  let fitAll = function(){
-    for (const el of fits) {
+  /* ── Tekst der skal passe (også med reserveskrift) ── */
+  function fitEls(){
+    for (const el of $$("[data-fit]")) {
       el.style.fontSize = "";
       let fs = parseFloat(getComputedStyle(el).fontSize), g = 0;
-      while (el.scrollWidth > el.clientWidth + 1 && fs > 14 && g++ < 80) {
-        fs *= 0.96;
-        el.style.fontSize = fs + "px";
-      }
-    }
-  };
-  const routes = $$(".route");
-  function fitRoutes(){
-    for (const r of routes) {
-      const bs = $$(".ap b", r);
-      bs.forEach(b => b.style.fontSize = "");
-      let fs = parseFloat(getComputedStyle(bs[0]).fontSize), g = 0;
-      while (r.scrollWidth > r.clientWidth + 1 && fs > 24 && g++ < 80) {
-        fs *= 0.96;
-        bs.forEach(b => b.style.fontSize = fs + "px");
-      }
+      while (el.scrollWidth > el.clientWidth + 1 && fs > 14 && g++ < 80) { fs *= 0.96; el.style.fontSize = fs + "px"; }
     }
   }
-  const _fitAll = fitAll;
-  fitAll = function(){ _fitAll(); fitRoutes(); };
+  function fitRoutes(){
+    for (const r of $$(".route")) {
+      const bs = $$(".ap b", r); bs.forEach(b => { b.style.fontSize = ""; });
+      let fs = parseFloat(getComputedStyle(bs[0]).fontSize), g = 0;
+      while (r.scrollWidth > r.clientWidth + 1 && fs > 24 && g++ < 80) { fs *= 0.96; bs.forEach(b => { b.style.fontSize = fs + "px"; }); }
+    }
+  }
+  const fitAll = () => { fitEls(); fitRoutes(); };
+  window.__fitAll = fitAll;
   let ft;
   window.addEventListener("resize", () => { clearTimeout(ft); ft = setTimeout(fitAll, 120); });
   fitAll();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAll);
   window.addEventListener("load", fitAll);
 
-  /* ── Lightbox */
+  /* ── Lightbox (med fokusfælde) ─────────────────────── */
   const lb = $("#lb"), lbimg = $("#lbimg"), lbcap = $("#lbcap");
   const items = $$("#gal > button");
   let li = 0, lastFocus = null;
   function lbShow(i){
     li = (i + items.length) % items.length;
     const im = items[li].querySelector("img"), cap = items[li].querySelector(".cap");
-    lbimg.classList.remove("dead");
-    lbimg.src = im.currentSrc || im.src;
-    lbimg.alt = im.alt;
+    lbimg.classList.remove("dead"); lbimg.src = im.currentSrc || im.src; lbimg.alt = im.alt;
     lbcap.innerHTML = cap ? cap.innerHTML : "";
   }
   function lbOpen(i){
-    lastFocus = document.activeElement;
-    lbShow(i);
+    lastFocus = document.activeElement; lbShow(i);
     lb.classList.add("open"); lb.setAttribute("aria-hidden", "false");
-    document.body.classList.add("lb-open");
-    $(".x", lb).focus();
+    document.body.classList.add("lb-open"); $(".x", lb).focus();
   }
   function lbClose(){
     lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("lb-open");
-    if (lastFocus) lastFocus.focus();
+    document.body.classList.remove("lb-open"); if (lastFocus) lastFocus.focus();
   }
   items.forEach((b, i) => b.addEventListener("click", () => lbOpen(i)));
   lb.addEventListener("click", e => {
@@ -1107,49 +1739,57 @@ const CONFIG = {
       if (e.key === "Escape") lbClose();
       else if (e.key === "ArrowRight") lbShow(li + 1);
       else if (e.key === "ArrowLeft") lbShow(li - 1);
-    } else if (e.key === "Escape" && document.body.classList.contains("menu-open")) setMenu(false);
+      else if (e.key === "Tab") {
+        const f = $$("button", lb), i = f.indexOf(document.activeElement);
+        e.preventDefault(); f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+      }
+    } else if (e.key === "Escape" && document.body.classList.contains("menu-open")) { setMenu(false); btn.focus(); }
   });
 
-  /* ── Sne */
+  /* ── Sne (dæmpes over rejsekort og oversigtskort) ── */
   const cv = $("#snow");
   if (cv && !reduce && CONFIG.snowDensity > 0 && cv.getContext) {
     const ctx = cv.getContext("2d");
-    let W = 0, H = 0, dpr = 1, flakes = [];
+    let W = 0, H = 0, flakes = [];
     function size(){
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       W = window.innerWidth; H = window.innerHeight;
-      cv.width = W * dpr; cv.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const n = Math.round(Math.min(220, (W * H) / 13000) * CONFIG.snowDensity);
-      while (flakes.length < n) flakes.push(mk(true));
-      flakes.length = n;
+      cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const n = Math.round(Math.min(200, (W * H) / 13000) * CONFIG.snowDensity);
+      while (flakes.length < n) flakes.push(mk(true)); flakes.length = n;
     }
-    function mk(any){
-      const z = Math.random();
-      return { x: Math.random() * W, y: any ? Math.random() * H : -10, r: 0.6 + z * 2.1, vy: 0.25 + z * 0.9, vx: (Math.random() - 0.5) * 0.3, a: 0.25 + z * 0.55, ph: Math.random() * 6.28 };
-    }
+    function mk(any){ const z = Math.random(); return { x: Math.random() * W, y: any ? Math.random() * H : -10, r: 0.6 + z * 2, vy: 0.25 + z * 0.85, vx: (Math.random() - 0.5) * 0.3, a: 0.2 + z * 0.5, ph: Math.random() * 6.28 }; }
     let t = 0;
     function draw(){
       if (!document.hidden) {
-        t += 0.008;
-        ctx.clearRect(0, 0, W, H);
-        ctx.fillStyle = "#EEF3F8";
+        t += 0.008; ctx.clearRect(0, 0, W, H); ctx.fillStyle = "#EEF3F8";
         for (const f of flakes) {
           f.y += f.vy; f.x += f.vx + Math.sin(t + f.ph) * 0.35;
-          if (f.y > H + 6) { Object.assign(f, mk(false)); }
+          if (f.y > H + 6) Object.assign(f, mk(false));
           if (f.x > W + 6) f.x = -6; else if (f.x < -6) f.x = W + 6;
-          ctx.globalAlpha = f.a;
-          ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.2832); ctx.fill();
+          ctx.globalAlpha = f.a; ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 6.2832); ctx.fill();
         }
         ctx.globalAlpha = 1;
       }
       requestAnimationFrame(draw);
     }
-    size();
-    window.addEventListener("resize", size);
-    requestAnimationFrame(draw);
+    size(); window.addEventListener("resize", size); requestAnimationFrame(draw);
+    if ("IntersectionObserver" in window) {
+      const vis = new Set();
+      const dio = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) vis.add(e.target); else vis.delete(e.target); }); cv.classList.toggle("dim", vis.size > 0); }, { threshold: 0.15 });
+      ["#nu", "#kort", "#lommen"].forEach(s => { const el = $(s); if (el) dio.observe(el); });
+    }
   }
+
+  /* ── Offline: service worker under /familieski/ ──── */
+  if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol)) {
+    window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js", { scope: "./", updateViaCache: "none" }).catch(() => {}); });
+  }
+
+  // Til test og fejlfinding
+  window.FAMILIESKI = { TRIP, stateAt, buildICS, zoned, dayKey, now };
 })();
+
 </script>
 </body>
 </html>
