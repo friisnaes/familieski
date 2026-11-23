@@ -706,7 +706,7 @@ html.gave-open .grain{z-index:97}
 .g-inside,.g-flap{position:absolute;inset:0;border-radius:4px;background:var(--snow);color:var(--void)}
 .g-inside{padding:7% 8% 6%;display:flex;flex-direction:column;gap:10px;box-shadow:0 26px 50px -16px rgba(0,0,0,.7)}
 .g-inside .g-lbl,.g-flap .g-lbl{font-size:12px}
-.g-msg{font-family:"Caveat","Segoe Print",cursive;font-weight:500;font-size:clamp(19px,4.8vw,24px);line-height:1.2;color:#1c2a3d;flex:1;overflow:auto;white-space:pre-wrap;min-height:0}
+.g-msg{font-family:"Caveat","Segoe Print",cursive;font-weight:500;font-size:clamp(19px,4.8vw,24px);line-height:1.2;color:#1c2a3d;flex:1;overflow:hidden;white-space:pre-wrap;min-height:0}
 .g-from{display:flex;gap:10px;align-items:baseline}
 .g-from span:last-child{font-family:"Caveat","Segoe Print",cursive;font-weight:600;font-size:clamp(24px,6vw,30px);line-height:1;color:#1c2a3d}
 .g-flap{transform-origin:top center;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.4,.1,.2,1) .25s;z-index:2}
@@ -729,8 +729,16 @@ html.gave-open .grain{z-index:97}
 @keyframes gpuls{0%{transform:scale(.55);opacity:.95}70%{transform:scale(1.2);opacity:0}100%{transform:scale(1.2);opacity:0}}
 .g-cue span{position:absolute;left:50%;top:32px;transform:translateX(-50%);white-space:nowrap;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--snow);background:var(--night);border:1px solid var(--line-2);padding:6px 9px;border-radius:999px;opacity:0;transition:opacity .6s}
 .g-cue.label span{opacity:.95}
+.g-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.g-chl{width:100%;text-align:center;font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.g-chip{font-family:"Caveat","Segoe Print",cursive;font-weight:600;font-size:24px;line-height:1;color:var(--snow);background:rgba(17,25,34,.75);border:1px solid var(--line-2);border-radius:999px;padding:10px 18px;min-height:48px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.g-chip:hover{border-color:var(--ice)}
+.g-chip.on{background:var(--snow);color:#1c2a3d;border-color:var(--snow)}
+.g-chip:focus-visible{outline:2px solid var(--ice);outline-offset:3px}
+.g-ok{font-family:var(--f-mono);font-size:14px;color:var(--brass)}
+.g-gift.g-wait{opacity:.55;filter:saturate(.7)}
 .g-again{background:none;border:0;padding:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;min-height:44px}
-@media (max-height:640px){.g-gift{--W:min(220px,54vw,34vh)}.g-steps{display:none}.g-app{gap:6px;padding-top:10px}}
+@media (max-height:640px){.g-gift{--W:min(200px,52vw,29vh)}.g-steps{display:none}.g-app{gap:6px;padding-top:10px}.g-chl{display:none}.g-chip{font-size:20px;min-height:44px;padding:8px 14px}.g-brand b{font-size:22px}}
 @media (prefers-reduced-motion: reduce){
   #gave *{animation:none!important}
   .g-panel,.g-seal,.g-band,.g-bow,.g-tag,.g-pass,.g-flap,.g-gift,.g-fold,#gave{transition-duration:.01s!important;transition-delay:0s!important}
@@ -741,12 +749,13 @@ html.gave-open .grain{z-index:97}
 <div id="gave" role="dialog" aria-modal="true" aria-label="En gave: familieguiden til Saalbach" hidden>
   <div class="g-app">
     <div class="g-top">
-      <div class="g-brand"><span class="g-eye">En gave til jer</span><b>Saalbach ’27</b></div>
+      <div class="g-brand"><span class="g-eye" id="gEye">En gave til jer</span><b>Saalbach ’27</b></div>
       <div class="g-tools">
         <button class="g-btn" id="gLyd" type="button" aria-pressed="true">Lyd: til</button>
         <button class="g-btn" id="gSkip" type="button">Spring over</button>
       </div>
     </div>
+    <div class="g-chips" id="gChips" hidden></div>
     <div class="g-stage" id="gStage">
       <div class="g-gift g-idle" id="gGift">
         <div class="g-floor"></div>
@@ -802,9 +811,9 @@ html.gave-open .grain{z-index:97}
         <div class="g-inside">
           <span class="g-lbl">EN HILSEN</span>
           <div class="g-msg" id="gHilsen"></div>
-          <div class="g-from"><span class="g-lbl">FRA</span><span id="gFra"></span></div>
+          <div class="g-from"><span class="g-lbl" id="gFraLbl">FRA</span><span id="gFra"></span></div>
         </div>
-        <div class="g-flap"><div class="g-ffr"><span class="g-lbl">TIL</span><span class="g-nm" id="gKortTil"></span><span class="g-sub">Saalbach · 6.–13. marts 2027</span><div class="g-stripe"></div></div><div class="g-fbk"><em>Saalbach ’27</em><i></i></div></div>
+        <div class="g-flap"><div class="g-ffr"><span class="g-lbl">TIL</span><span class="g-nm" id="gKortTil"></span><span class="g-sub" id="gKortSub">Saalbach 2027</span><div class="g-stripe"></div></div><div class="g-fbk"><em>Saalbach ’27</em><i></i></div></div>
       </div>
       <div class="g-row"><button class="g-btn" id="gLaeg" type="button">Læg kortet</button></div>
     </div>
@@ -1243,7 +1252,7 @@ html.gave-open .grain{z-index:97}
    Når noget bliver bekræftet: ret status og tid her, og hæv version.
    ════════════════════════════════════════════════════════════ */
 const TRIP = {
-  version: "2026-11-23-v2.4",
+  version: "2026-11-23-v2.6",
   updated: "23.11.2026",
   tz: "Europe/Vienna",
   start: "2027-03-06",
@@ -2036,28 +2045,56 @@ const CONFIG = {
 <script>
 
 /* ════════════════════════════════════════════════════════════
-   GAVEN — siden pakket ind. Vises første gang, siden åbnes.
-   Ret kortets tekst her. ?til=Navn i linket skriver navnet på kortet.
-   ?gave=1 viser gaven igen, ?gave=0 springer den over.
+   GAVERNE — siden pakket ind. Tre pakker, hver med sit link:
+     ?pakke=jeanet
+     ?pakke=freja-alexander
+     ?pakke=carl-amalie-victor
+   Er der flere modtagere, vælger hver sit navn og pakker sin egen op.
+   &til=Navn vælger navnet på forhånd. ?gave=1 viser gaven igen, ?gave=0 springer over.
+   Ret kortenes tekst her.
    ════════════════════════════════════════════════════════════ */
-const GAVE = {
-  til: "Familien",
-  fra: "Thomas",
-  hilsen: "Seks dage på ski og en uge sammen.\nAlt, I skal bruge, ligger indeni.\nPak den ud, og glæd jer."
-};
+const GAVER = [
+  { id: "jeanet", nr: 1, til: ["Jeanet"], fra: "Thomas",
+    hilsen: "Kære skat. Så er vi klar til at fejre vores fødselsdage sammen med de allervigtigste mennesker i vores liv.",
+    underskrift: "Kys Thomas" },
+  { id: "freja-alexander", nr: 2, til: ["Freja", "Alexander"], fra: "Jeanet & Thomas",
+    hilsen: "Kære Freja og Alexander\nVi glæder os til at tage sydpå sammen med jer i marts ♥️\nSeks dage på ski og en uge sammen. Alt, I skal bruge, ligger her i pakken. Pak den ud, og glæd jer.",
+    underskrift: "KH Jeanet & Thomas" },
+  { id: "carl-amalie-victor", nr: 3, til: ["Carl", "Amalie", "Victor"], fra: "Jeanet & Thomas",
+    hilsen: "Kære Carl, Amalie & Victor\nVi glæder os til at tage sydpå sammen med jer i marts ♥️\nSeks dage på ski, en uge sammen og en kælk til Carl. Alt, I skal bruge, ligger her i pakken. Pak den ud, og glæd jer.",
+    underskrift: "KH Jeanet & Thomas" }
+];
 (function(){
   "use strict";
   const G = document.getElementById("gave"); if (!G) return;
   const $ = s => G.querySelector(s);
   const html = document.documentElement;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const KEY = "familieski-gave-v1";
+  const KEY = "familieski-gaver-v2";
   const P = new URLSearchParams(location.search);
-  const tilP = (P.get("til") || "").replace(/[<>"&]/g, "").trim().slice(0, 30);
-  const cfg = { til: tilP || GAVE.til, fra: GAVE.fra, hilsen: GAVE.hilsen };
-  let seen = false; try { seen = localStorage.getItem(KEY) === "aabnet"; } catch (e) {}
+  const norm = s => String(s || "").trim().toLowerCase();
+  const og = (a, b) => a.length === 1 ? a[0] : a.slice(0, -1).join(", ") + " & " + a[a.length - 1];
+
+  // Hvilken pakke? Med ?pakke=… den ene; ellers alle tre (man vælger sit navn)
+  const pk = norm(P.get("pakke"));
+  const PAKKE = GAVER.find(g => g.id === pk || String(g.nr) === pk) || null;
+  const MODT = PAKKE ? PAKKE.til.slice() : GAVER.reduce((a, g) => a.concat(g.til), []);
+  const pakkeFor = navn => GAVER.find(g => g.til.includes(navn));
+
+  let aabnet = new Set();
+  try { aabnet = new Set(JSON.parse(localStorage.getItem(KEY) || "[]")); } catch (e) {}
+  const gem = () => { try { localStorage.setItem(KEY, JSON.stringify(Array.from(aabnet))); } catch (e) {} };
+
+  const tilP = MODT.find(n => norm(n) === norm(P.get("til"))) || null;
+  let navn = tilP || (MODT.length === 1 ? MODT[0] : null);
+
   const force = P.get("gave") === "1", off = P.get("gave") === "0";
-  const show = force || (!off && !seen && !location.hash && !P.has("nu"));
+  let show;
+  if (off || location.hash || P.has("nu")) show = force;
+  else if (force) show = true;
+  else if (tilP) show = !aabnet.has(tilP);
+  else if (PAKKE) show = PAKKE.til.some(n => !aabnet.has(n));
+  else show = aabnet.size === 0;
 
   /* lyd: syntetiseret papir, satin og pap. Ingen lydfiler. */
   let lyd = true, ac = null;
@@ -2080,43 +2117,62 @@ const GAVE = {
   function bladre(){ if (!lyd || !ctx()) return; knitre(6, .5, .18); }
   function ryst(ms){ try { navigator.vibrate && navigator.vibrate(ms); } catch (e) {} }
 
-  /* lakseglet i messing med giverens forbogstav */
+  /* lakseglet i messing med giverens forbogstav(er) */
   const KLAT = (() => { const n = 60, p = []; for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2; const r = 44 + 2.2 * Math.sin(a * 3 + .7) + 1.6 * Math.sin(a * 5 + 2.1) + 1.1 * Math.sin(a * 9 + .3) + (Math.sin(a * 2 + 1) > .93 ? 3.2 : 0);
     p.push((50 + r * Math.cos(a)).toFixed(2) + " " + (50 + r * Math.sin(a)).toFixed(2)); } return "M" + p.join(" L") + " Z"; })();
   const RIFT = (() => { const p = []; for (let i = 0; i <= 10; i++) p.push((50 + [0, 2.5, -1.5, 3, -2, 1, -3, 2, -1, 1.5, 0][i]) + "% " + (i * 10) + "%"); return p; })();
-  function segl(b){ return '<svg viewBox="0 0 100 100" aria-hidden="true"><defs>'
+  function segl(b){ const fs = b.length > 1 ? 25 : 34, y = b.length > 1 ? 59 : 62;
+    return '<svg viewBox="0 0 100 100" aria-hidden="true"><defs>'
     + '<radialGradient id="glak" cx="36%" cy="30%" r="75%"><stop offset="0" stop-color="#f5dc9e"/><stop offset=".42" stop-color="#D0AB63"/><stop offset="1" stop-color="#6e5020"/></radialGradient>'
     + '<radialGradient id="gpres" cx="60%" cy="66%" r="70%"><stop offset="0" stop-color="#d8b672"/><stop offset=".7" stop-color="#b8924a"/><stop offset="1" stop-color="#7a5a22"/></radialGradient></defs>'
     + '<path d="' + KLAT + '" fill="url(#glak)"/><circle cx="50" cy="50" r="31" fill="url(#gpres)"/>'
     + '<circle cx="50" cy="50" r="31" fill="none" stroke="#6e5020" stroke-width="1.6" opacity=".7"/><circle cx="50.6" cy="50.8" r="31.8" fill="none" stroke="#fbeac0" stroke-width=".9" opacity=".5"/>'
     + '<circle cx="50" cy="50" r="26.5" fill="none" stroke="#6e5020" stroke-width=".6" opacity=".5"/>'
-    + '<g font-family="Anton, Impact, sans-serif" font-size="34" text-anchor="middle">'
-    + '<text x="49.2" y="61.2" fill="#fbeac0" opacity=".55">' + b + '</text><text x="50.9" y="62.6" fill="#4a3410" opacity=".75">' + b + '</text><text x="50" y="62" fill="#8a6a2e">' + b + '</text></g>'
+    + '<g font-family="Anton, Impact, sans-serif" font-size="' + fs + '" text-anchor="middle" letter-spacing="1">'
+    + '<text x="49.2" y="' + (y - .8) + '" fill="#fbeac0" opacity=".55">' + b + '</text><text x="50.9" y="' + (y + .6) + '" fill="#4a3410" opacity=".75">' + b + '</text><text x="50" y="' + y + '" fill="#8a6a2e">' + b + '</text></g>'
     + '<ellipse cx="36" cy="27" rx="12" ry="6" fill="#fff" opacity=".18" transform="rotate(-28 36 27)"/></svg>'; }
+  const initialer = fra => (fra.match(/\p{Lu}/gu) || ["·"]).slice(0, 2).join("");
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
   function tegn(){
-    const m = (cfg.fra || "").match(/\p{L}/u); const b = m ? m[0].toUpperCase() : "·";
+    const gv = navn ? pakkeFor(navn) : PAKKE;
+    const fra = gv ? gv.fra : "Jeanet & Thomas";
+    const b = esc(initialer(fra));
     ["#gSeal", "#gSealL", "#gSealR"].forEach(id => { $(id).innerHTML = segl(b); });
     $("#gSealL").style.clipPath = "polygon(-10% -10%, " + RIFT.join(", ") + ", -10% 110%)";
     $("#gSealR").style.clipPath = "polygon(" + RIFT.join(", ") + ", 110% 110%, 110% -10%)";
-    $("#gTagNavn").textContent = cfg.til; $("#gKortTil").textContent = cfg.til;
-    $("#gTagNavn").style.fontSize = "calc(var(--W) * " + Math.min(.075, .46 / Math.max(1, cfg.til.length)).toFixed(4) + ")";
-    $("#gFra").textContent = cfg.fra; $("#gHilsen").textContent = cfg.hilsen;
-    $("#gPassNavn").textContent = cfg.til === "Familien" ? "Til familien" : "Til " + cfg.til;
+    const t = navn || "?";
+    $("#gTagNavn").textContent = t; $("#gKortTil").textContent = t;
+    $("#gTagNavn").style.fontSize = "calc(var(--W) * " + Math.min(.075, .46 / Math.max(1, t.length)).toFixed(4) + ")";
+    $("#gFra").textContent = gv && gv.underskrift ? gv.underskrift : fra; $("#gFraLbl").hidden = !!(gv && gv.underskrift);
+    $("#gHilsen").textContent = gv ? gv.hilsen : "";
+    $("#gKortSub").textContent = "Fra " + fra + " · Saalbach 2027";
+    $("#gPassNavn").textContent = navn ? "Til " + navn : "";
+    $("#gEye").textContent = navn ? "En gave til " + navn : "En gave til jer";
+    // navnevalg
+    const ch = $("#gChips");
+    if (MODT.length > 1) {
+      ch.hidden = false;
+      const lbl = PAKKE ? "Pakke " + PAKKE.nr + " · til " + og(PAKKE.til) + " · hver pakker sin egen op" : "Hvem pakker op?";
+      ch.innerHTML = '<div class="g-chl">' + esc(lbl) + "</div>" + MODT.map(n => '<button type="button" class="g-chip' + (n === navn ? " on" : "") + '" data-n="' + esc(n) + '" aria-pressed="' + (n === navn) + '">' + (aabnet.has(n) ? '<span class="g-ok" aria-label="pakket op på denne enhed">✓</span>' : "") + esc(n) + "</button>").join("");
+    } else { ch.hidden = true; ch.innerHTML = ""; }
   }
 
   /* tilstand */
   let st = { kort: false, sloejfe: false, papir: 0, tur: false };
   const VERB = (() => { try { return matchMedia("(hover: hover) and (pointer: fine)").matches ? "Klik" : "Tryk"; } catch (e) { return "Tryk"; } })();
-  const HINT = { start: "Tryk på kortet og læs, hvem gaven er fra", sloejfe: "Tryk på sløjfen og løsn den", papir: "Tryk på seglet og bryd det", papir2: "Tryk på papiret og fold det ud", tur: "Tryk på liftkortet og gå ind", slut: "God tur" };
-  function trin(){ if (st.tur) return "slut"; if (st.papir >= 2) return "tur"; if (st.sloejfe) return st.papir === 1 ? "papir2" : "papir"; if (st.kort) return "sloejfe"; return "start"; }
+  const HINT = { navn: "Tryk på dit navn først", start: "Tryk på kortet og læs, hvem gaven er fra", sloejfe: "Tryk på sløjfen og løsn den", papir: "Tryk på seglet og bryd det", papir2: "Tryk på papiret og fold det ud", tur: "Tryk på liftkortet og gå ind", slut: "God tur" };
+  function trin(){ if (!navn) return "navn"; if (st.tur) return "slut"; if (st.papir >= 2) return "tur"; if (st.sloejfe) return st.papir === 1 ? "papir2" : "papir"; if (st.kort) return "sloejfe"; return "start"; }
   function opdater(){
     const t = trin(); $("#gHint").textContent = HINT[t].replace(/^Tryk/, VERB); planCue(t === "start" ? 700 : 1350);
     const done = { kort: st.kort, sloejfe: st.sloejfe, papir: st.papir >= 2, tur: st.tur };
-    const nu = { start: "kort", sloejfe: "sloejfe", papir: "papir", papir2: "papir", tur: "tur", slut: "" }[t];
+    const nu = { navn: "", start: "kort", sloejfe: "sloejfe", papir: "papir", papir2: "papir", tur: "tur", slut: "" }[t];
     G.querySelectorAll("#gSteps li").forEach(li => { const s = li.dataset.s; li.classList.toggle("done", !!done[s]); li.classList.toggle("now", s === nu); });
-    $("#gHitBow").disabled = st.sloejfe; $("#gHitPaper").disabled = !st.sloejfe || st.papir >= 2; $("#gHitPass").disabled = !(st.papir >= 2) || st.tur;
+    $("#gHitTag").disabled = !navn;
+    $("#gHitBow").disabled = !navn || st.sloejfe; $("#gHitPaper").disabled = !st.sloejfe || st.papir >= 2; $("#gHitPass").disabled = !(st.papir >= 2) || st.tur;
     $("#gCta").hidden = !(st.papir >= 2);
     $("#gGift").classList.toggle("g-idle", !st.sloejfe);
+    $("#gGift").classList.toggle("g-wait", !navn);
   }
   function nulstil(){
     st = { kort: false, sloejfe: false, papir: 0, tur: false };
@@ -2124,11 +2180,14 @@ const GAVE = {
     $("#gPaper").className = "g-paper"; $("#gPass").className = "g-pass"; $("#gTag").className = "g-tag";
     tegn(); opdater();
   }
-  function aabnKort(){ knitre(4, .25, .2); ryst(10); planCue(99999); const m = $("#gModal"); m.classList.add("on"); setTimeout(() => { m.classList.add("open"); bladre(); }, 420); setTimeout(() => $("#gLaeg").focus(), 500); }
+  // hilsenen skal kunne stå på kortet uden at blive klippet
+  function fitMsg(){ const m = $("#gHilsen"); m.style.fontSize = ""; let fs = parseFloat(getComputedStyle(m).fontSize), g = 0;
+    while (m.scrollHeight > m.clientHeight + 1 && fs > 14 && g++ < 40) { fs *= .95; m.style.fontSize = fs + "px"; } }
+  function aabnKort(){ if (!navn) return; knitre(4, .25, .2); ryst(10); planCue(99999); const m = $("#gModal"); m.classList.add("on"); fitMsg(); setTimeout(() => { m.classList.add("open"); bladre(); fitMsg(); }, 420); setTimeout(() => $("#gLaeg").focus(), 500); }
   function laegKort(){ const m = $("#gModal"); m.classList.remove("open"); setTimeout(() => m.classList.remove("on"), 350);
     st.kort = true; const tg = $("#gTag"); if (st.sloejfe) tg.classList.add("aside"); opdater();
     setTimeout(() => { const n = !$("#gHitBow").disabled ? "#gHitBow" : !$("#gHitPaper").disabled ? "#gHitPaper" : !$("#gHitPass").disabled ? "#gHitPass" : "#gInd"; const e = $(n); if (e) e.focus(); }, 380); }
-  function loesn(){ if (st.sloejfe) return; st.sloejfe = true; satin(); ryst(18); $("#gGift").classList.add("untied"); setTimeout(() => $("#gTag").classList.add("aside"), 250); opdater(); setTimeout(() => $("#gHitPaper").focus(), 300); }
+  function loesn(){ if (!navn || st.sloejfe) return; st.sloejfe = true; satin(); ryst(18); $("#gGift").classList.add("untied"); setTimeout(() => $("#gTag").classList.add("aside"), 250); opdater(); setTimeout(() => $("#gHitPaper").focus(), 300); }
   function skala(){ return { W: $("#gGift").offsetWidth, stw: $("#gStage").clientWidth }; }
   function rivOp(){
     if (!st.sloejfe || st.papir >= 2) return; st.papir++;
@@ -2138,11 +2197,7 @@ const GAVE = {
       $("#gPaper").classList.add("open"); $("#gGift").classList.add("unfolded"); setTimeout(() => $("#gPass").classList.add("lift"), 1150); }
     opdater(); if (st.papir >= 2) setTimeout(() => $("#gHitPass").focus(), 400);
   }
-  function ind(){
-    if (G.classList.contains("ud")) return;
-    st.tur = true; opdater(); bump(); ryst(15);
-    $("#gPaper").classList.add("gone"); $("#gPass").classList.add("go"); $("#gGift").classList.add("opened");
-    try { localStorage.setItem(KEY, "aabnet"); } catch (e) {}
+  function luk(){
     setTimeout(() => G.classList.add("ud"), reduce ? 0 : 450);
     setTimeout(() => {
       G.hidden = true; G.classList.remove("ud"); html.classList.remove("gave-open"); planCue(99999);
@@ -2150,20 +2205,29 @@ const GAVE = {
       const n = document.getElementById("nu"); if (n) { n.setAttribute("tabindex", "-1"); n.focus({ preventScroll: true }); }
     }, reduce ? 60 : 1300);
   }
-  function vis(){ G.hidden = false; G.classList.remove("ud"); html.classList.add("gave-open"); nulstil(); setTimeout(() => $("#gHitTag").focus(), 350); }
+  function ind(){
+    if (G.classList.contains("ud") || !navn) return;
+    st.tur = true; opdater(); bump(); ryst(15);
+    $("#gPaper").classList.add("gone"); $("#gPass").classList.add("go"); $("#gGift").classList.add("opened");
+    aabnet.add(navn); gem(); luk();
+  }
+  function spring(){ if (navn) { aabnet.add(navn); } else { aabnet.add("—"); } gem(); luk(); }
+  function vis(){ G.hidden = false; G.classList.remove("ud"); html.classList.add("gave-open"); nulstil(); setTimeout(() => { const f = navn ? $("#gHitTag") : G.querySelector(".g-chip"); if (f) f.focus(); }, 350); }
 
   /* markering på næste sted at trykke */
-  const MAAL = { start: "#gTag", sloejfe: "#gHitBow", papir: ".g-seal", papir2: "#gGift", tur: "#gPass" };
+  const MAAL = { navn: ".g-chip", start: "#gTag", sloejfe: "#gHitBow", papir: ".g-seal", papir2: "#gGift", tur: "#gPass" };
   let c1, c2;
   function placer(){ const c = $("#gCue"), m = MAAL[trin()]; if (!m || $("#gModal").classList.contains("on") || G.hidden) { c.classList.remove("on", "label"); return false; }
+    if (m === ".g-chip") { c.classList.remove("on", "label"); return false; }
     const r = $(m).getBoundingClientRect(), s = $("#gStage").getBoundingClientRect(); let x = r.left + r.width / 2 - s.left, y = r.top + r.height / 2 - s.top;
     if (m === "#gTag") { x = r.left + r.width * .62 - s.left; y = r.top + r.height * .62 - s.top; }
     c.style.transform = "translate(" + x + "px," + y + "px)"; return true; }
   function planCue(ms){ const c = $("#gCue"); c.classList.remove("on", "label"); clearTimeout(c1); clearTimeout(c2); $("#gCue span").textContent = VERB + " her";
     c1 = setTimeout(() => { if (placer()) { c.classList.add("on"); c2 = setTimeout(() => c.classList.add("label"), 3200); } }, ms); }
-  window.addEventListener("resize", () => { if ($("#gCue").classList.contains("on")) placer();
+  window.addEventListener("resize", () => { if ($("#gCue").classList.contains("on")) placer(); if ($("#gModal").classList.contains("on")) fitMsg();
     if (st.papir >= 2 && !st.tur && !G.hidden) { const { W, stw } = skala(); const k = Math.min(1, (stw - 8) / (2.06 * W)); $("#gGift").style.transform = "translateX(" + (-.09 * W * k) + "px) scale(" + k + ")"; } });
 
+  $("#gChips").addEventListener("click", e => { const b = e.target.closest(".g-chip"); if (!b) return; navn = b.dataset.n; nulstil(); setTimeout(() => $("#gHitTag").focus(), 200); });
   $("#gHitTag").addEventListener("click", aabnKort);
   $("#gLaeg").addEventListener("click", laegKort);
   $("#gKortIgen").addEventListener("click", aabnKort);
@@ -2172,14 +2236,14 @@ const GAVE = {
   $("#gHitPaper").addEventListener("click", rivOp);
   $("#gHitPass").addEventListener("click", ind);
   $("#gInd").addEventListener("click", ind);
-  $("#gSkip").addEventListener("click", ind);
+  $("#gSkip").addEventListener("click", spring);
   $("#gLyd").addEventListener("click", e => { lyd = !lyd; e.currentTarget.textContent = "Lyd: " + (lyd ? "til" : "fra"); e.currentTarget.setAttribute("aria-pressed", String(lyd)); });
   document.addEventListener("keydown", e => {
     if (G.hidden) return;
     if (e.key === "Escape" && $("#gModal").classList.contains("on")) { e.stopPropagation(); laegKort(); return; }
-    if (e.key === "Tab") { // hold fokus i gaven
-      const sel = $("#gModal").classList.contains("on") ? "#gModal button" : ".g-app button:not([disabled]):not([hidden])";
-      const f = Array.from(G.querySelectorAll(sel)).filter(b => b.offsetParent !== null || b.getClientRects().length);
+    if (e.key === "Tab") {
+      const sel = $("#gModal").classList.contains("on") ? "#gModal button" : ".g-app button:not([disabled])";
+      const f = Array.from(G.querySelectorAll(sel)).filter(b => b.getClientRects().length && !b.closest("[hidden]"));
       if (!f.length) return; const i = f.indexOf(document.activeElement);
       e.preventDefault(); f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
     }
@@ -2188,7 +2252,7 @@ const GAVE = {
 
   tegn();
   if (show) vis(); else G.hidden = true;
-  if (window.FAMILIESKI) window.FAMILIESKI.gave = { vis, ind, state: () => ({ ...st, hidden: G.hidden }) };
+  if (window.FAMILIESKI) window.FAMILIESKI.gave = { vis, ind, valg: n => { navn = n; nulstil(); }, state: () => ({ ...st, navn, hidden: G.hidden, aabnet: Array.from(aabnet) }) };
 })();
 
 </script>
