@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://www.hotel-sonne.at" crossorigin>
 <link rel="preload" as="image" href="https://www.hotel-sonne.at/fileadmin/_processed_/f/e/csm_81_9ff6418c46.jpg" fetchpriority="high">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap">
 
 
 <style>
@@ -564,9 +564,252 @@ nav.main a{padding:10px 10px}
   #map-g .gt{display:none}
   #map-g .sc text{font-size:20px}
 }
+
+/* ════════ Gaven: siden pakket ind — kortet, sløjfen, seglet, papiret, liftkortet ════════ */
+#gave{position:fixed;inset:0;z-index:95;display:flex;flex-direction:column;
+  background:radial-gradient(120% 80% at 50% 42%,#101a24 0%,#06080B 75%);color:var(--snow);font-family:var(--f-sans);
+  -webkit-tap-highlight-color:transparent;overflow:hidden;transition:opacity .8s ease}
+#gave[hidden]{display:none!important}
+#gave.ud{opacity:0;pointer-events:none}
+html.gave-open,html.gave-open body{overflow:hidden}
+html.gave-open #snow{z-index:96}
+html.gave-open .grain{z-index:97}
+.g-app{flex:1;display:flex;flex-direction:column;gap:10px;min-height:0;padding:14px max(16px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px))}
+.g-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.g-brand{display:flex;flex-direction:column;gap:3px;min-width:0}
+.g-eye{font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.g-brand b{font-family:var(--f-display);font-weight:400;font-size:26px;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+.g-tools{display:flex;gap:8px;flex-wrap:wrap}
+.g-btn{font-family:var(--f-mono);font-size:var(--fs-mono-sm);letter-spacing:.06em;text-transform:uppercase;color:var(--snow);background:rgba(17,25,34,.7);
+  border:1px solid var(--line-2);border-radius:999px;padding:10px 16px;min-height:44px;cursor:pointer}
+.g-btn:hover{border-color:var(--ice)}
+.g-btn.g-solid{background:var(--snow);color:var(--void);border-color:var(--snow);min-height:52px;padding:12px 22px}
+.g-btn:focus-visible,.g-hit:focus-visible{outline:2px solid var(--ice);outline-offset:3px}
+
+.g-stage{flex:1;display:grid;place-items:center;position:relative;min-height:0;perspective:1600px;overflow:clip}
+.g-gift{--W:min(300px,62vw,44vh);width:var(--W);aspect-ratio:161/236;max-width:100%;position:relative;transform-style:preserve-3d;
+  transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.g-gift.g-idle{animation:gbreathe 4.5s ease-in-out infinite}
+@keyframes gbreathe{50%{transform:translateY(-3px)}}
+.g-floor{position:absolute;inset:6% 4% 0 4%;border-radius:6px;box-shadow:0 34px 60px -18px rgba(0,0,0,.85),0 8px 18px -8px rgba(0,0,0,.7)}
+
+/* liftkortet indeni */
+.g-pass{position:absolute;inset:0;border-radius:10px;overflow:hidden;transform-style:preserve-3d;
+  transition:transform 1s cubic-bezier(.2,.8,.2,1),box-shadow 1s;
+  background:linear-gradient(160deg,#16283a 0%,#0b131c 55%,#06080B 100%);
+  box-shadow:inset 0 0 0 1px rgba(143,199,232,.22)}
+.g-pass::before{content:"";position:absolute;inset:0;background:var(--ph) center bottom/100% 46% no-repeat;opacity:.9}
+.g-pass::after{content:"";position:absolute;inset:0;background:radial-gradient(90% 60% at 80% 0%,rgba(143,199,232,.22),transparent 60%)}
+.g-pin{position:absolute;inset:0;z-index:1;padding:11% 10%;display:flex;flex-direction:column;gap:calc(var(--W)*.03)}
+.g-pl{font-family:var(--f-mono);font-size:calc(var(--W)*.036);letter-spacing:.2em;color:var(--brass);text-transform:uppercase}
+.g-pt{font-family:var(--f-display);font-weight:400;text-transform:uppercase;font-size:calc(var(--W)*.15);line-height:.9;color:var(--snow)}
+.g-pt i{font-style:normal;display:block;color:transparent;-webkit-text-stroke:1px var(--snow)}
+.g-pd{font-family:var(--f-mono);font-size:calc(var(--W)*.045);color:var(--ice);letter-spacing:.06em}
+.g-pk{display:flex;flex-wrap:wrap;gap:6px}
+.g-pk span{font-family:var(--f-mono);font-size:calc(var(--W)*.032);letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(143,199,232,.35);border-radius:999px;padding:3px 8px;color:var(--snow)}
+.g-bar{margin-top:auto;height:calc(var(--W)*.09);background:repeating-linear-gradient(90deg,rgba(238,243,248,.85) 0 2px,transparent 2px 4px,rgba(238,243,248,.85) 4px 5px,transparent 5px 9px,rgba(238,243,248,.85) 9px 12px,transparent 12px 14px);opacity:.75}
+.g-pn{font-family:"Caveat","Segoe Print",cursive;font-weight:600;font-size:calc(var(--W)*.09);line-height:1;color:var(--snow)}
+.g-pass.lift{transform:translateZ(40px);box-shadow:inset 0 0 0 1px rgba(143,199,232,.4),0 0 60px -10px rgba(143,199,232,.45)}
+.g-pass.go{transform:translateZ(260px) scale(1.15);transition-duration:.9s}
+
+/* papiret */
+.g-paper{position:absolute;inset:0;pointer-events:none;transform-style:preserve-3d;transition:opacity .7s}
+.g-panel{position:absolute;top:0;bottom:0;transform-style:preserve-3d;transition:transform 1.25s cubic-bezier(.45,.05,.2,1)}
+.g-panel.g-l{left:0;width:44%;transform-origin:left center;z-index:2}
+.g-panel.g-r{left:38%;right:0;transform-origin:right center;z-index:1}
+.g-fr,.g-bk{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.g-fr{background-color:#0f1c29;
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 9px, rgba(143,199,232,.07) 10px, rgba(143,199,232,.07) 10.6px, transparent 11.6px),
+    radial-gradient(circle at 50% 50%, rgba(238,243,248,.08) 1.2px, transparent 1.8px),
+    radial-gradient(130% 90% at 30% 20%, rgba(143,199,232,.12), transparent 55%),
+    linear-gradient(115deg, rgba(0,0,0,0) 40%, rgba(255,255,255,.05) 50%, rgba(0,0,0,0) 60%);
+  background-size:26px 26px, 26px 26px, 300% 100%, 300% 100%;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05), inset 0 0 24px rgba(0,0,0,.55), inset 0 -10px 18px -10px rgba(0,0,0,.6)}
+.g-l .g-fr{border-radius:4px 0 0 4px;background-position:0 0, 13px 13px, 0 0, 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05), inset 14px 0 22px -14px rgba(0,0,0,.6), 7px 0 10px -6px rgba(0,0,0,.6)}
+.g-r .g-fr{border-radius:0 4px 4px 0;background-position:-31px 0, -18px 13px, 50% 0, 50% 0}
+.g-l .g-fr::after{content:"";position:absolute;top:0;bottom:0;right:0;width:7px;background:linear-gradient(90deg, rgba(255,255,255,0) 0, rgba(255,255,255,.12) 55%, rgba(255,255,255,.05) 80%, rgba(0,0,0,.4) 100%)}
+.g-bk{transform:rotateY(180deg);background-color:#e4eaf0;
+  background-image:linear-gradient(90deg, rgba(20,40,60,.08), rgba(20,40,60,0) 9%, rgba(20,40,60,0) 91%, rgba(20,40,60,.08)),
+    repeating-linear-gradient(17deg, rgba(20,40,60,.02) 0 1px, transparent 1px 4px);
+  box-shadow:0 10px 24px -14px rgba(0,0,0,.5)}
+.g-l .g-bk{border-radius:0 4px 4px 0}.g-r .g-bk{border-radius:4px 0 0 4px}
+.g-paper.open .g-l{transform:rotateY(-177deg)}
+.g-paper.open .g-r{transform:rotateY(177deg);transition-delay:.22s}
+.g-paper.gone{opacity:0}
+.g-seal,.g-sealh{position:absolute;top:71%;aspect-ratio:1;transform:translate(-50%,-50%) rotate(-9deg);pointer-events:none}
+.g-seal{left:44%;width:15%;z-index:3}
+.g-seal svg,.g-sealh svg{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 1.5px 1.2px rgba(0,0,0,.55))}
+.g-sealh{opacity:0;transition:transform .45s cubic-bezier(.2,.9,.2,1)}
+.g-l .g-sealh{left:100%;width:34.09%}
+.g-r .g-sealh{left:9.68%;width:24.19%}
+.g-paper.s1 .g-seal{opacity:0}
+.g-paper.s1 .g-sealh{opacity:1}
+.g-paper.s1 .g-l .g-sealh{transform:translate(-57%,-49%) rotate(-13deg)}
+.g-paper.s1 .g-r .g-sealh{transform:translate(-43%,-51%) rotate(-5deg)}
+
+/* båndene og sløjfen i messing */
+.g-ribbons{position:absolute;inset:0;overflow:hidden;pointer-events:none;border-radius:4px}
+.g-band{position:absolute;transition:transform .85s cubic-bezier(.5,0,.2,1)}
+.g-band.g-v{left:61%;width:10%;top:0;bottom:0;transform:translateX(-50%);
+  background:linear-gradient(90deg,#7a5a22 0%,#b8924a 18%,#f0d699 42%,#D0AB63 58%,#b8924a 82%,#7a5a22 100%)}
+.g-band.g-h{top:37%;height:7%;left:0;right:0;transform:translateY(-50%);
+  background:linear-gradient(180deg,#7a5a22 0%,#b8924a 18%,#f0d699 42%,#D0AB63 60%,#7a5a22 100%)}
+.g-band::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 3px)}
+.untied .g-band.g-v{transform:translate(-50%,108%)}
+.untied .g-band.g-h{transform:translate(-108%,-50%)}
+.g-bow{position:absolute;left:61%;top:37%;width:46%;transform:translate(-50%,-52%);pointer-events:none;transition:transform .8s cubic-bezier(.5,0,.2,1), opacity .6s .25s;filter:drop-shadow(0 6px 6px rgba(0,0,0,.5))}
+.g-bow svg{display:block;width:100%;height:auto;overflow:visible}
+.g-bow .loop{transform-box:fill-box;transition:transform .55s cubic-bezier(.5,0,.3,1)}
+.g-bow .loop.a{transform-origin:100% 50%}
+.g-bow .loop.b{transform-origin:0% 50%}
+.untied .g-bow .loop.a{transform:scale(.15) rotate(-40deg)}
+.untied .g-bow .loop.b{transform:scale(.15) rotate(40deg)}
+.untied .g-bow{transform:translate(-50%,-160%) scale(.5) rotate(25deg);opacity:0}
+
+/* kortet */
+.g-tag{position:absolute;left:61%;top:37%;width:34%;aspect-ratio:1.45;transform:translate(-118%, 18%) rotate(-11deg);transform-origin:90% 10%;
+  transition:transform .9s cubic-bezier(.3,.8,.2,1),opacity .4s;z-index:6}
+.g-face{position:absolute;inset:0;background:var(--snow);border-radius:3px;box-shadow:0 6px 14px -4px rgba(0,0,0,.6);
+  display:flex;flex-direction:column;justify-content:center;padding:0 12%;gap:2px;color:var(--void)}
+.g-face::before{content:"";position:absolute;right:9%;top:16%;width:7px;height:7px;border-radius:50%;background:#0f1c29;box-shadow:inset 0 1px 2px rgba(0,0,0,.4)}
+.g-lbl{font-family:var(--f-mono);font-weight:500;font-size:calc(var(--W)*.03);letter-spacing:.24em;color:#9a7838}
+.g-nm{font-family:"Caveat","Segoe Print",cursive;font-weight:600;font-size:calc(var(--W)*.075);line-height:1.05;color:#1c2a3d;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.g-tag.aside{transform:translate(-95%, -270%) rotate(-17deg) scale(.86)}
+.g-gift.unfolded .g-tag{transform:translateZ(16px) translate(-292%, 150%) rotate(-6deg) scale(.92)}
+.g-gift.opened .g-tag{opacity:0;pointer-events:none}
+
+/* klikflader */
+.g-hit{position:absolute;background:transparent;border:0;padding:0;cursor:pointer;border-radius:6px;z-index:5}
+.g-hit[disabled]{cursor:default;pointer-events:none}
+#gHitPaper{inset:0;z-index:3}
+#gHitBow{left:61%;top:37%;width:40%;height:28%;transform:translate(-50%,-50%);z-index:5}
+#gHitTag{inset:0;z-index:7;border-radius:3px}
+#gHitPass{inset:0;z-index:2;border-radius:10px}
+
+.g-foot{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.g-hint{margin:0;font-family:var(--f-sans);font-size:clamp(18px,2vw,21px);min-height:1.4em;color:var(--snow)}
+.g-steps{display:flex;gap:6px;list-style:none;padding:0;margin:0;flex-wrap:wrap;justify-content:center}
+.g-steps li{font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--mute-2);padding:7px 10px;border-radius:999px;border:1px solid transparent;display:flex;gap:6px;align-items:center}
+.g-steps li.now{color:var(--snow);border-color:var(--line-2)}
+.g-steps li.done{color:var(--brass)}
+.g-cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.g-cta[hidden]{display:none}
+
+/* kortet åbnet */
+.g-modal{position:fixed;inset:0;z-index:99;display:grid;place-items:center;padding:24px max(16px,env(safe-area-inset-left,0px));
+  background:rgba(3,5,8,.6);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .35s}
+.g-modal.on{opacity:1;pointer-events:auto}
+.g-big{width:min(440px,100%);perspective:1400px;transform:translateY(16px) scale(.94);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.g-modal.on .g-big{transform:none}
+.g-fold{position:relative;aspect-ratio:1.42;transform-style:preserve-3d;transition:margin-top .9s cubic-bezier(.4,.1,.2,1) .25s}
+.g-inside,.g-flap{position:absolute;inset:0;border-radius:4px;background:var(--snow);color:var(--void)}
+.g-inside{padding:7% 8% 6%;display:flex;flex-direction:column;gap:10px;box-shadow:0 26px 50px -16px rgba(0,0,0,.7)}
+.g-inside .g-lbl,.g-flap .g-lbl{font-size:12px}
+.g-msg{font-family:"Caveat","Segoe Print",cursive;font-weight:500;font-size:clamp(19px,4.8vw,24px);line-height:1.2;color:#1c2a3d;flex:1;overflow:auto;white-space:pre-wrap;min-height:0}
+.g-from{display:flex;gap:10px;align-items:baseline}
+.g-from span:last-child{font-family:"Caveat","Segoe Print",cursive;font-weight:600;font-size:clamp(24px,6vw,30px);line-height:1;color:#1c2a3d}
+.g-flap{transform-origin:top center;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.4,.1,.2,1) .25s;z-index:2}
+.g-flap .g-ffr,.g-flap .g-fbk{position:absolute;inset:0;border-radius:4px;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--snow)}
+.g-ffr{display:flex;flex-direction:column;justify-content:center;padding:0 10%;gap:8px;box-shadow:0 26px 50px -16px rgba(0,0,0,.7)}
+.g-ffr .g-nm{font-size:clamp(42px,11vw,60px)}
+.g-ffr .g-sub{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5a6a7a}
+.g-ffr .g-stripe{position:absolute;left:10%;right:10%;bottom:14%;height:2px;background:var(--brass)}
+.g-fbk{transform:rotateY(180deg) rotateZ(180deg);background:linear-gradient(#dfe6ed,#EEF3F8)!important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.g-fbk em{font-family:var(--f-display);font-style:normal;text-transform:uppercase;font-size:clamp(26px,7vw,34px);color:#0f1c29;opacity:.8}
+.g-fbk i{display:block;width:36px;height:2px;background:var(--brass)}
+.g-modal.open .g-fold{margin-top:70.4%}
+.g-modal.open .g-flap{transform:rotateX(-178deg)}
+.g-row{display:flex;justify-content:center;margin-top:18px}
+.g-row .g-btn{background:var(--snow);color:var(--void);border-color:var(--snow)}
+
+.g-cue{position:absolute;left:0;top:0;width:0;height:0;pointer-events:none;z-index:30;opacity:0;transition:opacity .45s}
+.g-cue.on{opacity:1}
+.g-cue::before{content:"";position:absolute;left:-23px;top:-23px;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--ice);box-shadow:0 0 0 5px rgba(143,199,232,.12);animation:gpuls 2.4s ease-out infinite}
+@keyframes gpuls{0%{transform:scale(.55);opacity:.95}70%{transform:scale(1.2);opacity:0}100%{transform:scale(1.2);opacity:0}}
+.g-cue span{position:absolute;left:50%;top:32px;transform:translateX(-50%);white-space:nowrap;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--snow);background:var(--night);border:1px solid var(--line-2);padding:6px 9px;border-radius:999px;opacity:0;transition:opacity .6s}
+.g-cue.label span{opacity:.95}
+.g-again{background:none;border:0;padding:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;min-height:44px}
+@media (max-height:640px){.g-gift{--W:min(220px,54vw,34vh)}.g-steps{display:none}.g-app{gap:6px;padding-top:10px}}
+@media (prefers-reduced-motion: reduce){
+  #gave *{animation:none!important}
+  .g-panel,.g-seal,.g-band,.g-bow,.g-tag,.g-pass,.g-flap,.g-gift,.g-fold,#gave{transition-duration:.01s!important;transition-delay:0s!important}
+}
 </style>
 </head>
 <body>
+<div id="gave" role="dialog" aria-modal="true" aria-label="En gave: familieguiden til Saalbach" hidden>
+  <div class="g-app">
+    <div class="g-top">
+      <div class="g-brand"><span class="g-eye">En gave til jer</span><b>Saalbach ’27</b></div>
+      <div class="g-tools">
+        <button class="g-btn" id="gLyd" type="button" aria-pressed="true">Lyd: til</button>
+        <button class="g-btn" id="gSkip" type="button">Spring over</button>
+      </div>
+    </div>
+    <div class="g-stage" id="gStage">
+      <div class="g-gift g-idle" id="gGift">
+        <div class="g-floor"></div>
+        <div class="g-pass" id="gPass">
+          <div class="g-pin">
+            <span class="g-pl">Liftkort · familieski</span>
+            <b class="g-pt">Saalbach<i>Hinterglemm</i></b>
+            <span class="g-pd">06.03 – 13.03.2027</span>
+            <div class="g-pk"><span>7 døgn</span><span>3 værelser</span><span>Die Sonne</span></div>
+            <div class="g-bar"></div>
+            <span class="g-pn" id="gPassNavn"></span>
+          </div>
+          <button class="g-hit" id="gHitPass" type="button" aria-label="Gå ind på siden" disabled></button>
+        </div>
+        <div class="g-paper" id="gPaper">
+          <div class="g-panel g-r"><div class="g-fr"><div class="g-sealh" id="gSealR" aria-hidden="true"></div></div><div class="g-bk"></div></div>
+          <div class="g-panel g-l"><div class="g-fr"><div class="g-sealh" id="gSealL" aria-hidden="true"></div></div><div class="g-bk"></div></div>
+          <div class="g-seal" id="gSeal" aria-hidden="true"></div>
+        </div>
+        <button class="g-hit" id="gHitPaper" type="button" aria-label="Åbn papiret" disabled></button>
+        <div class="g-ribbons"><div class="g-band g-h"></div><div class="g-band g-v"></div></div>
+        <div class="g-bow" aria-hidden="true">
+          <svg viewBox="0 0 200 140">
+            <defs>
+              <linearGradient id="gbA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0d699"/><stop offset=".45" stop-color="#D0AB63"/><stop offset="1" stop-color="#7a5a22"/></linearGradient>
+              <linearGradient id="gbB" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0d699"/><stop offset=".45" stop-color="#D0AB63"/><stop offset="1" stop-color="#7a5a22"/></linearGradient>
+              <linearGradient id="gbT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8924a"/><stop offset="1" stop-color="#7a5a22"/></linearGradient>
+            </defs>
+            <path d="M92 76 L58 132 L72 128 L80 140 L104 82 Z" fill="url(#gbT)"/>
+            <path d="M108 76 L146 128 L132 126 L126 139 L96 82 Z" fill="url(#gbT)"/>
+            <g class="loop a"><path d="M100 70 C 70 20, 18 18, 14 48 C 10 78, 60 92, 100 74 Z" fill="url(#gbA)"/><path d="M100 70 C 76 38, 36 34, 30 52 C 50 50, 76 58, 100 72 Z" fill="#7a5a22" opacity=".5"/></g>
+            <g class="loop b"><path d="M100 70 C 130 20, 182 18, 186 48 C 190 78, 140 92, 100 74 Z" fill="url(#gbB)"/><path d="M100 70 C 124 38, 164 34, 170 52 C 150 50, 124 58, 100 72 Z" fill="#7a5a22" opacity=".5"/></g>
+            <rect x="88" y="58" width="24" height="26" rx="7" fill="#D0AB63"/><rect x="92" y="61" width="9" height="20" rx="4" fill="#f0d699" opacity=".6"/>
+          </svg>
+        </div>
+        <div class="g-tag" id="gTag">
+          <div class="g-face"><span class="g-lbl">TIL</span><span class="g-nm" id="gTagNavn"></span></div>
+          <button class="g-hit" id="gHitTag" type="button" aria-label="Læs kortet"></button>
+        </div>
+        <button class="g-hit" id="gHitBow" type="button" aria-label="Løsn sløjfen"></button>
+      </div>
+      <div class="g-cue" id="gCue" aria-hidden="true"><span></span></div>
+    </div>
+    <div class="g-foot">
+      <p class="g-hint" id="gHint" aria-live="polite"></p>
+      <ol class="g-steps" id="gSteps"><li data-s="kort"><b>1</b>Kortet</li><li data-s="sloejfe"><b>2</b>Sløjfen</li><li data-s="papir"><b>3</b>Papiret</li><li data-s="tur"><b>4</b>Turen</li></ol>
+      <div class="g-cta" id="gCta" hidden><button class="g-btn g-solid" id="gInd" type="button">Gå ind på siden</button><button class="g-btn" id="gKortIgen" type="button">Læs kortet igen</button></div>
+    </div>
+  </div>
+  <div class="g-modal" id="gModal" role="dialog" aria-modal="true" aria-label="Kortet">
+    <div class="g-big">
+      <div class="g-fold">
+        <div class="g-inside">
+          <span class="g-lbl">EN HILSEN</span>
+          <div class="g-msg" id="gHilsen"></div>
+          <div class="g-from"><span class="g-lbl">FRA</span><span id="gFra"></span></div>
+        </div>
+        <div class="g-flap"><div class="g-ffr"><span class="g-lbl">TIL</span><span class="g-nm" id="gKortTil"></span><span class="g-sub">Saalbach · 6.–13. marts 2027</span><div class="g-stripe"></div></div><div class="g-fbk"><em>Saalbach ’27</em><i></i></div></div>
+      </div>
+      <div class="g-row"><button class="g-btn" id="gLaeg" type="button">Læg kortet</button></div>
+    </div>
+  </div>
+</div>
 <a class="skip" href="#nu">Spring til turen lige nu</a>
 <canvas id="snow" aria-hidden="true"></canvas>
 <div class="grain" aria-hidden="true"></div>
@@ -669,7 +912,7 @@ nav.main a{padding:10px 10px}
     <div class="sh rv">
       <span class="num mono">01 — Hotellet</span>
       <h2 class="display"><span class="fit" data-fit>Die Sonne</span></h2>
-      <p>Fire stjerner superior, mellem Saalbach og Hinterglemm. <strong>All inclusive fra morgen til midnat.</strong></p>
+      <p>Fire stjerner superior, mellem Saalbach og Hinterglemm. <strong>All inclusive hele opholdet.</strong></p>
     </div>
     <div class="split">
       <div class="txt rv">
@@ -679,10 +922,10 @@ nav.main a{padding:10px 10px}
       </div>
       <div class="facts rv">
         <div><b>4★S</b><span>Superior</span></div>
-        <div><b>ca. 15.00</b><span>Check-in</span></div>
+        <div><b>15.00</b><span>Check-in senest</span></div>
         <div><b>11.00</b><span>Check-ud</span></div>
         <div><b>30 m²</b><span>Hvert værelse</span></div>
-        <div><b>13.00</b><span>All inclusive fra ankomst</span></div>
+        <div><b>12.00</b><span>All inclusive fra ankomst</span></div>
         <div><b>Hele dagen</b><span>Inklusiv-taxi til liftene</span></div>
       </div>
     </div>
@@ -694,8 +937,8 @@ nav.main a{padding:10px 10px}
       <button type="button" data-i="0"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/4/f/csm_familienhotel-saalbach-winter-IMG_4156_HDR_e5762751cb.jpg" alt="Hotel Die Sonne en vinteraften" onerror="this.classList.add('dead')"></div><span class="cap"><i>01</i>Die Sonne en vinteraften</span></button>
       <button type="button" data-i="1"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/0/4/csm_IMG_4627_1_JAN_2017_463f9a8429.jpeg" alt="Hotel Die Sonne i sne" onerror="this.classList.add('dead')"></div><span class="cap"><i>02</i>Die Sonne i sne</span></button>
       <button type="button" data-i="2"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/e/e/csm_DZ_Kohlmais2_30m2_2d1c145048.jpg" alt="Dobbeltværelse Kohlmais, 30 m²" onerror="this.classList.add('dead')"></div><span class="cap"><i>03</i>Dobbeltværelse Kohlmais · 30 m²</span></button>
-      <button type="button" data-i="3"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/8/7/csm_WEBJuniorsuiteSchattberggesamt2_52dbeeeab0.jpg" alt="Juniorsuite Schattberg" onerror="this.classList.add('dead')"></div><span class="cap"><i>04</i>Juniorsuite Schattberg</span></button>
-      <button type="button" data-i="4"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/0/3/csm_WEB-Sonne-Jagasuite-Dez22-1__1__71a3f7c1f1.jpg" alt="Jagasuite med badekar" onerror="this.classList.add('dead')"></div><span class="cap"><i>05</i>Jagasuite med badekar</span></button>
+      <button type="button" data-i="3"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/5/c/csm_Doppelzimmer_Reiterkogel_fa896aac48.jpg" alt="Dobbeltværelse Reiterkogel" onerror="this.classList.add('dead')"></div><span class="cap"><i>04</i>Dobbeltværelse Reiterkogel</span></button>
+      <button type="button" data-i="4"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/2/c/csm_familienhotel-saalbach-doppelzimmer-reiterkogel-CV0R8427_2f2923f66c.jpg" alt="Badeværelset i Reiterkogel" onerror="this.classList.add('dead')"></div><span class="cap"><i>05</i>Badeværelset, Reiterkogel</span></button>
       <button type="button" data-i="5"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/b/5/csm_WEB-Sonne-Hallenbad-Dez22-1_01_175689814c.jpg" alt="Indendørs pool" onerror="this.classList.add('dead')"></div><span class="cap"><i>06</i>Indendørs pool</span></button>
       <button type="button" data-i="6"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/5/5/csm_Kopie_von_WEB-Sonne-Hallenbad-Dez22-2_Steffi.O_Web__1__28f837d864.jpg" alt="Poolen under bjælkeloftet" onerror="this.classList.add('dead')"></div><span class="cap"><i>07</i>Poolen under bjælkeloftet</span></button>
       <button type="button" data-i="7"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/9/e/csm_Header_HP_SONNE_2023__14__b239da6534.jpg" alt="Saunaen, klar til gus" onerror="this.classList.add('dead')"></div><span class="cap"><i>08</i>Saunaen, klar til gus</span></button>
@@ -707,7 +950,7 @@ nav.main a{padding:10px 10px}
 
     <div class="panels">
       <article class="rv">
-        <div class="pi ph"><img loading="lazy" src="https://www.hotel-sonne.at/fileadmin/user_upload/web-SONNE-Zimmer-Juli2024-5.jpg" alt="Dobbeltværelse, juli 2024" onerror="this.classList.add('dead')"></div>
+        <div class="pi ph"><img loading="lazy" src="https://www.hotel-sonne.at/fileadmin/user_upload/INSTA-DZ_Kohlmais30qm_HotelDieSonne_Zimmer_Juni25-8.jpg" alt="Dobbeltværelse Kohlmais, 30 m², juni 2025" onerror="this.classList.add('dead')"></div>
         <div class="pb">
           <span class="label">Værelset</span>
           <h3>Plads til fire</h3>
@@ -959,7 +1202,7 @@ nav.main a{padding:10px 10px}
       <div>
         <h4>Godt at vide</h4>
         <ul>
-          <li>Check-in fra ca. 15.00 · check-ud 11.00</li>
+          <li>Check-in senest 15.00, gerne før · check-ud 11.00</li>
           <li>Lån af babyalarm, elkedel, flaskevarmer, barnevogn og bæresele, hvis man beder om det</li>
           <li>Børnepasning er med i all inclusive. Skiskolen er fra 4 år</li>
         </ul>
@@ -976,7 +1219,7 @@ nav.main a{padding:10px 10px}
       <a href="https://www.flysas.com/dk-da/" target="_blank" rel="noopener">SAS ↗</a>
     </div>
     <div class="outline" aria-hidden="true"><span class="fit" data-fit>Saalbach</span></div>
-    <div class="fbot"><span>Familieski 2027 · <span data-plan-ver>Rejseplan opdateret 22.11.2026</span></span><span>Ingen bookingnumre på denne side. Med vilje.</span></div>
+    <div class="fbot"><span><button type="button" class="g-again" data-gave-igen>Pak gaven ind igen</button></span><span>Familieski 2027 · <span data-plan-ver>Rejseplan opdateret 22.11.2026</span></span><span>Ingen bookingnumre på denne side. Med vilje.</span></div>
   </div>
 </footer>
 
@@ -1000,8 +1243,8 @@ nav.main a{padding:10px 10px}
    Når noget bliver bekræftet: ret status og tid her, og hæv version.
    ════════════════════════════════════════════════════════════ */
 const TRIP = {
-  version: "2026-11-22-v2.2",
-  updated: "22.11.2026",
+  version: "2026-11-23-v2.4",
+  updated: "23.11.2026",
   tz: "Europe/Vienna",
   start: "2027-03-06",
   end: "2027-03-13",
@@ -1050,10 +1293,12 @@ const TRIP = {
   times: [
     { id: "ankomst", date: "2027-03-06", time: "10:30", approx: true, label: "Fremme på hotellet",
       note: "Beregnet: landing 08.10, bagage og ca. 90 min kørsel.", status: "forelobig" },
-    { id: "ai-start", date: "2027-03-06", time: "13:00", label: "All inclusive og après ski-buffet starter",
-      note: "Hotellets tilbud.", status: "bekraeftet" },
-    { id: "checkin", date: "2027-03-06", time: "15:00", approx: true, label: "Værelserne klar",
-      note: "Check-in fra ca. kl. 15 ifølge hotellet. Bagagerum i mellemtiden.", status: "bekraeftet" },
+    { id: "ai-start", date: "2027-03-06", time: "12:00", label: "All inclusive starter",
+      note: "Hotellets bekræftelse.", status: "bekraeftet" },
+    { id: "apres", date: "2027-03-06", time: "13:00", label: "Après ski-buffet åbner",
+      note: "Hotellets tilbud. Åben til kl. 16.30.", status: "bekraeftet" },
+    { id: "checkin", date: "2027-03-06", time: "15:00", label: "Værelserne klar senest",
+      note: "Gerne før, hvis værelset er klar. Bagagerum i mellemtiden.", status: "bekraeftet" },
     { id: "checkout", date: "2027-03-13", time: "11:00", label: "Check-ud, hotellets frist",
       note: "Senest kl. 11. All inclusive slutter samtidig.", status: "bekraeftet" }
   ],
@@ -1407,7 +1652,7 @@ const CONFIG = {
     } else if (st.kind === "udrejse") {
       h = "Udrejse i dag";
       sub = dateLabel(st.key, true) + ". Kastrup, Salzburg, Saalbach. Ingen ski i dag.";
-      facts = [fact("Fly", flightLine(OUT), OUT.status), fact("Transfer", tIn.pickup ? "Afhentning " + hm(tIn.pickup) + " · ca. " + tIn.durationMin + " min" : "Privat shuttle · afhentningstid ikke oplyst", tIn.status), fact("Hotel", hotelAddr() + " · værelser fra ca. " + hm(ci.time), "bekraeftet")];
+      facts = [fact("Fly", flightLine(OUT), OUT.status), fact("Transfer", tIn.pickup ? "Afhentning " + hm(tIn.pickup) + " · ca. " + tIn.durationMin + " min" : "Privat shuttle · afhentningstid ikke oplyst", tIn.status), fact("Hotel", hotelAddr() + " · værelser senest " + hm(ci.time), "bekraeftet")];
       acts = ["copy", "dir", "ring"];
     } else if (st.kind === "dag") {
       h = "Skidag " + st.n + " af 6";
@@ -1785,6 +2030,165 @@ const CONFIG = {
 
   // Til test og fejlfinding
   window.FAMILIESKI = { TRIP, stateAt, buildICS, zoned, dayKey, now };
+})();
+
+</script>
+<script>
+
+/* ════════════════════════════════════════════════════════════
+   GAVEN — siden pakket ind. Vises første gang, siden åbnes.
+   Ret kortets tekst her. ?til=Navn i linket skriver navnet på kortet.
+   ?gave=1 viser gaven igen, ?gave=0 springer den over.
+   ════════════════════════════════════════════════════════════ */
+const GAVE = {
+  til: "Familien",
+  fra: "Thomas",
+  hilsen: "Seks dage på ski og en uge sammen.\nAlt, I skal bruge, ligger indeni.\nPak den ud, og glæd jer."
+};
+(function(){
+  "use strict";
+  const G = document.getElementById("gave"); if (!G) return;
+  const $ = s => G.querySelector(s);
+  const html = document.documentElement;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const KEY = "familieski-gave-v1";
+  const P = new URLSearchParams(location.search);
+  const tilP = (P.get("til") || "").replace(/[<>"&]/g, "").trim().slice(0, 30);
+  const cfg = { til: tilP || GAVE.til, fra: GAVE.fra, hilsen: GAVE.hilsen };
+  let seen = false; try { seen = localStorage.getItem(KEY) === "aabnet"; } catch (e) {}
+  const force = P.get("gave") === "1", off = P.get("gave") === "0";
+  const show = force || (!off && !seen && !location.hash && !P.has("nu"));
+
+  /* lyd: syntetiseret papir, satin og pap. Ingen lydfiler. */
+  let lyd = true, ac = null;
+  function ctx(){ if (!ac) { try { ac = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { ac = null; } } if (ac && ac.state === "suspended") ac.resume(); return ac; }
+  function stoej(d){ const a = ctx(), b = a.createBuffer(1, Math.ceil(a.sampleRate * d), a.sampleRate), x = b.getChannelData(0); for (let i = 0; i < x.length; i++) x[i] = Math.random() * 2 - 1; return b; }
+  function burst(t0, d, f, q, g){ const a = ac, s = a.createBufferSource(); s.buffer = stoej(d); const bp = a.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = f; bp.Q.value = q;
+    const v = a.createGain(); v.gain.setValueAtTime(0, t0); v.gain.linearRampToValueAtTime(g, t0 + .004); v.gain.exponentialRampToValueAtTime(.0008, t0 + d); s.connect(bp).connect(v).connect(a.destination); s.start(t0); s.stop(t0 + d + .02); }
+  function knitre(n, span, g){ if (!lyd || !ctx()) return; const t = ac.currentTime; for (let i = 0; i < n; i++) burst(t + Math.random() * span, .03 + Math.random() * .07, 1800 + Math.random() * 4200, .9 + Math.random() * 1.6, g * (.4 + Math.random() * .7)); }
+  function knaek(){ if (!lyd || !ctx()) return; const a = ac, t = a.currentTime;
+    [[0, .05, .5], [.035, .03, .35], [.07, .02, .18]].forEach(([o, d, g]) => { const s = a.createBufferSource(); s.buffer = stoej(d); const hp = a.createBiquadFilter(); hp.type = "highpass"; hp.frequency.value = 1800 + Math.random() * 900;
+      const v = a.createGain(); v.gain.setValueAtTime(g, t + o); v.gain.exponentialRampToValueAtTime(.001, t + o + d); s.connect(hp).connect(v).connect(a.destination); s.start(t + o); s.stop(t + o + d + .01); });
+    const os = a.createOscillator(), vv = a.createGain(); os.type = "triangle"; os.frequency.setValueAtTime(210, t); os.frequency.exponentialRampToValueAtTime(90, t + .08); vv.gain.setValueAtTime(.18, t); vv.gain.exponentialRampToValueAtTime(.001, t + .1); os.connect(vv).connect(a.destination); os.start(t); os.stop(t + .11); }
+  function foldLyd(){ if (!lyd || !ctx()) return; knitre(16, 1.2, .2); const a = ac, t = a.currentTime, d = 1.1, s = a.createBufferSource(); s.buffer = stoej(d); const lp = a.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.setValueAtTime(700, t); lp.frequency.linearRampToValueAtTime(2200, t + .5); lp.frequency.linearRampToValueAtTime(600, t + d);
+    const v = a.createGain(); v.gain.setValueAtTime(0, t); v.gain.linearRampToValueAtTime(.22, t + .3); v.gain.exponentialRampToValueAtTime(.001, t + d); s.connect(lp).connect(v).connect(a.destination); s.start(t); s.stop(t + d); }
+  function satin(){ if (!lyd || !ctx()) return; const a = ac, t = a.currentTime, d = .7, s = a.createBufferSource(); s.buffer = stoej(d); const bp = a.createBiquadFilter(); bp.type = "bandpass"; bp.Q.value = 3;
+    bp.frequency.setValueAtTime(500, t); bp.frequency.exponentialRampToValueAtTime(2600, t + d * .8); const v = a.createGain(); v.gain.setValueAtTime(0, t); v.gain.linearRampToValueAtTime(.32, t + .18); v.gain.exponentialRampToValueAtTime(.001, t + d);
+    s.connect(bp).connect(v).connect(a.destination); s.start(t); s.stop(t + d); }
+  function bump(){ if (!lyd || !ctx()) return; const a = ac, t = a.currentTime, o = a.createOscillator(), v = a.createGain(); o.type = "sine"; o.frequency.setValueAtTime(120, t); o.frequency.exponentialRampToValueAtTime(55, t + .18);
+    v.gain.setValueAtTime(.35, t); v.gain.exponentialRampToValueAtTime(.001, t + .25); o.connect(v).connect(a.destination); o.start(t); o.stop(t + .26); knitre(3, .2, .12); }
+  function bladre(){ if (!lyd || !ctx()) return; knitre(6, .5, .18); }
+  function ryst(ms){ try { navigator.vibrate && navigator.vibrate(ms); } catch (e) {} }
+
+  /* lakseglet i messing med giverens forbogstav */
+  const KLAT = (() => { const n = 60, p = []; for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2; const r = 44 + 2.2 * Math.sin(a * 3 + .7) + 1.6 * Math.sin(a * 5 + 2.1) + 1.1 * Math.sin(a * 9 + .3) + (Math.sin(a * 2 + 1) > .93 ? 3.2 : 0);
+    p.push((50 + r * Math.cos(a)).toFixed(2) + " " + (50 + r * Math.sin(a)).toFixed(2)); } return "M" + p.join(" L") + " Z"; })();
+  const RIFT = (() => { const p = []; for (let i = 0; i <= 10; i++) p.push((50 + [0, 2.5, -1.5, 3, -2, 1, -3, 2, -1, 1.5, 0][i]) + "% " + (i * 10) + "%"); return p; })();
+  function segl(b){ return '<svg viewBox="0 0 100 100" aria-hidden="true"><defs>'
+    + '<radialGradient id="glak" cx="36%" cy="30%" r="75%"><stop offset="0" stop-color="#f5dc9e"/><stop offset=".42" stop-color="#D0AB63"/><stop offset="1" stop-color="#6e5020"/></radialGradient>'
+    + '<radialGradient id="gpres" cx="60%" cy="66%" r="70%"><stop offset="0" stop-color="#d8b672"/><stop offset=".7" stop-color="#b8924a"/><stop offset="1" stop-color="#7a5a22"/></radialGradient></defs>'
+    + '<path d="' + KLAT + '" fill="url(#glak)"/><circle cx="50" cy="50" r="31" fill="url(#gpres)"/>'
+    + '<circle cx="50" cy="50" r="31" fill="none" stroke="#6e5020" stroke-width="1.6" opacity=".7"/><circle cx="50.6" cy="50.8" r="31.8" fill="none" stroke="#fbeac0" stroke-width=".9" opacity=".5"/>'
+    + '<circle cx="50" cy="50" r="26.5" fill="none" stroke="#6e5020" stroke-width=".6" opacity=".5"/>'
+    + '<g font-family="Anton, Impact, sans-serif" font-size="34" text-anchor="middle">'
+    + '<text x="49.2" y="61.2" fill="#fbeac0" opacity=".55">' + b + '</text><text x="50.9" y="62.6" fill="#4a3410" opacity=".75">' + b + '</text><text x="50" y="62" fill="#8a6a2e">' + b + '</text></g>'
+    + '<ellipse cx="36" cy="27" rx="12" ry="6" fill="#fff" opacity=".18" transform="rotate(-28 36 27)"/></svg>'; }
+  function tegn(){
+    const m = (cfg.fra || "").match(/\p{L}/u); const b = m ? m[0].toUpperCase() : "·";
+    ["#gSeal", "#gSealL", "#gSealR"].forEach(id => { $(id).innerHTML = segl(b); });
+    $("#gSealL").style.clipPath = "polygon(-10% -10%, " + RIFT.join(", ") + ", -10% 110%)";
+    $("#gSealR").style.clipPath = "polygon(" + RIFT.join(", ") + ", 110% 110%, 110% -10%)";
+    $("#gTagNavn").textContent = cfg.til; $("#gKortTil").textContent = cfg.til;
+    $("#gTagNavn").style.fontSize = "calc(var(--W) * " + Math.min(.075, .46 / Math.max(1, cfg.til.length)).toFixed(4) + ")";
+    $("#gFra").textContent = cfg.fra; $("#gHilsen").textContent = cfg.hilsen;
+    $("#gPassNavn").textContent = cfg.til === "Familien" ? "Til familien" : "Til " + cfg.til;
+  }
+
+  /* tilstand */
+  let st = { kort: false, sloejfe: false, papir: 0, tur: false };
+  const VERB = (() => { try { return matchMedia("(hover: hover) and (pointer: fine)").matches ? "Klik" : "Tryk"; } catch (e) { return "Tryk"; } })();
+  const HINT = { start: "Tryk på kortet og læs, hvem gaven er fra", sloejfe: "Tryk på sløjfen og løsn den", papir: "Tryk på seglet og bryd det", papir2: "Tryk på papiret og fold det ud", tur: "Tryk på liftkortet og gå ind", slut: "God tur" };
+  function trin(){ if (st.tur) return "slut"; if (st.papir >= 2) return "tur"; if (st.sloejfe) return st.papir === 1 ? "papir2" : "papir"; if (st.kort) return "sloejfe"; return "start"; }
+  function opdater(){
+    const t = trin(); $("#gHint").textContent = HINT[t].replace(/^Tryk/, VERB); planCue(t === "start" ? 700 : 1350);
+    const done = { kort: st.kort, sloejfe: st.sloejfe, papir: st.papir >= 2, tur: st.tur };
+    const nu = { start: "kort", sloejfe: "sloejfe", papir: "papir", papir2: "papir", tur: "tur", slut: "" }[t];
+    G.querySelectorAll("#gSteps li").forEach(li => { const s = li.dataset.s; li.classList.toggle("done", !!done[s]); li.classList.toggle("now", s === nu); });
+    $("#gHitBow").disabled = st.sloejfe; $("#gHitPaper").disabled = !st.sloejfe || st.papir >= 2; $("#gHitPass").disabled = !(st.papir >= 2) || st.tur;
+    $("#gCta").hidden = !(st.papir >= 2);
+    $("#gGift").classList.toggle("g-idle", !st.sloejfe);
+  }
+  function nulstil(){
+    st = { kort: false, sloejfe: false, papir: 0, tur: false };
+    const g = $("#gGift"); g.classList.remove("untied", "opened", "unfolded"); g.style.transform = "";
+    $("#gPaper").className = "g-paper"; $("#gPass").className = "g-pass"; $("#gTag").className = "g-tag";
+    tegn(); opdater();
+  }
+  function aabnKort(){ knitre(4, .25, .2); ryst(10); planCue(99999); const m = $("#gModal"); m.classList.add("on"); setTimeout(() => { m.classList.add("open"); bladre(); }, 420); setTimeout(() => $("#gLaeg").focus(), 500); }
+  function laegKort(){ const m = $("#gModal"); m.classList.remove("open"); setTimeout(() => m.classList.remove("on"), 350);
+    st.kort = true; const tg = $("#gTag"); if (st.sloejfe) tg.classList.add("aside"); opdater();
+    setTimeout(() => { const n = !$("#gHitBow").disabled ? "#gHitBow" : !$("#gHitPaper").disabled ? "#gHitPaper" : !$("#gHitPass").disabled ? "#gHitPass" : "#gInd"; const e = $(n); if (e) e.focus(); }, 380); }
+  function loesn(){ if (st.sloejfe) return; st.sloejfe = true; satin(); ryst(18); $("#gGift").classList.add("untied"); setTimeout(() => $("#gTag").classList.add("aside"), 250); opdater(); setTimeout(() => $("#gHitPaper").focus(), 300); }
+  function skala(){ return { W: $("#gGift").offsetWidth, stw: $("#gStage").clientWidth }; }
+  function rivOp(){
+    if (!st.sloejfe || st.papir >= 2) return; st.papir++;
+    if (st.papir === 1) { knaek(); ryst(30); $("#gPaper").classList.add("s1"); }
+    else { foldLyd(); ryst(25); const { W, stw } = skala(); const k = Math.min(1, (stw - 8) / (2.06 * W));
+      $("#gGift").style.transform = "translateX(" + (-.09 * W * k) + "px) scale(" + k + ")";
+      $("#gPaper").classList.add("open"); $("#gGift").classList.add("unfolded"); setTimeout(() => $("#gPass").classList.add("lift"), 1150); }
+    opdater(); if (st.papir >= 2) setTimeout(() => $("#gHitPass").focus(), 400);
+  }
+  function ind(){
+    if (G.classList.contains("ud")) return;
+    st.tur = true; opdater(); bump(); ryst(15);
+    $("#gPaper").classList.add("gone"); $("#gPass").classList.add("go"); $("#gGift").classList.add("opened");
+    try { localStorage.setItem(KEY, "aabnet"); } catch (e) {}
+    setTimeout(() => G.classList.add("ud"), reduce ? 0 : 450);
+    setTimeout(() => {
+      G.hidden = true; G.classList.remove("ud"); html.classList.remove("gave-open"); planCue(99999);
+      window.scrollTo(0, 0); window.dispatchEvent(new Event("resize"));
+      const n = document.getElementById("nu"); if (n) { n.setAttribute("tabindex", "-1"); n.focus({ preventScroll: true }); }
+    }, reduce ? 60 : 1300);
+  }
+  function vis(){ G.hidden = false; G.classList.remove("ud"); html.classList.add("gave-open"); nulstil(); setTimeout(() => $("#gHitTag").focus(), 350); }
+
+  /* markering på næste sted at trykke */
+  const MAAL = { start: "#gTag", sloejfe: "#gHitBow", papir: ".g-seal", papir2: "#gGift", tur: "#gPass" };
+  let c1, c2;
+  function placer(){ const c = $("#gCue"), m = MAAL[trin()]; if (!m || $("#gModal").classList.contains("on") || G.hidden) { c.classList.remove("on", "label"); return false; }
+    const r = $(m).getBoundingClientRect(), s = $("#gStage").getBoundingClientRect(); let x = r.left + r.width / 2 - s.left, y = r.top + r.height / 2 - s.top;
+    if (m === "#gTag") { x = r.left + r.width * .62 - s.left; y = r.top + r.height * .62 - s.top; }
+    c.style.transform = "translate(" + x + "px," + y + "px)"; return true; }
+  function planCue(ms){ const c = $("#gCue"); c.classList.remove("on", "label"); clearTimeout(c1); clearTimeout(c2); $("#gCue span").textContent = VERB + " her";
+    c1 = setTimeout(() => { if (placer()) { c.classList.add("on"); c2 = setTimeout(() => c.classList.add("label"), 3200); } }, ms); }
+  window.addEventListener("resize", () => { if ($("#gCue").classList.contains("on")) placer();
+    if (st.papir >= 2 && !st.tur && !G.hidden) { const { W, stw } = skala(); const k = Math.min(1, (stw - 8) / (2.06 * W)); $("#gGift").style.transform = "translateX(" + (-.09 * W * k) + "px) scale(" + k + ")"; } });
+
+  $("#gHitTag").addEventListener("click", aabnKort);
+  $("#gLaeg").addEventListener("click", laegKort);
+  $("#gKortIgen").addEventListener("click", aabnKort);
+  $("#gModal").addEventListener("click", e => { if (e.target.id === "gModal") laegKort(); });
+  $("#gHitBow").addEventListener("click", loesn);
+  $("#gHitPaper").addEventListener("click", rivOp);
+  $("#gHitPass").addEventListener("click", ind);
+  $("#gInd").addEventListener("click", ind);
+  $("#gSkip").addEventListener("click", ind);
+  $("#gLyd").addEventListener("click", e => { lyd = !lyd; e.currentTarget.textContent = "Lyd: " + (lyd ? "til" : "fra"); e.currentTarget.setAttribute("aria-pressed", String(lyd)); });
+  document.addEventListener("keydown", e => {
+    if (G.hidden) return;
+    if (e.key === "Escape" && $("#gModal").classList.contains("on")) { e.stopPropagation(); laegKort(); return; }
+    if (e.key === "Tab") { // hold fokus i gaven
+      const sel = $("#gModal").classList.contains("on") ? "#gModal button" : ".g-app button:not([disabled]):not([hidden])";
+      const f = Array.from(G.querySelectorAll(sel)).filter(b => b.offsetParent !== null || b.getClientRects().length);
+      if (!f.length) return; const i = f.indexOf(document.activeElement);
+      e.preventDefault(); f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+    }
+  }, true);
+  document.querySelectorAll("[data-gave-igen]").forEach(b => b.addEventListener("click", vis));
+
+  tegn();
+  if (show) vis(); else G.hidden = true;
+  if (window.FAMILIESKI) window.FAMILIESKI.gave = { vis, ind, state: () => ({ ...st, hidden: G.hidden }) };
 })();
 
 </script>
