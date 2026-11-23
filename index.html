@@ -565,6 +565,43 @@ nav.main a{padding:10px 10px}
   #map-g .sc text{font-size:20px}
 }
 
+
+/* ════════ v3: less is more ════════ */
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.legs{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(20px,2.6vw,32px)}
+@media (min-width:1240px){.legs{grid-template-columns:repeat(2,minmax(0,1fr))}.legs .pass{grid-template-columns:1fr}.legs .pass .ps{border-left:0;border-top:2px dashed var(--line-2);grid-template-columns:repeat(4,1fr)}.legs .pass .ps::before{left:-14px;top:-14px}.legs .pass .ps::after{right:-14px;left:auto;top:-14px;bottom:auto}}
+.leg{display:flex;flex-direction:column;gap:6px;min-width:0}
+.tl-l{list-style:none;margin:0;padding:0 4px}
+.tl-l li{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:2px 12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.tl-l li:last-child{border-bottom:0}
+.tl-l time{font-family:var(--f-mono);font-size:var(--fs-mono-md);font-weight:500;color:var(--ice);line-height:1.35}
+.tl-l li b{font-weight:500;line-height:1.35}
+.tl-l .tl-n{grid-column:2/-1;font-size:var(--fs-small);color:var(--mute);line-height:1.4}
+.tl-l li .st{grid-column:3;grid-row:1}
+@media (max-width:480px){.tl-l li{grid-template-columns:60px minmax(0,1fr)}.tl-l li .st{grid-column:2;grid-row:auto;justify-self:start}.tl-l .tl-n{grid-column:2}}
+.pocket{margin-top:clamp(36px,5vw,64px)}
+@media (min-width:960px){.pk-pack{grid-row:auto}}
+.pk-card>.btn{align-self:flex-start}
+.gear{list-style:none;margin:clamp(20px,2.4vw,28px) 0 0;padding:0;border-top:1px solid var(--line)}
+.gear li{padding:12px 0;border-bottom:1px solid var(--line);color:#c5cfda;font-size:var(--fs-small)}
+.gear b{font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--ice);font-weight:500;margin-right:12px}
+.sh p a{color:var(--ice);text-decoration:none;white-space:nowrap}
+.cond{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 clamp(20px,2.4vw,28px)}
+.days{margin-top:0}
+@media (min-width:1100px){.days{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.days>article{min-height:0}
+.tchip{display:inline-block;font-family:var(--f-mono);font-size:var(--fs-mono-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--brass);border:1px solid rgba(208,171,99,.5);border-radius:999px;padding:3px 10px;vertical-align:middle;white-space:nowrap}
+.ex>article{min-height:0}
+.gal{margin-top:clamp(28px,3vw,44px)}
+.outline{margin-top:0}
+footer{padding-top:clamp(48px,7vw,96px)}
+.tl-l li b,.tl-l .tl-n{display:block}
+.tl-l .tl-n{grid-column:auto;margin-top:2px}
+@media (min-width:1240px){.gal{grid-template-columns:repeat(3,1fr)}}
+.pocket{align-items:start}
+@media (min-width:960px){.aftalt{grid-template-columns:1fr}}
+section.s{padding:clamp(64px,9vw,128px) 0}
+
 /* ════════ Gaven: siden pakket ind — kortet, sløjfen, seglet, papiret, liftkortet ════════ */
 #gave{position:fixed;inset:0;z-index:95;display:flex;flex-direction:column;
   background:radial-gradient(120% 80% at 50% 42%,#101a24 0%,#06080B 75%);color:var(--snow);font-family:var(--f-sans);
@@ -828,12 +865,11 @@ html.gave-open .grain{z-index:97}
     <a class="brand" href="#hero" aria-label="Til toppen"><b>Saalbach&nbsp;’27</b><span>6.–13. marts</span></a>
     <nav class="main" aria-label="Sektioner">
       <a href="#nu"><i>00</i>Nu</a>
-      <a href="#hotellet"><i>01</i>Hotellet</a>
-      <a href="#rejsen"><i>02</i>Rejsen</a>
-      <a href="#lommen"><i>03</i>Lommen</a>
-      <a href="#kort"><i>04</i>Kortet</a>
-      <a href="#plan"><i>05</i>Plan</a>
-      <a href="#formen"><i>06</i>Formen</a>
+      <a href="#rejsen"><i>01</i>Rejsen</a>
+      <a href="#hotellet"><i>02</i>Hotellet</a>
+      <a href="#kort"><i>03</i>Kortet</a>
+      <a href="#plan"><i>04</i>Plan</a>
+      <a href="#formen"><i>05</i>Formen</a>
     </nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav"><span class="bars" aria-hidden="true"></span><span class="mt">Menu</span></button>
   </div>
@@ -841,12 +877,11 @@ html.gave-open .grain{z-index:97}
 
 <nav class="mnav" id="mnav" aria-label="Mobilmenu" aria-hidden="true">
   <a href="#nu"><i>00</i><b>Turen lige nu</b></a>
-  <a href="#hotellet"><i>01</i><b>Hotellet</b></a>
-  <a href="#rejsen"><i>02</i><b>Rejsen</b></a>
-  <a href="#lommen"><i>03</i><b>I lommen</b></a>
-  <a href="#kort"><i>04</i><b>Fra oven</b></a>
-  <a href="#plan"><i>05</i><b>Plan A og B</b></a>
-  <a href="#formen"><i>06</i><b>Formen</b></a>
+  <a href="#rejsen"><i>01</i><b>Rejsen</b></a>
+  <a href="#hotellet"><i>02</i><b>Hotellet</b></a>
+  <a href="#kort"><i>03</i><b>Fra oven</b></a>
+  <a href="#plan"><i>04</i><b>Plan A og B</b></a>
+  <a href="#formen"><i>05</i><b>Formen</b></a>
 </nav>
 
 <main>
@@ -860,11 +895,11 @@ html.gave-open .grain{z-index:97}
     <div class="scrim-b"></div>
   </div>
   <div class="hero-in">
-    <div class="eyebrow mono"><span>Østrig</span><span class="dot"></span><span>Salzburger Land</span><span class="dot"></span><span>6.–13. marts 2027</span></div>
+    <div class="eyebrow mono"><span>Østrig</span><span class="dot"></span><span>6.–13. marts 2027</span></div>
     <h1 class="display"><span class="fit l1" data-fit>Saalbach</span><span class="fit l2" data-fit>Hinterglemm</span></h1>
     <p class="lead">Syv personer, tre værelser, én uge. Den yngste kan endnu ikke stå på ski.</p>
     <div class="count" aria-live="off">
-      <span class="cl mono" data-dep-label>Afgang fra København · lørdag 6. marts kl. 06.35</span>
+      <span class="cl mono" data-dep-label>Til afgang kl. 06.35</span>
       <div class="cd" id="cd">
         <div><b data-u="d">––</b><span>Dage</span></div>
         <div><b data-u="h">––</b><span>Timer</span></div>
@@ -874,16 +909,8 @@ html.gave-open .grain{z-index:97}
     </div>
     <div class="hero-acts">
       <a class="btn pri" href="#nu">Turen lige nu ↓</a>
-      <a class="btn" href="#lommen">Adresse, kalender, pakkeliste</a>
-    </div>
-    <div class="stats">
-      <div><b>7</b><span>Nætter</span></div>
-      <div><b>270<small>km</small></b><span>Piste</span></div>
-      <div><b>2.096<small>m</small></b><span>Højeste punkt</span></div>
-      <div><b>7</b><span>På holdet</span></div>
     </div>
   </div>
-  <div class="scroll-cue" aria-hidden="true">Rul ned</div>
 </section>
 
 <section id="nu" aria-labelledby="nu-h">
@@ -902,134 +929,22 @@ html.gave-open .grain{z-index:97}
   </div>
 </section>
 
-<div class="ticker" aria-hidden="true">
-  <div class="track">
-    <span>Saalbach<em>/</em></span><span>Hinterglemm<em>/</em></span><span>Leogang<em>/</em></span><span>Fieberbrunn<em>/</em></span><span>270 km piste<em>/</em></span><span>70 lifte<em>/</em></span><span>Die Sonne<em>/</em></span><span>All inclusive<em>/</em></span><span>6.–13. marts<em>/</em></span>
-    <span>Saalbach<em>/</em></span><span>Hinterglemm<em>/</em></span><span>Leogang<em>/</em></span><span>Fieberbrunn<em>/</em></span><span>270 km piste<em>/</em></span><span>70 lifte<em>/</em></span><span>Die Sonne<em>/</em></span><span>All inclusive<em>/</em></span><span>6.–13. marts<em>/</em></span>
-  </div>
-</div>
-
-<!-- ═══════════ PARALLAX ═══════════ -->
-<div class="band" aria-hidden="true">
-  <div class="ph"><img data-px src="https://www.hotel-sonne.at/fileadmin/_processed_/b/1/csm_Skicircus_Saalbach_Hinterglemm_Leogang_Fieberbrunn_1200x800-4_93035c58af.jpg" alt="" loading="lazy" onerror="this.classList.add('dead')"></div>
-  <div class="bt"><div class="wrap"><blockquote>270 kilometer. Vi når ikke det hele. Vi prøver.</blockquote><cite>Skicircus Saalbach Hinterglemm Leogang Fieberbrunn</cite></div></div>
-</div>
-
-<!-- ═══════════ 02 HOTELLET ═══════════ -->
-<section class="s alt" id="hotellet">
-  <div class="wrap">
-    <div class="sh rv">
-      <span class="num mono">01 — Hotellet</span>
-      <h2 class="display"><span class="fit" data-fit>Die Sonne</span></h2>
-      <p>Fire stjerner superior, mellem Saalbach og Hinterglemm. <strong>All inclusive hele opholdet.</strong></p>
-    </div>
-    <div class="split">
-      <div class="txt rv">
-        <p>Hotel Die Sonne ligger stille og solrigt mellem de to byer i Glemmtal. Familiedrevet, af Camilla og Hannes Schwabl. Busstoppestedet er ved døren, der går en nedfart lige ved hotellet, og hotellets inklusiv-taxi kører hele dagen til skiskolen og til liftene Kohlmais, Schattberg X-press, 12er Kogel og Reiterkogel.</p>
-        <p>Det er et familiehotel. Det passer os fint, for det er vi også. Der er en afdeling kun for gæster fra 15 år, hvis nogen får brug for det. Det får nogen.</p>
-        <p class="small">Wifi i hele huset.</p>
-      </div>
-      <div class="facts rv">
-        <div><b>4★S</b><span>Superior</span></div>
-        <div><b>15.00</b><span>Check-in senest</span></div>
-        <div><b>11.00</b><span>Check-ud</span></div>
-        <div><b>30 m²</b><span>Hvert værelse</span></div>
-        <div><b>12.00</b><span>All inclusive fra ankomst</span></div>
-        <div><b>Hele dagen</b><span>Inklusiv-taxi til liftene</span></div>
-      </div>
-    </div>
-
-    <div class="rooms-h rv"><h3>Værelserne</h3><span class="label">Kohlmais eller Reiterkogel · 30 m² hver</span></div>
-    <div class="rooms rv" id="rooms"></div>
-
-    <div class="gal rv" id="gal">
-      <button type="button" data-i="0"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/4/f/csm_familienhotel-saalbach-winter-IMG_4156_HDR_e5762751cb.jpg" alt="Hotel Die Sonne en vinteraften" onerror="this.classList.add('dead')"></div><span class="cap"><i>01</i>Die Sonne en vinteraften</span></button>
-      <button type="button" data-i="1"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/0/4/csm_IMG_4627_1_JAN_2017_463f9a8429.jpeg" alt="Hotel Die Sonne i sne" onerror="this.classList.add('dead')"></div><span class="cap"><i>02</i>Die Sonne i sne</span></button>
-      <button type="button" data-i="2"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/e/e/csm_DZ_Kohlmais2_30m2_2d1c145048.jpg" alt="Dobbeltværelse Kohlmais, 30 m²" onerror="this.classList.add('dead')"></div><span class="cap"><i>03</i>Dobbeltværelse Kohlmais · 30 m²</span></button>
-      <button type="button" data-i="3"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/5/c/csm_Doppelzimmer_Reiterkogel_fa896aac48.jpg" alt="Dobbeltværelse Reiterkogel" onerror="this.classList.add('dead')"></div><span class="cap"><i>04</i>Dobbeltværelse Reiterkogel</span></button>
-      <button type="button" data-i="4"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/2/c/csm_familienhotel-saalbach-doppelzimmer-reiterkogel-CV0R8427_2f2923f66c.jpg" alt="Badeværelset i Reiterkogel" onerror="this.classList.add('dead')"></div><span class="cap"><i>05</i>Badeværelset, Reiterkogel</span></button>
-      <button type="button" data-i="5"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/b/5/csm_WEB-Sonne-Hallenbad-Dez22-1_01_175689814c.jpg" alt="Indendørs pool" onerror="this.classList.add('dead')"></div><span class="cap"><i>06</i>Indendørs pool</span></button>
-      <button type="button" data-i="6"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/5/5/csm_Kopie_von_WEB-Sonne-Hallenbad-Dez22-2_Steffi.O_Web__1__28f837d864.jpg" alt="Poolen under bjælkeloftet" onerror="this.classList.add('dead')"></div><span class="cap"><i>07</i>Poolen under bjælkeloftet</span></button>
-      <button type="button" data-i="7"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/9/e/csm_Header_HP_SONNE_2023__14__b239da6534.jpg" alt="Saunaen, klar til gus" onerror="this.classList.add('dead')"></div><span class="cap"><i>08</i>Saunaen, klar til gus</span></button>
-      <button type="button" data-i="8"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/1/2/csm_wellnesshotel-saalbach-kaminzimmer_155b456844.jpg" alt="Hvilerum med pejs" onerror="this.classList.add('dead')"></div><span class="cap"><i>09</i>Hvilerum med pejs</span></button>
-      <button type="button" data-i="9"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/e/9/csm_web-hoteldiesonne-bar-0004_6b22caa341.jpg" alt="Baren" onerror="this.classList.add('dead')"></div><span class="cap"><i>10</i>Baren</span></button>
-      <button type="button" data-i="10"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/user_upload/INSTA-HotelDieSonne_Rupertistube_Juni25-1.jpg" alt="Rupertistube" onerror="this.classList.add('dead')"></div><span class="cap"><i>11</i>Rupertistube</span></button>
-      <button type="button" data-i="11"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/a/b/csm_HotelDIESonne-2020-Restaurant-22_8f74f3e86c.jpg" alt="Restauranten" onerror="this.classList.add('dead')"></div><span class="cap"><i>12</i>Restauranten</span></button>
-    </div>
-
-    <div class="panels">
-      <article class="rv">
-        <div class="pi ph"><img loading="lazy" src="https://www.hotel-sonne.at/fileadmin/user_upload/INSTA-DZ_Kohlmais30qm_HotelDieSonne_Zimmer_Juni25-8.jpg" alt="Dobbeltværelse Kohlmais, 30 m², juni 2025" onerror="this.classList.add('dead')"></div>
-        <div class="pb">
-          <span class="label">Værelset</span>
-          <h3>Plads til fire</h3>
-          <p>Tre dobbeltværelser, Kohlmais eller Reiterkogel, alle 30 m². Det er hotellets største dobbeltværelser med plads til op til fire. Trægulv, lodenstof og en sovesofa. Det ene har tremmeseng til Carl. Hypoallergene værelser kan fås, hvis man beder om det.</p>
-        </div>
-      </article>
-      <article class="rv">
-        <div class="pi ph"><img loading="lazy" src="https://www.hotel-sonne.at/fileadmin/_processed_/9/e/csm_Sonne-Hallenbad-Dez22-1_5c4d0ca5de.jpg" alt="Indendørs pool i Sonnenoase" onerror="this.classList.add('dead')"></div>
-        <div class="pb">
-          <span class="label">Spaet</span>
-          <h3>To afdelinger</h3>
-          <ul>
-            <li>Sonnenoase, for hele familien: indendørs pool, opvarmet udendørs whirlpool, stort hvilerum, infrarøde sæder, børnebiograf og læsehjørne.</li>
-            <li>Sonnenhaus, fra 15 år: fitness og saunaer. Finsk sauna med daglige urteinfusioner, biosauna, saltdampbad, infrarød kabine og farvelys-sanarium.</li>
-            <li>Zirben-spa til massage og behandlinger, blandt andet thaimassage hos Nithi. Spaprogram med hotellets træner.</li>
-          </ul>
-        </div>
-      </article>
-      <article class="rv">
-        <div class="pi ph"><img loading="lazy" src="https://www.hotel-sonne.at/fileadmin/_processed_/2/b/csm_HotelDIESonne-2020-Restaurant-23_3ce9a76582.jpg" alt="Restauranten, dækket op til middag" onerror="this.classList.add('dead')"></div>
-        <div class="pb">
-          <span class="label">Maden</span>
-          <h3>Fra morgen til aften</h3>
-          <ul>
-            <li>Stor morgenbuffet med økologiske og regionale råvarer.</li>
-            <li>Après ski-buffet til kl. 16.30. Åbner allerede kl. 13 for dem, der kommer tidligt ned.</li>
-            <li>Femretters middag, eller dagens lifetime-menu: vegetarisk, gluten- og laktosefri. Salat- og dessertbuffet. Temabuffet om søndagen.</li>
-          </ul>
-        </div>
-      </article>
-    </div>
-
-    <div class="skistrip rv">
-      <div><b>Egne ski</b><p>Jeanet, Victor, Alexander og Thomas har egne ski med. Støvlerne bliver delt ud inden turen, så hver pakker sine egne.</p></div>
-      <div><b>Leje</b><p>Freja og Amalie får ski og støvler via hotellet. Hotellets partnere er Snow &amp; Fun og Sport Bründl, og de hjælper med at vælge efter niveau.</p></div>
-      <div><b>Skiservice</b><p>Snow &amp; Fun sliber og vokser natten over og stiller skiene tilbage i hotellets skikælder.</p></div>
-      <div><b>Liftkort og skiskole</b><p>Liftkortene får vi i receptionen. Skiskolen tager børn fra 4 år, så Carl må vente et par sæsoner.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ 02 REJSEN ═══════════ -->
+<!-- ═══════════ 01 REJSEN ═══════════ -->
 <section class="s" id="rejsen">
   <div class="wrap">
     <div class="sh rv">
-      <span class="num mono">02 — Rejsen</span>
+      <span class="num mono">01 — Rejsen</span>
       <h2 class="display"><span class="fit" data-fit>Rejsen</span></h2>
-      <p>Tidligt ud, tidligt fremme. <strong>Det er hele planen.</strong></p>
     </div>
-    <div class="legend rv"><span class="st st-b">Bekræftet</span><span class="lx">står i en booking eller hos hotellet</span><span class="st st-f">Foreløbig</span><span class="lx">vores eget skøn</span><span class="st st-a">Afventer</span><span class="lx">ikke oplyst endnu</span></div>
-    <div class="passes" id="passes"></div>
-    <div class="tls">
-      <article class="tl rv"><h3 id="tl-ud-h">Udrejsedag</h3><ol id="tl-ud"></ol></article>
-      <article class="tl rv"><h3 id="tl-hjem-h">Hjemrejsedag</h3><ol id="tl-hjem"></ol>
-        <p class="tl-note">Check-ud kl. 11 er hotellets frist. Afhentningen er en anden tid, og den er ikke aftalt endnu.</p></article>
+    <p class="legend rv"><span class="st st-b">Bekræftet</span><span class="st st-f">Foreløbig</span><span class="st st-a">Afventer</span></p>
+    <div class="legs">
+      <div class="leg rv"><div id="pass-ud"></div><ol class="tl-l" id="tl-ud"></ol></div>
+      <div class="leg rv"><div id="pass-hjem"></div><ol class="tl-l" id="tl-hjem"></ol></div>
     </div>
-  </div>
-</section>
 
-<!-- ═══════════ 03 I LOMMEN ═══════════ -->
-<section class="s alt" id="lommen">
-  <div class="wrap">
-    <div class="sh rv">
-      <span class="num mono">03 — I lommen</span>
-      <h2 class="display"><span class="fit" data-fit>I lommen</span></h2>
-      <p>Det, man skal bruge med en skitaske i den anden hånd. <strong>Virker også uden net, når siden har været åbnet én gang.</strong></p>
-    </div>
-    <div class="pocket">
+    <div class="pocket" id="lommen">
       <article class="pk-card rv">
-        <span class="label">Hotellet</span>
+        <span class="label">I lommen</span>
         <h3>Hotel Die Sonne</h3>
         <p class="addr" data-hotel-addr>Altachweg 334<br>5753 Saalbach, Østrig</p>
         <div class="pk-acts">
@@ -1037,39 +952,50 @@ html.gave-open .grain{z-index:97}
           <a class="btn" data-hotel-dir href="https://www.google.com/maps/dir/?api=1&amp;destination=Hotel%20Die%20Sonne%2C%20Altachweg%20334%2C%205753%20Saalbach%2C%20Austria" target="_blank" rel="noopener">Vejvisning ↗</a>
           <a class="btn" data-hotel-tel href="tel:+4365417202">Ring til hotellet</a>
         </div>
-        <p class="small">Telefon <span data-hotel-phone>+43 6541 7202</span> · <a href="mailto:saalbach@hotel-sonne.at">saalbach@hotel-sonne.at</a></p>
-      </article>
-      <article class="pk-card rv">
-        <span class="label">Kalender</span>
-        <h3>Flyene i kalenderen</h3>
-        <ul id="ics-list"></ul>
-        <button type="button" class="btn pri" data-act="ics">Hent kalenderfil (.ics)</button>
-        <p class="small">Én fil med begge fly og en påmindelse tre timer før. Transfer kommer med, når tidspunktet er bekræftet.</p>
+        <button type="button" class="btn" data-act="ics">Fly i kalenderen (.ics)</button>
+        <p class="small">Virker også uden net, når siden har været åbnet én gang.</p>
       </article>
       <article class="pk-card pk-pack rv" id="pakkeliste">
-        <div class="pk-h"><span class="label">Pakkeliste</span><span class="pk-count" id="pk-count">0 af 14</span></div>
-        <h3>Pakket?</h3>
+        <div class="pk-h"><span class="label">Pakkeliste</span><span class="pk-count" id="pk-count">0 af 10</span></div>
         <ul class="pack" id="pack"></ul>
-        <div class="pk-foot"><p class="small">Afkrydsninger gemmes kun på denne enhed.</p><button type="button" class="btn" data-act="pack-reset">Nulstil</button></div>
-        <p class="small">Barnevogn, bæresele og babyalarm kan lånes på hotellet, hvis man beder om det.</p>
+        <div class="pk-foot"><p class="small">Gemmes kun på denne enhed.</p><button type="button" class="btn" data-act="pack-reset">Nulstil</button></div>
       </article>
     </div>
-    <p class="offline-note"><span data-plan-ver>Rejseplan opdateret 22.11.2026</span>. Når planen ændres her, henter siden den nye version næste gang, der er net.</p>
   </div>
 </section>
 
-<div class="band" aria-hidden="true">
-  <div class="ph"><img data-px src="https://www.hotel-sonne.at/fileadmin/_processed_/b/7/csm_Skicircus_Saalbach_Hinterglemm_Leogang_Fieberbrunn_1200x800-3_9b388475b4.jpg" alt="" loading="lazy" onerror="this.classList.add('dead')"></div>
-  <div class="bt"><div class="wrap"><blockquote>Fire byer. To delstater. Ét liftkort.</blockquote><cite>Salzburger Land og Tyrol</cite></div></div>
-</div>
+<!-- ═══════════ 02 HOTELLET ═══════════ -->
+<section class="s alt" id="hotellet">
+  <div class="wrap">
+    <div class="sh rv">
+      <span class="num mono">02 — Hotellet</span>
+      <h2 class="display"><span class="fit" data-fit>Die Sonne</span></h2>
+      <p>Fire stjerner mellem Saalbach og Hinterglemm. All inclusive, pool, saunaer og taxa til liftene hele dagen. <a href="https://www.hotel-sonne.at/en/" target="_blank" rel="noopener">hotel-sonne.at ↗</a></p>
+    </div>
+    <div class="rooms rv" id="rooms"></div>
+    <ul class="gear rv">
+      <li><b>Egne ski</b> Jeanet, Victor, Alexander og Thomas. Støvlerne deles ud inden turen.</li>
+      <li><b>Via hotellet</b> Ski og støvler til Freja og Amalie.</li>
+      <li><b>Liftkort</b> I receptionen.</li>
+    </ul>
+    <div class="gal rv" id="gal">
+      <button type="button" data-i="0"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/4/f/csm_familienhotel-saalbach-winter-IMG_4156_HDR_e5762751cb.jpg" alt="Hotel Die Sonne en vinteraften" onerror="this.classList.add('dead')"></div><span class="cap"><i>01</i>Die Sonne en vinteraften</span></button>
+      <button type="button" data-i="1"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/e/e/csm_DZ_Kohlmais2_30m2_2d1c145048.jpg" alt="Dobbeltværelse Kohlmais, 30 m²" onerror="this.classList.add('dead')"></div><span class="cap"><i>02</i>Dobbeltværelse Kohlmais · 30 m²</span></button>
+      <button type="button" data-i="2"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/5/c/csm_Doppelzimmer_Reiterkogel_fa896aac48.jpg" alt="Dobbeltværelse Reiterkogel" onerror="this.classList.add('dead')"></div><span class="cap"><i>03</i>Dobbeltværelse Reiterkogel</span></button>
+      <button type="button" data-i="3"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/b/5/csm_WEB-Sonne-Hallenbad-Dez22-1_01_175689814c.jpg" alt="Indendørs pool" onerror="this.classList.add('dead')"></div><span class="cap"><i>04</i>Indendørs pool</span></button>
+      <button type="button" data-i="4"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/_processed_/9/e/csm_Header_HP_SONNE_2023__14__b239da6534.jpg" alt="Saunaen, klar til gus" onerror="this.classList.add('dead')"></div><span class="cap"><i>05</i>Saunaen, klar til gus</span></button>
+      <button type="button" data-i="5"><div class="fr ph"><img loading="lazy" decoding="async" src="https://www.hotel-sonne.at/fileadmin/user_upload/INSTA-HotelDieSonne_Rupertistube_Juni25-1.jpg" alt="Rupertistube" onerror="this.classList.add('dead')"></div><span class="cap"><i>06</i>Rupertistube</span></button>
+    </div>
+  </div>
+</section>
 
-<!-- ═══════════ 04 SAALBACH FRA OVEN ═══════════ -->
+<!-- ═══════════ 03 FRA OVEN ═══════════ -->
 <section class="s" id="kort">
   <div class="wrap">
     <div class="sh rv">
-      <span class="num mono">04 — Saalbach fra oven</span>
-      <h2 class="display"><span class="fit" data-fit>Fra oven</span></h2>
-      <p>Saalbach Hinterglemm Leogang Fieberbrunn. Fire byer, to delstater, ét liftkort. <strong>Vælg et område.</strong></p>
+      <span class="num mono">03 — Fra oven</span>
+      <h2 class="display"><span class="fit" data-fit>Skicircus</span></h2>
+      <p>Fire byer, ét liftkort. <span data-count="270">270</span> km piste, <span data-count="70">70</span> lifte, op til <span data-count="2096">2.096</span> m.</p>
     </div>
     <div class="map-wrap">
       <figure class="map rv">
@@ -1085,152 +1011,65 @@ html.gave-open .grain{z-index:97}
         <article class="map-panel" id="map-panel" aria-live="polite"></article>
       </div>
     </div>
-    <div class="nums rv">
-      <div><b class="fit" data-fit><span data-count="270">270</span><small>km</small></b><span>Piste i alt</span></div>
-      <div><b class="fit" data-fit><span data-count="70">70</span></b><span>Lifte</span></div>
-      <div><b class="fit" data-fit><span data-count="2096">2.096</span><small>m</small></b><span>Højeste punkt · Schattberg West</span></div>
-      <div><b class="fit" data-fit><span data-count="1266">1.266</span><small>m</small></b><span>Højdeforskel · fra 830 m</span></div>
-      <div><b class="fit" data-fit><span data-count="90">90</span><small>%</small></b><span>Af pisterne med kunstsne</span></div>
-      <div><b class="fit" data-fit><span data-count="65">65</span><small>km</small></b><span>Skicircus-runden, hele vejen rundt</span></div>
-    </div>
-
-    <div class="extra">
-      <div class="rv"><span class="label">Vejret i marts · gennemsnit i dalen</span><div class="w"><span>+5°<i>Dag</i></span><span>−5°<i>Nat</i></span></div><p>Koldere på toppen. Omkring 20 cm nysne om ugen i gennemsnit i marts, målt i mellemhøjde. Et gennemsnit er ikke et løfte.</p></div>
-      <div class="rv"><span class="label">Liftkortet</span><div class="w"><span>270<i>Skicircus</i></span><span>408<i>Alpin Card</i></span></div><p>Skicircus dækker de fire byer. Ski ALPIN CARD lægger Schmittenhöhe i Zell am See og Kitzsteinhorn i Kaprun oveni, i alt 408 km.</p></div>
-    </div>
-
   </div>
 </section>
 
-<!-- ═══════════ 05 PLAN A OG B ═══════════ -->
+<!-- ═══════════ 04 PLAN A OG B ═══════════ -->
 <section class="s alt" id="plan">
   <div class="wrap">
     <div class="sh rv">
-      <span class="num mono">05 — Plan A og B</span>
+      <span class="num mono">04 — Plan A og B</span>
       <h2 class="display"><span class="fit" data-fit>Plan A og B</span></h2>
-      <p>Der er ikke planlagt meget. Det er sådan set planen. <strong>Her er det aftalte, og her er idéerne.</strong></p>
+      <p>Næsten intet er aftalt. Det er sådan set planen.</p>
     </div>
     <div class="aftalt rv" id="aftalt"></div>
-
-    <h3 class="cond-h rv">Tjek forholdene først</h3>
-    <div class="live" style="margin-top:0">
-      <div class="rv"><span class="label">Live · vejret</span><h3>Udsigten</h3><p>Seks dage frem, i dalen og på toppen.</p>
-        <a href="https://www.feratel.com/en/weather/austria/salzburg/saalbach-hinterglemm.html" target="_blank" rel="noopener"><span>Vejret i Saalbach · feratel</span><i>↗</i></a>
-        <a href="https://www.snow-forecast.com/resorts/Saalbach/6day/top" target="_blank" rel="noopener"><span>6 dage på toppen · snow-forecast</span><i>↗</i></a></div>
-      <div class="rv"><span class="label">Live · sneen</span><h3>Snedybder</h3><p>Måles dagligt ved dal- og bjergstation.</p>
-        <a href="https://www.saalbach.com/en/live-info/snow-report" target="_blank" rel="noopener"><span>Snerapport · saalbach.com</span><i>↗</i></a>
-        <a href="https://www.snow-forecast.com/resorts/Saalbach/snow-report" target="_blank" rel="noopener"><span>Snehistorik · snow-forecast</span><i>↗</i></a></div>
-      <div class="rv"><span class="label">Live · kameraerne</span><h3>Webcams</h3><p>Over 30 kameraer i Skicircus. Kig, inden du pakker.</p>
-        <a href="https://www.skiresort.info/ski-resort/saalbach-hinterglemm-leogang-fieberbrunn-skicircus/webcams/" target="_blank" rel="noopener"><span>Alle webcams · skiresort.info</span><i>↗</i></a>
-        <a href="https://www.feratel.com/en/webcams/austria/salzburg/saalbach-zwoelferkogel" target="_blank" rel="noopener"><span>Zwölferkogel · feratel</span><i>↗</i></a>
-        <a href="https://www.feratel.com/en/webcams/austria/salzburg/saalbach-kohlmaiskopf" target="_blank" rel="noopener"><span>Kohlmaiskopf · feratel</span><i>↗</i></a></div>
+    <div class="cond rv">
+      <a class="btn" href="https://www.feratel.com/en/weather/austria/salzburg/saalbach-hinterglemm.html" target="_blank" rel="noopener">Vejret ↗</a>
+      <a class="btn" href="https://www.saalbach.com/en/live-info/snow-report" target="_blank" rel="noopener">Sneen ↗</a>
+      <a class="btn" href="https://www.skiresort.info/ski-resort/saalbach-hinterglemm-leogang-fieberbrunn-skicircus/webcams/" target="_blank" rel="noopener">Webcams ↗</a>
     </div>
-
     <div class="days">
-      <article class="rv"><span class="idea">Idé · ikke aftalt</span><h3>Blå dag</h3><dl class="ab"><dt>A</dt><dd>Tidligt op. Zwölferkogel og Schattberg West, mens pisterne er nyprepareret.</dd><dt>B</dt><dd>Hele Skicircus-runden, 65 km og 12.400 højdemeter. Hvis benene vil.</dd></dl></article>
-      <article class="rv"><span class="idea">Idé · ikke aftalt</span><h3>Grå dag</h3><dl class="ab"><dt>A</dt><dd>Kortere ture og de lette og mellemsvære nedfarter på Leogang-siden over Asitz.</dd><dt>B</dt><dd>Sonnenoase: pool, udendørs whirlpool og børnebiograf. Carl kan være med.</dd></dl></article>
-      <article class="rv"><span class="idea">Idé · ikke aftalt</span><h3>Trætte ben</h3><dl class="ab"><dt>A</dt><dd>Formiddag på ski og ned til après ski-buffeten, når den åbner kl. 13.</dd><dt>B</dt><dd>Thaimassage hos Nithi i Zirben-spaet. Det er ikke svaghed, det er vedligeholdelse.</dd></dl></article>
-      <article class="rv"><span class="idea">Idé · ikke aftalt</span><h3>Dag med Carl</h3><dl class="ab"><dt>A</dt><dd>Kælk. Carl skal ikke på ski, men han kan godt sidde i en kælk. Det er en start.</dd><dt>B</dt><dd>Poolen i Sonnenoase og børnebiografen. Ingen kø.</dd></dl></article>
-      <article class="rv"><span class="idea">Idé · ikke aftalt</span><h3>Dårlig sne</h3><dl class="ab"><dt>A</dt><dd>Gletsjerdag på Kitzsteinhorn i Kaprun. Kræver Alpin Card, så det skal besluttes inden liftkortene købes.</dd><dt>B</dt><dd>Formiddag højt oppe, eftermiddag i Sonnenhaus, fra 15 år.</dd></dl></article>
-      <article class="rv"><span class="idea">Idé · ikke aftalt</span><h3>Om aftenen</h3><dl class="ab"><dt>A</dt><dd>Aftenski: oplyst pist mandag, onsdag og fredag til kl. 21.30, ifølge hotellet. Efter en femretters middag er det en ambitiøs plan.</dd><dt>B</dt><dd>Baren. Og så i seng.</dd></dl></article>
+      <article class="rv"><h3>Blå dag</h3><dl class="ab"><dt>A</dt><dd>Zwölferkogel og Schattberg tidligt.</dd><dt>B</dt><dd>Hele runden, 65 km. Aftenski man, ons og fre.</dd></dl></article>
+      <article class="rv"><h3>Grå dag</h3><dl class="ab"><dt>A</dt><dd>Lette ture på Leogang-siden.</dd><dt>B</dt><dd>Pool og whirlpool.</dd></dl></article>
+      <article class="rv"><h3>Trætte ben</h3><dl class="ab"><dt>A</dt><dd>Formiddag på ski, après ski kl. 13.</dd><dt>B</dt><dd>Massage og sauna.</dd></dl></article>
+      <article class="rv"><h3>Med Carl</h3><dl class="ab"><dt>A</dt><dd>Kælk.</dd><dt>B</dt><dd>Poolen og børnebiografen.</dd></dl></article>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ 06 FORMEN ═══════════ -->
+<!-- ═══════════ 05 FORMEN ═══════════ -->
 <section class="s" id="formen">
   <div class="wrap">
     <div class="sh rv">
-      <span class="num mono">06 — Formen</span>
+      <span class="num mono">05 — Formen</span>
       <h2 class="display"><span class="fit" data-fit>Formen</span></h2>
-      <p>Seks skidage kræver lår, baller, læg og en mave, der holder det hele samlet. <strong>Carl hjælper gerne. Han vejer ca. 10 kilo.</strong></p>
+      <p>Fra nu: 5–10 minutter de fleste dage. Let i december, hop fra januar. <span class="tchip" id="tstart">Nu</span></p>
     </div>
-    <div class="plan rv">
-      <div><span class="label">Start</span><b id="tstart">Nu</b><p>Ingen grund til at vente. Julemåneden tæller med.</p></div>
-      <div><span class="label">Hvor tit</span><b>De fleste dage</b><p>Hver dag er målet. De fleste dage er godt nok.</p></div>
-      <div><span class="label">Hvor længe</span><b>5–10 min</b><p>Tre-fire øvelser, med Carl eller uden. Skift fra dag til dag.</p></div>
-      <div><span class="label">Progression</span><b>Let → hårdere</b><p>December: få sæt og ingen hop. Fra januar: flere sæt, og hoppene kommer med.</p></div>
-    </div>
-
-    <div class="ex-h rv"><h3>Med Carl</h3><span class="label">8 øvelser · ca. 10 kg levende vægt</span></div>
+    <div class="ex-h rv"><h3>Med Carl</h3><span class="label">Ingen hop med ham på armen</span></div>
     <div class="ex">
-      <article class="rv"><span class="xn">01 · Med Carl</span><h3>Carl-squat</h3><div class="rp"><span>3 × 10</span><span>Lår og baller</span></div><p>Bær ham foran brystet og gå ned, til lårene er vandrette. Skistillingen med vægt på.</p></article>
-      <article class="rv"><span class="xn">02 · Med Carl</span><h3>Wallsit med passager</h3><div class="rp"><span>30–60 sek</span><span>Forside lår</span></div><p>Ryggen mod væggen, Carl på skødet. Det minder mest om en lang rød pist.</p></article>
-      <article class="rv"><span class="xn">03 · Med Carl</span><h3>Hoftehævet</h3><div class="rp"><span>3 × 12</span><span>Baller og baglår</span></div><p>Lig på ryggen med Carl siddende på hofterne, og hold ham med begge hænder. Han tror, det er en karrusel.</p></article>
-      <article class="rv"><span class="xn">04 · Med Carl</span><h3>Flyveren</h3><div class="rp"><span>3 × 10</span><span>Mave og hoftebøjere</span></div><p>Carl på skinnebenene og hænderne i hans. Bøj og stræk benene langsomt. Meget fnis, også fra Carl.</p></article>
-      <article class="rv"><span class="xn">05 · Med Carl</span><h3>Udfald med bæresele</h3><div class="rp"><span>2 × 10 frem og tilbage</span><span>Lår og balance</span></div><p>Gennem stuen og tilbage igen. Bæreselen kan lånes på hotellet, men den her øvelse foregår derhjemme.</p></article>
-      <article class="rv"><span class="xn">06 · Med Carl</span><h3>Fang Carl</h3><div class="rp"><span>3 × 30 sek</span><span>Inder- og yderside lår</span></div><p>Lave sidetrin i halv squat, mens han går efter dig. Det er kanterne, der trænes.</p></article>
-      <article class="rv"><span class="xn">07 · Med Carl</span><h3>Tunnelen</h3><div class="rp"><span>3 × 30 sek</span><span>Mave og skuldre</span></div><p>Planke, mens han kravler under dig. Sideplanke, når han kommer ud på den anden side.</p></article>
-      <article class="rv"><span class="xn">08 · Med Carl</span><h3>Tåhævet</h3><div class="rp"><span>3 × 15</span><span>Læg og ankler</span></div><p>Stå med Carl på armen og løft hælene langsomt. Det er det, skistøvlerne kræver hele dagen.</p></article>
+      <article class="rv"><h3>Carl-squat</h3><div class="rp"><span>3 × 10</span></div><p>Carl foran brystet, ned til vandrette lår.</p></article>
+      <article class="rv"><h3>Wallsit</h3><div class="rp"><span>30–60 sek</span></div><p>Ryggen mod væggen, Carl på skødet.</p></article>
+      <article class="rv"><h3>Hoftehævet</h3><div class="rp"><span>3 × 12</span></div><p>Carl på hofterne. Han tror, det er en karrusel.</p></article>
+      <article class="rv"><h3>Fang Carl</h3><div class="rp"><span>3 × 30 sek</span></div><p>Lave sidetrin, mens han går efter dig.</p></article>
     </div>
-    <div class="safety rv"><b>Regler</b>Hold ham tæt ind til kroppen. Ingen hop og ingen hurtige retningsskift med ham på armen. Stop, når han ikke synes, det er sjovt længere.</div>
-
-    <div class="ex-h rv"><h3>Uden Carl</h3><span class="label">8 øvelser · hoppene kommer med fra januar</span></div>
+    <div class="ex-h rv"><h3>Uden Carl</h3><span class="label">Hop fra januar</span></div>
     <div class="ex">
-      <article class="rv"><span class="xn">01 · Uden Carl</span><h3>Skøjtehop</h3><div class="rp"><span>3 × 10 pr. side</span><span>Svingene</span></div><p>Hop sidelæns fra ét ben til det andet, og stå landingen stille. Den vigtigste af dem alle.</p></article>
-      <article class="rv"><span class="xn">02 · Uden Carl</span><h3>Bulgarsk split squat</h3><div class="rp"><span>3 × 8 pr. ben</span><span>Lår og baller</span></div><p>Bagerste fod op på en stol. Ét ben ad gangen, som på ski.</p></article>
-      <article class="rv"><span class="xn">03 · Uden Carl</span><h3>Etbens-dødløft</h3><div class="rp"><span>3 × 8 pr. ben</span><span>Baglår og balance</span></div><p>Langsomt ned med flad ryg. Passer på knæene, når pisten bliver lang.</p></article>
-      <article class="rv"><span class="xn">04 · Uden Carl</span><h3>Copenhagen-planke</h3><div class="rp"><span>3 × 20 sek pr. side</span><span>Inderside lår</span></div><p>Sideplanke med øverste ben på en bænk. Navnet forpligter.</p></article>
-      <article class="rv"><span class="xn">05 · Uden Carl</span><h3>Kassehop</h3><div class="rp"><span>3 × 8</span><span>Eksplosiv kraft</span></div><p>Op på et lavt trin eller en kasse, blødt ned. Til pukler og ujævn sne.</p></article>
-      <article class="rv"><span class="xn">06 · Uden Carl</span><h3>Balance på pude</h3><div class="rp"><span>3 × 30 sek pr. ben</span><span>Fødder og ankler</span></div><p>På ét ben, på en sofapude, med lukkede øjne. Sværere end det lyder.</p></article>
-      <article class="rv"><span class="xn">07 · Uden Carl</span><h3>Sideplanke med benløft</h3><div class="rp"><span>3 × 10 pr. side</span><span>Yderside hofte</span></div><p>Løft det øverste ben langsomt og kontrolleret. Holder knæet på plads i svinget.</p></article>
-      <article class="rv"><span class="xn">08 · Uden Carl</span><h3>Wallsit, sidste udgave</h3><div class="rp"><span>Så længe du kan</span><span>Forside lår</span></div><p>Én gang om dagen. Skriv tiden ned. Den skal op inden marts.</p></article>
+      <article class="rv"><h3>Skøjtehop</h3><div class="rp"><span>3 × 10 pr. side</span></div><p>Sidelæns fra ben til ben. Stå landingen.</p></article>
+      <article class="rv"><h3>Split squat</h3><div class="rp"><span>3 × 8 pr. ben</span></div><p>Bagerste fod på en stol.</p></article>
+      <article class="rv"><h3>Copenhagen-planke</h3><div class="rp"><span>3 × 20 sek pr. side</span></div><p>Øverste ben på en bænk.</p></article>
+      <article class="rv"><h3>Balance</h3><div class="rp"><span>3 × 30 sek pr. ben</span></div><p>Ét ben, sofapude, lukkede øjne.</p></article>
     </div>
-    <div class="safety rv"><b>I øvrigt</b>Gør det ondt i knæ eller ryg, så stop. Det er ikke en konkurrence. Endnu.</div>
   </div>
 </section>
-
 </main>
 
-<!-- ═══════════ FOOTER ═══════════ -->
 <footer>
   <div class="wrap">
-    <div class="fcols">
-      <div>
-        <h4>Turen</h4>
-        <ul>
-          <li><b>6.–13. marts 2027</b>, lørdag til lørdag</li>
-          <li>7 nætter · 6 voksne og Carl · 3 værelser à 30 m²</li>
-          <li>All inclusive</li>
-          <li>Skicircus Saalbach Hinterglemm Leogang Fieberbrunn</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Flyene</h4>
-        <ul id="f-fly">
-        </ul>
-      </div>
-      <div>
-        <h4>Hotellet</h4>
-        <ul>
-          <li><b>Hotel Die Sonne</b><br>Altachweg 334, 5753 Saalbach, Østrig</li>
-          <li><a href="tel:+4365417202">+43 6541 7202</a></li>
-          <li><a href="mailto:saalbach@hotel-sonne.at">saalbach@hotel-sonne.at</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Godt at vide</h4>
-        <ul>
-          <li>Check-in senest 15.00, gerne før · check-ud 11.00</li>
-          <li>Lån af babyalarm, elkedel, flaskevarmer, barnevogn og bæresele, hvis man beder om det</li>
-          <li>Børnepasning er med i all inclusive. Skiskolen er fra 4 år</li>
-        </ul>
-      </div>
-    </div>
-    <div class="flinks">
-      <a href="https://www.hotel-sonne.at/en/" target="_blank" rel="noopener">Hotel Die Sonne ↗</a>
-      <a href="https://www.hotel-sonne.at/en/service/location-arrival/" target="_blank" rel="noopener">Lage &amp; Anreise ↗</a>
-      <a href="https://www.hotel-sonne.at/en/winter-holiday/the-ski-area/" target="_blank" rel="noopener">Skiområdet ↗</a>
-      <a href="https://www.saalbach.com/en/" target="_blank" rel="noopener">saalbach.com ↗</a>
-      <a href="https://www.saalbach.com/en/live-info/snow-report" target="_blank" rel="noopener">Snerapport ↗</a>
-      <a href="https://www.skiresort.info/ski-resort/saalbach-hinterglemm-leogang-fieberbrunn-skicircus/webcams/" target="_blank" rel="noopener">Webcams ↗</a>
-      <a href="https://www.feratel.com/en/weather/austria/salzburg/saalbach-hinterglemm.html" target="_blank" rel="noopener">Vejret ↗</a>
-      <a href="https://www.flysas.com/dk-da/" target="_blank" rel="noopener">SAS ↗</a>
-    </div>
     <div class="outline" aria-hidden="true"><span class="fit" data-fit>Saalbach</span></div>
-    <div class="fbot"><span><button type="button" class="g-again" data-gave-igen>Pak gaven ind igen</button></span><span>Familieski 2027 · <span data-plan-ver>Rejseplan opdateret 22.11.2026</span></span><span>Ingen bookingnumre på denne side. Med vilje.</span></div>
+    <div class="fbot"><span><button type="button" class="g-again" data-gave-igen>Pak gaven ind igen</button></span><span data-plan-ver>Rejseplan opdateret 23.11.2026</span></div>
   </div>
 </footer>
+
 
 <!-- Lightbox -->
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Billedgalleri" aria-hidden="true">
@@ -1252,7 +1091,7 @@ html.gave-open .grain{z-index:97}
    Når noget bliver bekræftet: ret status og tid her, og hæv version.
    ════════════════════════════════════════════════════════════ */
 const TRIP = {
-  version: "2026-11-23-v2.6",
+  version: "2026-11-23-v3",
   updated: "23.11.2026",
   tz: "Europe/Vienna",
   start: "2027-03-06",
@@ -1289,39 +1128,26 @@ const TRIP = {
   // pickup = afhentningstid "HH:MM" når den er aftalt. null = ikke oplyst.
   transfers: [
     { id: "ind", date: "2027-03-06", pickup: null, durationMin: 90, sortAt: "08:40",
-      label: "Privat shuttle Salzburg → hotellet",
-      note: "Ca. 90 min, ca. 100 km. Afhentningstid er ikke oplyst.",
-      status: "afventer" },
+      label: "Transfer til hotellet", note: "Privat shuttle, ca. 90 min. Tid ikke oplyst.", status: "afventer" },
     { id: "hjem", date: "2027-03-13", pickup: null, durationMin: 90, sortAt: "10:00",
-      label: "Afhentning hotellet → Salzburg",
-      note: "Ikke aftalt. Skal passe med flyet kl. 13.05 og ca. 90 min kørsel.",
-      status: "afventer" }
+      label: "Afhentning til lufthavnen", note: "Ikke aftalt. Skal passe med flyet kl. 13.05.", status: "afventer" }
   ],
 
-  // Hotellets egne tider og vores egne skøn — holdt adskilt via status og kilde
+  // Hotellets tider og vores eget skøn
   times: [
-    { id: "ankomst", date: "2027-03-06", time: "10:30", approx: true, label: "Fremme på hotellet",
-      note: "Beregnet: landing 08.10, bagage og ca. 90 min kørsel.", status: "forelobig" },
-    { id: "ai-start", date: "2027-03-06", time: "12:00", label: "All inclusive starter",
-      note: "Hotellets bekræftelse.", status: "bekraeftet" },
-    { id: "apres", date: "2027-03-06", time: "13:00", label: "Après ski-buffet åbner",
-      note: "Hotellets tilbud. Åben til kl. 16.30.", status: "bekraeftet" },
-    { id: "checkin", date: "2027-03-06", time: "15:00", label: "Værelserne klar senest",
-      note: "Gerne før, hvis værelset er klar. Bagagerum i mellemtiden.", status: "bekraeftet" },
-    { id: "checkout", date: "2027-03-13", time: "11:00", label: "Check-ud, hotellets frist",
-      note: "Senest kl. 11. All inclusive slutter samtidig.", status: "bekraeftet" }
+    { id: "ankomst", date: "2027-03-06", time: "10:30", approx: true, label: "Fremme på hotellet", note: "Vores skøn.", status: "forelobig" },
+    { id: "ai-start", date: "2027-03-06", time: "12:00", label: "All inclusive starter", note: "", status: "bekraeftet" },
+    { id: "checkin", date: "2027-03-06", time: "15:00", label: "Værelserne klar senest", note: "Gerne før. Bagagerum i mellemtiden.", status: "bekraeftet" },
+    { id: "checkout", date: "2027-03-13", time: "11:00", label: "Check-ud senest", note: "All inclusive slutter.", status: "bekraeftet" }
   ],
 
-  // Gælder hver dag under opholdet — fra hotellets tilbud
   daily: [
     { time: "13:00–16:30", label: "Après ski-buffet på hotellet", status: "bekraeftet" }
   ],
 
   // Faktisk aftalt i familien. Ingen opdigtede aftaler.
   agreements: [
-    { date: "2027-03-06", time: null, place: "Hotel Die Sonne",
-      text: "Ingen ski i dag. Vi pakker ud, henter liftkort i receptionen og får ski og støvler til Freja og Amalie.",
-      status: "bekraeftet" }
+    { date: "2027-03-06", time: null, place: "", text: "Ingen ski i dag. Udpakning, liftkort og udstyr til Freja og Amalie.", status: "bekraeftet" }
   ],
   meetingPoints: [],
 
@@ -1355,20 +1181,16 @@ const TRIP = {
   ],
 
   pack: [
-    { id: "pas", t: "Pas eller ID-kort til alle syv" },
-    { id: "sygesikring", t: "Det blå EU-sygesikringskort" },
-    { id: "telefon", t: "Telefon, oplader og stik" },
-    { id: "stovler", t: "Skistøvler", n: "Udleveres inden turen. Hver pakker sine egne." },
-    { id: "ski", t: "Ski i skitaske", n: "Jeanet, Victor, Alexander og Thomas" },
+    { id: "pas", t: "Pas eller ID-kort" },
+    { id: "sygesikring", t: "Blåt sygesikringskort" },
+    { id: "stovler", t: "Skistøvler" },
+    { id: "ski", t: "Ski i skitaske" },
     { id: "hjelm", t: "Hjelm og skibriller" },
-    { id: "handsker", t: "Skihandsker og halsedisse" },
+    { id: "handsker", t: "Handsker og halsedisse" },
     { id: "undertoj", t: "Skiundertøj og skisokker" },
-    { id: "jakke", t: "Skijakke og skibukser" },
-    { id: "sol", t: "Solcreme og læbepomade" },
-    { id: "bad", t: "Badetøj", n: "Pool og udendørs whirlpool" },
-    { id: "afterski", t: "Tøj til afterski og middag" },
-    { id: "carl", t: "Carls taske til flyet" },
-    { id: "kontanter", t: "Lidt euro i kontanter" }
+    { id: "bad", t: "Badetøj" },
+    { id: "sol", t: "Solcreme" },
+    { id: "carl", t: "Carls taske til flyet" }
   ]
 };
 
@@ -1464,23 +1286,24 @@ const CONFIG = {
 
   /* ── Render: boardingkort ─────────────────────────── */
   function renderPasses(){
-    const el = $("#passes"); if (!el) return;
-    el.innerHTML = TRIP.flights.map(f => {
+    TRIP.flights.forEach(f => {
+      const el = $("#pass-" + f.id); if (!el) return;
+      el.innerHTML = (() => {
       const [d] = f.dep.split("T"); const [y, m, dd] = d.split("-");
       return '<article class="pass rv" aria-label="' + esc(f.label + " " + f.no + " " + f.from.city + " til " + f.to.city) + '">' +
         '<div class="pm"><div class="ph-top"><span class="label">' + esc(f.label) + " · <b>" + esc(dateLabel(d, true)) + " " + y + "</b></span>" + chip(f.status) + "</div>" +
         '<div class="route"><div class="ap"><b>' + f.from.iata + '</b><span class="t">' + hm(f.dep.split("T")[1]) + '</span><span class="c">' + esc(f.from.city) + "</span></div>" +
         '<div class="arr" aria-hidden="true"><span>' + durTxt(f) + '</span><div class="ln2"></div></div>' +
         '<div class="ap"><b>' + f.to.iata + '</b><span class="t">' + hm(f.arr.split("T")[1]) + '</span><span class="c">' + esc(f.to.city) + "</span></div></div></div>" +
-        '<div class="ps"><div><span class="label">Fly</span><b>' + f.no + '</b></div><div><span class="label">Dato</span><b>' + dd + "." + m + "." + y.slice(2) + "</b></div>" +
-        '<div><span class="label">Afgang</span><b>' + hm(f.dep.split("T")[1]) + '</b></div><div><span class="label">Ankomst</span><b>' + hm(f.arr.split("T")[1]) + "</b></div></div></article>";
-    }).join("");
+        '<div class="ps"><div><span class="label">Fly</span><b>' + f.no + " · " + esc(f.airline) + "</b></div></div></article>";
+      })();
+    });
   }
 
   /* ── Render: tidslinjer for rejsedagene ───────────── */
-  function dayItems(key){
+  function dayItems(key, withFlights){
     const items = [];
-    TRIP.flights.forEach(f => {
+    if (withFlights) TRIP.flights.forEach(f => {
       if (f.dep.startsWith(key)) items.push({ at: f.dep.split("T")[1], time: hm(f.dep.split("T")[1]), label: "Afgang " + f.no + " fra " + f.from.city, note: f.from.name, status: f.status });
       if (f.arr.startsWith(key)) items.push({ at: f.arr.split("T")[1], time: hm(f.arr.split("T")[1]), label: "Landing i " + f.to.city, note: f.no + " · flyvetid " + durTxt(f), status: f.status });
     });
@@ -1490,10 +1313,9 @@ const CONFIG = {
     return items.sort((a, b) => a.at < b.at ? -1 : a.at > b.at ? 1 : 0);
   }
   function renderTimelines(){
-    [["#tl-ud", TRIP.start, "#tl-ud-h", "Udrejsedag"], ["#tl-hjem", TRIP.end, "#tl-hjem-h", "Hjemrejsedag"]].forEach(([sel, key, hsel, word]) => {
+    [["#tl-ud", TRIP.start], ["#tl-hjem", TRIP.end]].forEach(([sel, key]) => {
       const el = $(sel); if (!el) return;
-      const h = $(hsel); if (h) h.textContent = word + " · " + dateLabel(key);
-      el.innerHTML = dayItems(key).map(i => '<li><time>' + esc(i.time) + '</time><div><b>' + esc(i.label) + "</b>" + (i.note ? '<span class="tl-n">' + esc(i.note) + "</span>" : "") + "</div>" + chip(i.status) + "</li>").join("");
+      el.innerHTML = dayItems(key, false).map(i => '<li><time>' + esc(i.time) + '</time><div><b>' + esc(i.label) + "</b>" + (i.note ? '<span class="tl-n">' + esc(i.note) + "</span>" : "") + "</div>" + chip(i.status) + "</li>").join("");
     });
   }
 
@@ -1510,12 +1332,11 @@ const CONFIG = {
   }
   function renderAgreements(){
     const el = $("#aftalt"); if (!el) return;
-    const ag = TRIP.agreements.map(a => "<li><span class=\"k\">" + esc(dateLabel(a.date, true)) + (a.time ? " · " + hm(a.time) : "") + "</span>" + chip(a.status) + '<span class="v">' + esc(a.text) + (a.place ? " <em>" + esc(a.place) + "</em>" : "") + "</span></li>").join("");
+    const ag = TRIP.agreements.filter(a => a.date > TRIP.start && a.date < TRIP.end).map(a => "<li><span class=\"k\">" + esc(dateLabel(a.date, true)) + (a.time ? " · " + hm(a.time) : "") + "</span>" + chip(a.status) + '<span class="v">' + esc(a.text) + (a.place ? " <em>" + esc(a.place) + "</em>" : "") + "</span></li>").join("");
     const mp = TRIP.meetingPoints.length
       ? TRIP.meetingPoints.map(m => "<li><span class=\"k\">" + esc(dateLabel(m.date, true)) + (m.time ? " · " + hm(m.time) : "") + "</span>" + chip(m.status) + '<span class="v">' + esc(m.place) + (m.text ? " · " + esc(m.text) : "") + "</span></li>").join("")
-      : '<li class="none"><span class="v">Ingen mødesteder eller mødetider er aftalt endnu. De kommer her, når de er.</span></li>';
-    const dl = TRIP.daily.map(d => "<li><span class=\"k\">Hver dag · " + esc(d.time.replace(/:/g, ".")) + "</span>" + chip(d.status) + '<span class="v">' + esc(d.label) + "</span></li>").join("");
-    el.innerHTML = '<div><h3>Aftalt i familien</h3><ul class="agl">' + ag + mp + '</ul></div><div><h3>Fast på hotellet</h3><ul class="agl">' + dl + '</ul></div>';
+      : (ag ? "" : '<li class="none"><span class="v">Ingen mødesteder eller -tider endnu. De kommer her, når de er aftalt.</span></li>');
+    el.innerHTML = '<div><h3>Aftalt</h3><ul class="agl">' + ag + mp + "</ul></div>";
   }
 
   /* ── Kalenderfil (.ics) ────────────────────────────── */
@@ -1630,7 +1451,7 @@ const CONFIG = {
   /* ── Turen lige nu ─────────────────────────────────── */
   const ACT = {
     pak: { label: "Pakkeliste", href: "#pakkeliste" },
-    ics: { label: "Tilføj fly til kalender", act: "ics" },
+    ics: { label: "Fly i kalenderen", act: "ics" },
     rejse: { label: "Rejseplanen", href: "#rejsen" },
     copy: { label: "Kopiér hoteladresse", act: "copy" },
     dir: { label: "Vejvisning", href: dirUrl(), ext: true },
@@ -1654,9 +1475,9 @@ const CONFIG = {
     const co = TRIP.times.find(t => t.id === "checkout"), ci = TRIP.times.find(t => t.id === "checkin");
     if (st.kind === "for") {
       const days = Math.max(0, Math.floor((DEP_TS - now()) / 864e5));   // samme regning som nedtællingen
-      h = "Næste afgang";
-      sub = dateLabel(TRIP.start, true) + " kl. " + hm(OUT.dep.split("T")[1]) + " fra " + OUT.from.city + ". " + (days === 0 ? "Om under et døgn." : days === 1 ? "Om et døgn og lidt." : "Om " + days + " dage.");
-      facts = [fact("Udrejse", flightLine(OUT), OUT.status), fact("Hotel", TRIP.hotel.name + " · " + TRIP.hotel.city, "bekraeftet"), fact("Transfer", "Privat shuttle · tidspunkt ikke oplyst", tIn.status)];
+      h = "Før afgang";
+      sub = days === 0 ? "I morgen tidlig." : "Pak, sæt flyene i kalenderen, og glæd jer.";
+      facts = TRIP.transfers.filter(t => t.status !== "bekraeftet").map(t => fact("Mangler", t.label, t.status));
       acts = ["pak", "ics", "rejse"];
     } else if (st.kind === "udrejse") {
       h = "Udrejse i dag";
@@ -1668,7 +1489,7 @@ const CONFIG = {
       sub = dateLabel(st.key, true) + ".";
       const ag = TRIP.agreements.filter(a => a.date === st.key).concat(TRIP.meetingPoints.filter(m => m.date === st.key).map(m => ({ text: m.place + (m.time ? " kl. " + hm(m.time) : ""), status: m.status })));
       facts = ag.length ? ag.map(a => fact("Aftalt i dag", a.text, a.status)) : [fact("Aftalt i dag", "Intet aftalt. Se Plan A og B.", "afventer")];
-      TRIP.daily.forEach(d => facts.push(fact("Fast på hotellet", d.label + " " + d.time.replace(/:/g, "."), d.status)));
+      TRIP.daily.forEach(d => facts.push(fact("Hver dag", d.label + " " + d.time.replace(/:/g, "."), d.status)));
       acts = ["piste", "forhold", "plan"];
     } else if (st.kind === "hjemrejse") {
       h = "Hjemrejse i dag";
@@ -1846,7 +1667,7 @@ const CONFIG = {
     cd.querySelector('[data-u="m"]').textContent = pad2(m);
     cd.querySelector('[data-u="s"]').textContent = pad2(s);
   }
-  $$("[data-dep-label]").forEach(e => { e.textContent = "Afgang fra " + OUT.from.city + " · " + dateLabel(TRIP.start) + " kl. " + hm(OUT.dep.split("T")[1]); });
+  $$("[data-dep-label]").forEach(e => { e.textContent = "Til afgang kl. " + hm(OUT.dep.split("T")[1]); });
   if (!tick()) { const iv = setInterval(() => { if (tick()) clearInterval(iv); }, 1000); }
   let lastKind = stateAt(now()).kind;
   setInterval(() => { const k = stateAt(now()).kind; if (k !== lastKind) { lastKind = k; renderNow(); } }, 30000);
